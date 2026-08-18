@@ -1,0 +1,841 @@
+{
+  "_comment": "English translation. Any key omitted here falls back to ro.json. Do not translate `key`, `field`, `categoryKey`, `id`, `href`, `variant` or `type` values — they drive application logic. Company registration data, IBAN/IDNO and the bank name are legal identifiers and are left in their registered form.",
+
+  "meta": {
+    "localeName": "English",
+    "title": "VicandisLux — Simultaneous interpretation & sound equipment rental",
+    "description": "We rent simultaneous interpretation equipment and professional sound systems for conferences, corporate and institutional events in the Republic of Moldova — delivery, installation and technical support included.",
+    "siteName": "VicandisLux"
+  },
+
+  "nav": {
+    "links": [
+      { "label": "Home", "href": "#acasa" },
+      { "label": "Services", "href": "#servicii" },
+      { "label": "Equipment", "href": "#echipamente" },
+      { "label": "Configurator", "href": "#configurator" },
+      { "label": "Pricing", "href": "#preturi" },
+      { "label": "Case studies", "href": "#studii" },
+      { "label": "For tenders", "href": "#licitatii" },
+      { "label": "Contact", "href": "#contact" }
+    ],
+    "cta": "Request a quote →",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "directContact": "Direct contact",
+    "languageSwitcher": "Change language"
+  },
+
+  "contactChannels": [
+    { "key": "phone", "label": "Call", "href": "tel:+37322000000" },
+    { "key": "viber", "label": "Viber", "href": "#" },
+    { "key": "telegram", "label": "Telegram", "href": "#" },
+    { "key": "whatsapp", "label": "WhatsApp", "href": "#" }
+  ],
+
+  "hero": {
+    "eyebrow": "Simultaneous interpretation & sound",
+    "titleLines": ["Every word,", "heard clearly.", "In any language."],
+    "lede": "We rent simultaneous interpretation equipment and professional sound systems for conferences, corporate and institutional events — delivery, installation and technical support included.",
+    "ctaPrimary": "Request a quote →",
+    "ctaSecondary": "See the equipment",
+    "sinceLabel": "Since",
+    "sinceYear": "2018",
+    "facts": ["Nationwide coverage", "Support throughout the event"],
+    "panel": {
+      "fig": "FIG. 01 · EVENT PHOTO",
+      "captionLines": ["EVENT PHOTO — INTERPRETER", "BOOTH & CONSOLE", "WARM LIGHT, SHALLOW DOF"],
+      "stats": [
+        { "value": "32", "label": "CHANNELS", "accent": true },
+        { "value": "ISO", "label": "4043 BOOTHS", "accent": false }
+      ]
+    }
+  },
+
+  "services": {
+    "eyebrow": "Services",
+    "title": "What we offer",
+    "countLine": "05 services",
+    "countLineStrong": "a single supplier",
+    "linkLabel": "Learn more",
+    "items": [
+      {
+        "key": "interpretation",
+        "num": "01",
+        "title": "Simultaneous interpretation",
+        "desc": "Complete interpretation systems, sound-insulated booths and a receiver for every participant.",
+        "wide": false
+      },
+      {
+        "key": "sound",
+        "num": "02",
+        "title": "Event sound systems",
+        "desc": "Balanced sound and flawless acoustic coverage for rooms of any size.",
+        "wide": false
+      },
+      {
+        "key": "hybrid",
+        "num": "03",
+        "title": "Hybrid solutions & streaming",
+        "desc": "We broadcast the event to the room and the online audience at the same time, in several languages.",
+        "wide": false
+      },
+      {
+        "key": "video",
+        "num": "04",
+        "title": "Video & projection",
+        "desc": "Projectors, screens and LED walls for a clear image in front of a large audience.",
+        "wide": true
+      },
+      {
+        "key": "support",
+        "num": "05",
+        "title": "Technical support & operators",
+        "desc": "Our team delivers, installs and monitors everything for the duration of the event.",
+        "wide": true
+      }
+    ]
+  },
+
+  "stats": {
+    "eyebrow": "Key figures",
+    "note": "VicandisLux · MD",
+    "items": [
+      { "value": "2018", "suffix": "", "label": "Year founded", "variant": "num" },
+      { "value": "500", "suffix": "+", "label": "Events served", "variant": "num" },
+      { "value": "300", "suffix": "+", "label": "Receivers in stock", "variant": "num" },
+      { "value": "32", "suffix": "", "label": "Interpretation channels", "variant": "num" },
+      {
+        "value": "Nationwide coverage",
+        "suffix": "",
+        "label": "Republic of Moldova",
+        "variant": "text"
+      }
+    ]
+  },
+
+  "process": {
+    "eyebrow": "Process",
+    "title": "How we work",
+    "note": "04 steps · no surprises",
+    "steps": [
+      {
+        "num": "01",
+        "title": "Request",
+        "desc": "You tell us the details of your event through a short form."
+      },
+      {
+        "num": "02",
+        "title": "Technical consultation",
+        "desc": "We propose the optimal configuration of equipment and languages."
+      },
+      {
+        "num": "03",
+        "title": "Delivery & installation",
+        "desc": "We bring, set up and test everything before the start."
+      },
+      {
+        "num": "04",
+        "title": "On-site support",
+        "desc": "A technician monitors the equipment throughout the event."
+      }
+    ]
+  },
+
+  "catalog": {
+    "eyebrow": "Inventory",
+    "title": "Equipment",
+    "searchPlaceholder": "Search by model or manufacturer…",
+    "searchLabel": "Search equipment",
+    "requestListLabel": "Quote list",
+    "filtersLabel": "Filters",
+    "filtersButton": "Filters",
+    "filtersDrawerTitle": "Filters · category",
+    "showResults": "Show results",
+    "countSuffix": "items",
+    "sortLabel": "Sort:",
+    "sortValue": "Relevance ▾",
+    "detailsLabel": "Details",
+    "addLabel": "+ Add",
+    "addedLabel": "✓ Added",
+    "inStockLabel": "In stock:",
+    "unitLabel": "pcs",
+    "lowStockNote": " · low stock",
+    "categories": [
+      { "key": "all", "label": "All" },
+      { "key": "interpretation", "label": "Simultaneous interpretation" },
+      { "key": "portable", "label": "Portable systems" },
+      { "key": "conference", "label": "Conference systems" },
+      { "key": "sound", "label": "Sound systems" },
+      { "key": "microphones", "label": "Microphones" }
+    ],
+    "filterGroups": [
+      {
+        "key": "producer",
+        "label": "Manufacturer",
+        "type": "checkbox",
+        "options": [
+          { "key": "bosch", "label": "Bosch", "count": "14" },
+          { "key": "sennheiser", "label": "Sennheiser", "count": "9" },
+          { "key": "shure", "label": "Shure", "count": "7" },
+          { "key": "yamaha", "label": "Yamaha", "count": "5" }
+        ]
+      },
+      {
+        "key": "transmission",
+        "label": "Transmission type",
+        "type": "radio",
+        "options": [
+          { "key": "ir", "label": "IR — infrared", "count": "" },
+          { "key": "rf", "label": "RF — radio", "count": "" }
+        ]
+      },
+      {
+        "key": "capacity",
+        "label": "Capacity",
+        "type": "radio",
+        "options": [
+          { "key": "lt100", "label": "< 100", "count": "" },
+          { "key": "100-300", "label": "100 – 300", "count": "" },
+          { "key": "gt300", "label": "300+", "count": "" }
+        ]
+      }
+    ],
+    "products": [
+      {
+        "id": "integrus-int-tx-08",
+        "producer": "Bosch",
+        "model": "Integrus INT-TX 08",
+        "categoryKey": "interpretation",
+        "categoryLabel": "Simultaneous interpretation",
+        "fig": "IR TRANSMITTER",
+        "stock": 8,
+        "lowStock": true,
+        "specs": [
+          { "k": "Channels", "v": "32" },
+          { "k": "Transmission", "v": "IR" },
+          { "k": "Coverage", "v": "1200 m²" }
+        ]
+      },
+      {
+        "id": "tourguide-2020-d",
+        "producer": "Sennheiser",
+        "model": "Tourguide 2020-D",
+        "categoryKey": "portable",
+        "categoryLabel": "Portable systems",
+        "fig": "TOURGUIDE",
+        "stock": 120,
+        "lowStock": false,
+        "specs": [
+          { "k": "Channels", "v": "32" },
+          { "k": "Transmission", "v": "RF" },
+          { "k": "Range", "v": "100 m" }
+        ]
+      },
+      {
+        "id": "lbb-4540-receptor",
+        "producer": "Bosch",
+        "model": "LBB 4540 Receiver",
+        "categoryKey": "interpretation",
+        "categoryLabel": "Simultaneous interpretation",
+        "fig": "IR RECEIVER",
+        "stock": 300,
+        "lowStock": false,
+        "specs": [
+          { "k": "Channels", "v": "32" },
+          { "k": "Transmission", "v": "IR" },
+          { "k": "Battery life", "v": "20 h" }
+        ]
+      },
+      {
+        "id": "microflex-mxc",
+        "producer": "Shure",
+        "model": "Microflex MXC",
+        "categoryKey": "conference",
+        "categoryLabel": "Conference systems",
+        "fig": "CONFERENCE UNIT",
+        "stock": 20,
+        "lowStock": false,
+        "specs": [
+          { "k": "Units", "v": "50" },
+          { "k": "Network", "v": "Dante" },
+          { "k": "Connection", "v": "Cable" }
+        ]
+      },
+      {
+        "id": "cl5-consola",
+        "producer": "Yamaha",
+        "model": "CL5 Console",
+        "categoryKey": "sound",
+        "categoryLabel": "Sound systems",
+        "fig": "DIGITAL MIXER",
+        "stock": 4,
+        "lowStock": true,
+        "specs": [
+          { "k": "Channels", "v": "72" },
+          { "k": "I/O", "v": "Dante" },
+          { "k": "Faders", "v": "34" }
+        ]
+      },
+      {
+        "id": "sm58-microfon",
+        "producer": "Shure",
+        "model": "SM58 Microphone",
+        "categoryKey": "microphones",
+        "categoryLabel": "Microphones",
+        "fig": "DYNAMIC MICROPHONE",
+        "stock": 40,
+        "lowStock": false,
+        "specs": [
+          { "k": "Type", "v": "Dynamic" },
+          { "k": "Connector", "v": "XLR" },
+          { "k": "Response", "v": "50–15k Hz" }
+        ]
+      }
+    ]
+  },
+
+  "product": {
+    "breadcrumb": [
+      { "label": "Home", "href": "#acasa" },
+      { "label": "Equipment", "href": "#echipamente" }
+    ],
+    "breadcrumbCurrent": "Bosch Integrus",
+    "kicker": "Bosch · Simultaneous interpretation",
+    "title": "Integrus — simultaneous interpretation receiver",
+    "lede": "Digital infrared receiver with automatic channel selection and an LCD display — part of the Bosch Integrus system.",
+    "figLabel": "FIG. 01 · EVENT PHOTO",
+    "badges": [
+      { "key": "shield", "label": "Compliant with IEC 61603" },
+      { "key": "check", "label": "Tested & calibrated" }
+    ],
+    "gallery": [
+      { "label": "RECEIVER — FRONT", "short": "FRONT" },
+      { "label": "RECEIVER — BACK", "short": "BACK" },
+      { "label": "LCD DISPLAY", "short": "LCD" },
+      { "label": "WITH HEADPHONES", "short": "HEADPHONES" }
+    ],
+    "availabilityLabel": "Availability",
+    "availabilityValue": "In stock: 300 pcs",
+    "rateLabel": "Indicative rate / day",
+    "rateValue": "on request",
+    "addLabel": "Add to quote request",
+    "addedLabel": "✓ Added to request",
+    "quickQuote": "Request a quick quote",
+    "specsTitle": "Technical specifications",
+    "specsSubtitle": "Bosch Integrus · LBB 4540",
+    "datasheet": "Datasheet (PDF)",
+    "specsFootnote": "MANUFACTURER DATA · MAY VARY DEPENDING ON CONFIGURATION",
+    "specs": [
+      { "k": "Transmission type", "v": "Infrared (IR)", "highlight": false },
+      { "k": "Channels", "v": "up to 32", "highlight": true },
+      { "k": "Audio subcarriers", "v": "32", "highlight": false },
+      { "k": "Battery life", "v": "~20 h", "highlight": true },
+      { "k": "Charging time", "v": "3 h", "highlight": false },
+      { "k": "Compliance standard", "v": "IEC 61603", "highlight": false },
+      { "k": "Channel selection", "v": "Automatic", "highlight": false },
+      { "k": "Display", "v": "Monochrome LCD", "highlight": false },
+      { "k": "Headphone connector", "v": "3.5 mm jack", "highlight": false },
+      { "k": "Weight", "v": "75 g", "highlight": false },
+      { "k": "Operating temperature", "v": "0 – 40 °C", "highlight": false },
+      { "k": "Dimensions (H×W×D)", "v": "92 × 52 × 22 mm", "highlight": false }
+    ]
+  },
+
+  "configurator": {
+    "eyebrow": "Quote request",
+    "title": "Configure your event",
+    "note": "short steps · live estimate",
+    "sidebarEyebrow": "Steps",
+    "sidebarLede": "Choose your options — the estimate updates in real time.",
+    "estimateLabel": "Indicative estimate",
+    "estimateFootnote": "excl. VAT · confirmed in the quote",
+    "estimateDisclaimer": "This estimate is for guidance only. The final price is confirmed in the quote.",
+    "navLabels": ["Event type", "Interpretation", "Sound", "Video", "Streaming", "Summary"],
+    "backLabel": "‹ Back",
+    "nextLabel": "Continue",
+    "submitLabel": "Send request",
+    "summaryEyebrow": "Summary — final check",
+    "summaryTitle": "Recap and estimate",
+    "summaryDesc": "Check your configuration before sending the request.",
+    "recapLabels": {
+      "eventType": "Event",
+      "interp": "Interpretation",
+      "sound": "Sound",
+      "video": "Video",
+      "streaming": "Streaming"
+    },
+    "recapEmpty": "—",
+    "sent": {
+      "title": "Your request has been sent",
+      "desc": "A VicandisLux engineer will come back to you with a detailed quote within 24 working hours.",
+      "reference": "REQUEST REF · VL-Q/2026-0417"
+    },
+    "steps": [
+      {
+        "field": "eventType",
+        "eyebrow": "01 — Context",
+        "title": "What kind of event are you organising?",
+        "desc": "This helps us prepare the right room and equipment configuration.",
+        "options": [
+          { "key": "conf", "label": "Conference", "desc": "", "recap": "Conference" },
+          { "key": "corporate", "label": "Corporate", "desc": "", "recap": "Corporate" },
+          { "key": "instruire", "label": "Training", "desc": "", "recap": "Training" },
+          { "key": "public", "label": "Public event", "desc": "", "recap": "Public event" }
+        ]
+      },
+      {
+        "field": "interp",
+        "eyebrow": "02 — Interpretation",
+        "title": "Interpretation solution",
+        "desc": "The type of booth determines sound insulation and logistics.",
+        "options": [
+          {
+            "key": "integral",
+            "label": "Full booth (ISO 4043)",
+            "desc": "Complete sound insulation · diplomatic standard",
+            "recap": "Full booth"
+          },
+          {
+            "key": "masa",
+            "label": "Tabletop booth",
+            "desc": "Compact · for small rooms",
+            "recap": "Tabletop booth"
+          },
+          {
+            "key": "portabil",
+            "label": "Portable system (Tourguide)",
+            "desc": "No booth · mobile groups",
+            "recap": "Portable system"
+          },
+          {
+            "key": "nu",
+            "label": "Not required",
+            "desc": "No simultaneous interpretation",
+            "recap": "No"
+          }
+        ]
+      },
+      {
+        "field": "sound",
+        "eyebrow": "03 — Sound",
+        "title": "Size of the sound system",
+        "desc": "Speakers, mixing and microphones for a clear voice in the room.",
+        "options": [
+          { "key": "mica", "label": "Small room — under 100 people", "desc": "", "recap": "Small" },
+          {
+            "key": "medie",
+            "label": "Medium room — 100–300 people",
+            "desc": "",
+            "recap": "Medium"
+          },
+          { "key": "mare", "label": "Large room — over 300 people", "desc": "", "recap": "Large" },
+          { "key": "nu", "label": "Not required", "desc": "", "recap": "No" }
+        ]
+      },
+      {
+        "field": "video",
+        "eyebrow": "04 — Image",
+        "title": "Video, projection or LED",
+        "desc": "Choose the display solution for content and presentations.",
+        "options": [
+          {
+            "key": "proiectie",
+            "label": "Projector + screen",
+            "desc": "Presentations and slides",
+            "recap": "Projection"
+          },
+          {
+            "key": "led",
+            "label": "LED wall",
+            "desc": "High brightness · stage backdrop",
+            "recap": "LED wall"
+          },
+          {
+            "key": "monitoare",
+            "label": "Monitors / TV",
+            "desc": "Confidence or signage",
+            "recap": "Monitors"
+          },
+          { "key": "nu", "label": "Not required", "desc": "No video solutions", "recap": "No" }
+        ]
+      },
+      {
+        "field": "streaming",
+        "eyebrow": "05 — Hybrid",
+        "title": "Streaming or recording",
+        "desc": "For remote delegates or to archive the sessions.",
+        "options": [
+          {
+            "key": "live",
+            "label": "Live streaming",
+            "desc": "Broadcast to remote delegates",
+            "recap": "Live streaming"
+          },
+          {
+            "key": "inregistrare",
+            "label": "Recording",
+            "desc": "Archiving the sessions",
+            "recap": "Recording"
+          },
+          {
+            "key": "ambele",
+            "label": "Streaming + recording",
+            "desc": "Both, with redundancy",
+            "recap": "Streaming + recording"
+          },
+          {
+            "key": "nu",
+            "label": "Not required",
+            "desc": "No hybrid component",
+            "recap": "No"
+          }
+        ]
+      }
+    ]
+  },
+
+  "tenders": {
+    "eyebrow": "Supplier dossier · Official section",
+    "title": "Ready for public procurement procedures",
+    "lede": "We are prepared for public procurement procedures and donor-funded projects. Below you will find the data and documents you need — structured for the tender file.",
+    "assurances": [
+      "Documents updated 01.07.2026",
+      "Verifiable IDNO & IBAN",
+      "Response within 24 working hours"
+    ],
+    "identification": {
+      "eyebrow": "02 / Identification",
+      "title": "Identification details",
+      "desc": "Legal and banking details, ready to enter into forms.",
+      "footnote": "FIG. 02 — SUPPLIER DATA · SENSITIVE VALUES MARKED “[TO BE COMPLETED]”",
+      "rows": [
+        {
+          "k": "Legal name",
+          "v": "“VicandisLux” S.R.L.",
+          "mono": false,
+          "accent": false
+        },
+        { "k": "IDNO", "v": "[to be completed]", "mono": true, "accent": true },
+        {
+          "k": "Registered address",
+          "v": "MD-2005, Chișinău, str. Mitropolit Bănulescu-Bodoni 25",
+          "mono": false,
+          "accent": false
+        },
+        {
+          "k": "VAT status",
+          "v": "VAT payer · code [to be completed]",
+          "mono": false,
+          "accent": false
+        },
+        {
+          "k": "Bank",
+          "v": "BC “Mobiasbancă” S.A. — Centru branch, Chișinău",
+          "mono": false,
+          "accent": false
+        },
+        { "k": "IBAN", "v": "[to be completed]", "mono": true, "accent": true }
+      ]
+    },
+    "documents": {
+      "eyebrow": "03 / Documents",
+      "title": "Downloadable documents",
+      "desc": "Eligibility documents, kept up to date. Each in PDF format, electronically signed.",
+      "updatedPrefix": "Updated",
+      "downloadLabel": "Download",
+      "items": [
+        { "title": "Extract from the State Register", "date": "12 June 2026", "meta": "PDF · 1.2 MB" },
+        { "title": "Certificate of registration", "date": "12 June 2026", "meta": "PDF · 0.8 MB" },
+        {
+          "title": "Tax clearance certificate (SFS)",
+          "date": "1 July 2026",
+          "meta": "PDF · 0.6 MB"
+        },
+        {
+          "title": "Standard declarations (DUAE / eligibility)",
+          "date": "1 July 2026",
+          "meta": "PDF · 0.4 MB"
+        },
+        { "title": "List of references", "date": "20 June 2026", "meta": "PDF · 0.9 MB" }
+      ]
+    },
+    "references": {
+      "eyebrow": "04 / References",
+      "title": "Experience with institutions",
+      "desc": "Projects for public institutions and international organisations.",
+      "columns": {
+        "year": "Year",
+        "client": "Institution",
+        "service": "Services",
+        "scale": "Scale"
+      },
+      "items": [
+        {
+          "year": "2025",
+          "client": "State Chancellery of the Republic of Moldova",
+          "service": "Interpretation in 4 languages · sound · streaming",
+          "scale": "600 delegates"
+        },
+        {
+          "year": "2025",
+          "client": "EU Delegation to Moldova",
+          "service": "ISO 4043 booths · hybrid production",
+          "scale": "2 days"
+        },
+        {
+          "year": "2024",
+          "client": "UNDP Moldova",
+          "service": "Portable system · recording",
+          "scale": "12 sessions"
+        },
+        {
+          "year": "2024",
+          "client": "OSCE Mission to Moldova",
+          "service": "Simultaneous interpretation · microphones",
+          "scale": "180 delegates"
+        },
+        {
+          "year": "2023",
+          "client": "World Bank",
+          "service": "Sound · projection · RO-EN interpretation",
+          "scale": "320 participants"
+        },
+        {
+          "year": "2023",
+          "client": "Ministry of Finance",
+          "service": "Conference system · electronic voting",
+          "scale": "Annual"
+        }
+      ]
+    }
+  },
+
+  "pricing": {
+    "eyebrow": "Indicative pricing",
+    "currencyNote": "Prices in EUR · excl. VAT",
+    "title": "Clear pricing, no surprises at the end",
+    "lede": "We show you where the packages start and what each equipment category costs per day. The final price depends on a few factors — nothing hidden.",
+    "badgeLabel": "Most chosen",
+    "fromLabel": "from",
+    "perDay": "€ / day",
+    "scalePrefix": "excl. VAT · for",
+    "packages": [
+      {
+        "key": "s",
+        "tag": "Package S",
+        "title": "Seminar / small event",
+        "desc": "Rooms of up to ~80 people, a single sound zone and projection.",
+        "price": "350",
+        "scale": "up to ~80 people",
+        "highlighted": false,
+        "cta": "Configure",
+        "features": [
+          "Sound system for a small room (speakers + mixer)",
+          "2 wireless microphones",
+          "One projector + screen",
+          "Set-up and tear-down on the day of the event",
+          "One technical operator for the duration of the event"
+        ]
+      },
+      {
+        "key": "m",
+        "tag": "Package M",
+        "title": "Medium conference",
+        "desc": "Conferences of 100–300 people, with speeches, presentations and moderation.",
+        "price": "900",
+        "scale": "100–300 people",
+        "highlighted": true,
+        "cta": "Configure",
+        "features": [
+          "Line-array system sized for the room",
+          "Digital mixing + up to 6 microphones",
+          "High-brightness projection or a small LED wall",
+          "Simultaneous interpretation — 1 language (optional)",
+          "Video production for presentations",
+          "Two dedicated technical operators"
+        ]
+      },
+      {
+        "key": "l",
+        "tag": "Package L",
+        "title": "International conference",
+        "desc": "Large, multilingual events with streaming and full hybrid production.",
+        "price": "2,400",
+        "scale": "300+ people & online",
+        "highlighted": false,
+        "cta": "Configure",
+        "features": [
+          "Full sound for the plenary + breakout rooms",
+          "Simultaneous interpretation — up to 4 languages, ISO booths",
+          "Multi-camera capture + redundant streaming",
+          "Interpretation integrated into the stream",
+          "LED wall / large-format projection",
+          "Full technical team + production engineer"
+        ]
+      }
+    ],
+    "rates": {
+      "eyebrow": "02 / Rates by category",
+      "title": "Indicative rate table",
+      "note": "Price per event day, per category.",
+      "footnote": "All rates are in EUR, excl. VAT. Indicative values — the exact quote is calculated per event.",
+      "columns": {
+        "category": "Category",
+        "includes": "Typically includes",
+        "from": "From / day",
+        "usual": "Typical / day"
+      },
+      "items": [
+        {
+          "category": "Sound",
+          "includes": "line-array, mixer, microphones",
+          "from": "250",
+          "usual": "250–1,200"
+        },
+        {
+          "category": "Simultaneous interpretation",
+          "includes": "booth, transmitter, receivers",
+          "from": "400",
+          "usual": "400–1,800"
+        },
+        {
+          "category": "Video & projection",
+          "includes": "projector, screen, switching",
+          "from": "300",
+          "usual": "300–1,500"
+        },
+        {
+          "category": "LED wall",
+          "includes": "modular panels + processor",
+          "from": "600",
+          "usual": "600–3,000"
+        },
+        {
+          "category": "Streaming & hybrid",
+          "includes": "cameras, encoder, uplink",
+          "from": "500",
+          "usual": "500–2,000"
+        },
+        {
+          "category": "Technical operator",
+          "includes": "dedicated engineer / technician",
+          "from": "120",
+          "usual": "120–180"
+        }
+      ]
+    }
+  },
+
+  "cases": {
+    "eyebrow": "Case studies",
+    "title": "Recent projects",
+    "linkLabel": "View case study",
+    "ctaAll": "View all case studies →",
+    "items": [
+      {
+        "fig": "EVENT PHOTO — PLENARY HALL",
+        "tag": "Conference",
+        "title": "Regional investment forum",
+        "meta": "International conference · 6 languages · 240 participants"
+      },
+      {
+        "fig": "EVENT PHOTO — BOOTHS",
+        "tag": "Institutional",
+        "title": "Institutional plenary session",
+        "meta": "Institutional event · 4 languages · 400 delegates"
+      },
+      {
+        "fig": "EVENT PHOTO — STAGE & LED",
+        "tag": "Corporate",
+        "title": "Regional product launch",
+        "meta": "Corporate event · 2 languages · 180 guests"
+      }
+    ]
+  },
+
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Frequently asked questions",
+    "lede": "Can't find the answer? Write to us and we'll reply the same working day.",
+    "items": [
+      {
+        "q": "How far in advance should I book the equipment?",
+        "a": "We recommend 2–3 weeks ahead for large events, but we also handle urgent requests, depending on what is available in stock."
+      },
+      {
+        "q": "Do you provide a technician at the event?",
+        "a": "Yes. Every rental includes a technician who installs, tests and monitors the equipment for the whole duration of the event."
+      },
+      {
+        "q": "Do you deliver outside Chișinău?",
+        "a": "Yes, we deliver and install across the country. Transport costs are calculated based on distance and the volume of equipment."
+      },
+      {
+        "q": "How many languages can be interpreted simultaneously?",
+        "a": "Our systems support up to 32 channels — that is up to 32 languages interpreted in parallel, plus the original floor channel."
+      },
+      {
+        "q": "Do you offer ISO 4043 compliant booths?",
+        "a": "Yes. We use sound-insulated mobile booths compliant with the ISO 4043 standard, with quiet ventilation and dedicated lighting for interpreters."
+      },
+      {
+        "q": "How do I get a price quote?",
+        "a": "Fill in the configurator or call us directly. We come back with a recommended configuration and a price, usually the same working day."
+      }
+    ]
+  },
+
+  "contact": {
+    "title": "Have an event coming up?",
+    "lede": "Tell us the details and we'll come back with a quote as soon as possible.",
+    "cta": "Request a quote →",
+    "orCall": "or call us directly",
+    "phone": "+373 22 000 000",
+    "phoneHref": "tel:+37322000000"
+  },
+
+  "footer": {
+    "desc": "We rent simultaneous interpretation equipment, sound systems and audio-visual solutions for events.",
+    "social": [
+      { "label": "LinkedIn ↗", "href": "#" },
+      { "label": "Facebook ↗", "href": "#" },
+      { "label": "Instagram ↗", "href": "#" },
+      { "label": "YouTube ↗", "href": "#" }
+    ],
+    "columns": [
+      {
+        "title": "Services",
+        "links": [
+          { "label": "Simultaneous interpretation", "href": "#servicii" },
+          { "label": "Professional sound", "href": "#servicii" },
+          { "label": "Video & projection", "href": "#servicii" },
+          { "label": "Hybrid solutions & streaming", "href": "#servicii" },
+          { "label": "Equipment", "href": "#echipamente" }
+        ]
+      },
+      {
+        "title": "Company",
+        "links": [
+          { "label": "Case studies", "href": "#studii" },
+          { "label": "For tenders", "href": "#licitatii" },
+          { "label": "Pricing", "href": "#preturi" },
+          { "label": "Frequently asked questions", "href": "#faq" },
+          { "label": "Contact", "href": "#contact" }
+        ]
+      }
+    ],
+    "contactTitle": "Contact",
+    "phone": "+373 22 000 000",
+    "phoneHref": "tel:+37322000000",
+    "email": "office@vicandislux.md",
+    "addressLines": ["str. Ștefan cel Mare 100,", "MD-2001 Chișinău"],
+    "legalLine": "VICANDISLUX SRL · IDNO [to be completed] · Chișinău, Republic of Moldova",
+    "legalLinks": [
+      { "label": "Terms and conditions", "href": "#" },
+      { "label": "Privacy policy", "href": "#" },
+      { "label": "Cookie policy", "href": "#" }
+    ],
+    "copyright": "© 2026"
+  }
+}

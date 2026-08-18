@@ -1,0 +1,17 @@
+node_modules/
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+.DS_Store
+.env*.local
+npm-debug.log*
+
+# throwaway Pages preview checkout
+.deploy/
+
+# design source artifacts (design handoff, not site source)
+vicandislux-design-system/
+\# VicandisLux Design System/
+2026-08-18 16.43.15.jpg

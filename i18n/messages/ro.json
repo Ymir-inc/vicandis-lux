@@ -1,0 +1,846 @@
+{
+  "meta": {
+    "localeName": "Română",
+    "title": "VicandisLux — Închiriere echipamente de traducere simultană și sonorizare",
+    "description": "Închiriem echipamente de traducere simultană și sonorizare profesională pentru conferințe, evenimente corporate și instituționale în Republica Moldova — livrare, instalare și asistență tehnică incluse.",
+    "siteName": "VicandisLux"
+  },
+
+  "nav": {
+    "links": [
+      { "label": "Acasă", "href": "#acasa" },
+      { "label": "Servicii", "href": "#servicii" },
+      { "label": "Echipamente", "href": "#echipamente" },
+      { "label": "Configurator", "href": "#configurator" },
+      { "label": "Prețuri", "href": "#preturi" },
+      { "label": "Studii de caz", "href": "#studii" },
+      { "label": "Pentru licitații", "href": "#licitatii" },
+      { "label": "Contact", "href": "#contact" }
+    ],
+    "cta": "Solicită ofertă →",
+    "openMenu": "Deschide meniul",
+    "closeMenu": "Închide meniul",
+    "directContact": "Contact direct",
+    "languageSwitcher": "Schimbă limba"
+  },
+
+  "contactChannels": [
+    { "key": "phone", "label": "Sună", "href": "tel:+37322000000" },
+    { "key": "viber", "label": "Viber", "href": "#" },
+    { "key": "telegram", "label": "Telegram", "href": "#" },
+    { "key": "whatsapp", "label": "WhatsApp", "href": "#" }
+  ],
+
+  "hero": {
+    "eyebrow": "Traducere simultană & sonorizare",
+    "titleLines": ["Fiecare cuvânt,", "auzit clar.", "În orice limbă."],
+    "lede": "Închiriem echipamente de traducere simultană și sonorizare profesională pentru conferințe, evenimente corporate și instituționale — livrare, instalare și asistență tehnică incluse.",
+    "ctaPrimary": "Solicită ofertă →",
+    "ctaSecondary": "Vezi echipamentele",
+    "sinceLabel": "Din",
+    "sinceYear": "2018",
+    "facts": ["Acoperire națională", "Asistență pe durata evenimentului"],
+    "panel": {
+      "fig": "FIG. 01 · FOTO EVENIMENT",
+      "captionLines": ["FOTO EVENIMENT — CABINĂ", "INTERPRET & CONSOLĂ", "LUMINĂ CALDĂ, DOF REDUS"],
+      "stats": [
+        { "value": "32", "label": "CANALE", "accent": true },
+        { "value": "ISO", "label": "4043 CABINE", "accent": false }
+      ]
+    }
+  },
+
+  "services": {
+    "eyebrow": "Servicii",
+    "title": "Ce oferim",
+    "countLine": "05 servicii",
+    "countLineStrong": "un singur furnizor",
+    "linkLabel": "Află mai mult",
+    "items": [
+      {
+        "key": "interpretation",
+        "num": "01",
+        "title": "Traducere simultană",
+        "desc": "Sisteme complete de interpretare, cabine izolate fonic și receptoare pentru fiecare participant.",
+        "wide": false
+      },
+      {
+        "key": "sound",
+        "num": "02",
+        "title": "Sonorizare evenimente",
+        "desc": "Sunet echilibrat și acoperire acustică impecabilă pentru săli de orice dimensiune.",
+        "wide": false
+      },
+      {
+        "key": "hybrid",
+        "num": "03",
+        "title": "Soluții hibride & streaming",
+        "desc": "Transmitem evenimentul simultan către publicul din sală și cel online, în mai multe limbi.",
+        "wide": false
+      },
+      {
+        "key": "video",
+        "num": "04",
+        "title": "Video & proiecție",
+        "desc": "Videoproiectoare, ecrane și ecrane LED pentru o imagine clară în fața unei audiențe numeroase.",
+        "wide": true
+      },
+      {
+        "key": "support",
+        "num": "05",
+        "title": "Suport tehnic & operatori",
+        "desc": "Echipa noastră livrează, instalează și monitorizează totul pe durata evenimentului.",
+        "wide": true
+      }
+    ]
+  },
+
+  "stats": {
+    "eyebrow": "Indicatori",
+    "note": "VicandisLux · MD",
+    "items": [
+      { "value": "2018", "suffix": "", "label": "Anul înființării", "variant": "num" },
+      { "value": "500", "suffix": "+", "label": "Evenimente deservite", "variant": "num" },
+      { "value": "300", "suffix": "+", "label": "Receptoare în stoc", "variant": "num" },
+      { "value": "32", "suffix": "", "label": "Canale de traducere", "variant": "num" },
+      { "value": "Acoperire națională", "suffix": "", "label": "Republica Moldova", "variant": "text" }
+    ]
+  },
+
+  "process": {
+    "eyebrow": "Proces",
+    "title": "Cum lucrăm",
+    "note": "04 pași · fără surprize",
+    "steps": [
+      {
+        "num": "01",
+        "title": "Solicitare",
+        "desc": "Ne spui detaliile evenimentului printr-un formular scurt."
+      },
+      {
+        "num": "02",
+        "title": "Consultanță tehnică",
+        "desc": "Îți propunem configurația optimă de echipamente și limbi."
+      },
+      {
+        "num": "03",
+        "title": "Livrare & instalare",
+        "desc": "Aducem, montăm și testăm totul înainte de start."
+      },
+      {
+        "num": "04",
+        "title": "Asistență la eveniment",
+        "desc": "Un tehnician monitorizează echipamentele pe toată durata."
+      }
+    ]
+  },
+
+  "catalog": {
+    "eyebrow": "Inventar",
+    "title": "Echipamente",
+    "searchPlaceholder": "Caută după model sau producător…",
+    "searchLabel": "Caută echipamente",
+    "requestListLabel": "Listă cerere",
+    "filtersLabel": "Filtre",
+    "filtersButton": "Filtre",
+    "filtersDrawerTitle": "Filtre · categorie",
+    "showResults": "Arată rezultatele",
+    "countSuffix": "echipamente",
+    "sortLabel": "Sortare:",
+    "sortValue": "Relevanță ▾",
+    "detailsLabel": "Detalii",
+    "addLabel": "+ Adaugă",
+    "addedLabel": "✓ Adăugat",
+    "inStockLabel": "În stoc:",
+    "unitLabel": "buc",
+    "lowStockNote": " · stoc redus",
+    "categories": [
+      { "key": "all", "label": "Toate" },
+      { "key": "interpretation", "label": "Traducere simultană" },
+      { "key": "portable", "label": "Sisteme portabile" },
+      { "key": "conference", "label": "Sisteme de conferință" },
+      { "key": "sound", "label": "Sonorizare" },
+      { "key": "microphones", "label": "Microfoane" }
+    ],
+    "filterGroups": [
+      {
+        "key": "producer",
+        "label": "Producător",
+        "type": "checkbox",
+        "options": [
+          { "key": "bosch", "label": "Bosch", "count": "14" },
+          { "key": "sennheiser", "label": "Sennheiser", "count": "9" },
+          { "key": "shure", "label": "Shure", "count": "7" },
+          { "key": "yamaha", "label": "Yamaha", "count": "5" }
+        ]
+      },
+      {
+        "key": "transmission",
+        "label": "Tip transmisie",
+        "type": "radio",
+        "options": [
+          { "key": "ir", "label": "IR — infraroșu", "count": "" },
+          { "key": "rf", "label": "RF — radio", "count": "" }
+        ]
+      },
+      {
+        "key": "capacity",
+        "label": "Capacitate",
+        "type": "radio",
+        "options": [
+          { "key": "lt100", "label": "< 100", "count": "" },
+          { "key": "100-300", "label": "100 – 300", "count": "" },
+          { "key": "gt300", "label": "300+", "count": "" }
+        ]
+      }
+    ],
+    "products": [
+      {
+        "id": "integrus-int-tx-08",
+        "producer": "Bosch",
+        "model": "Integrus INT-TX 08",
+        "categoryKey": "interpretation",
+        "categoryLabel": "Traducere simultană",
+        "fig": "EMIȚĂTOR IR",
+        "stock": 8,
+        "lowStock": true,
+        "specs": [
+          { "k": "Canale", "v": "32" },
+          { "k": "Transmisie", "v": "IR" },
+          { "k": "Acoperire", "v": "1200 m²" }
+        ]
+      },
+      {
+        "id": "tourguide-2020-d",
+        "producer": "Sennheiser",
+        "model": "Tourguide 2020-D",
+        "categoryKey": "portable",
+        "categoryLabel": "Sisteme portabile",
+        "fig": "TOURGUIDE",
+        "stock": 120,
+        "lowStock": false,
+        "specs": [
+          { "k": "Canale", "v": "32" },
+          { "k": "Transmisie", "v": "RF" },
+          { "k": "Rază", "v": "100 m" }
+        ]
+      },
+      {
+        "id": "lbb-4540-receptor",
+        "producer": "Bosch",
+        "model": "LBB 4540 Receptor",
+        "categoryKey": "interpretation",
+        "categoryLabel": "Traducere simultană",
+        "fig": "RECEPTOR IR",
+        "stock": 300,
+        "lowStock": false,
+        "specs": [
+          { "k": "Canale", "v": "32" },
+          { "k": "Transmisie", "v": "IR" },
+          { "k": "Autonomie", "v": "20 h" }
+        ]
+      },
+      {
+        "id": "microflex-mxc",
+        "producer": "Shure",
+        "model": "Microflex MXC",
+        "categoryKey": "conference",
+        "categoryLabel": "Sisteme de conferință",
+        "fig": "POST CONFERINȚĂ",
+        "stock": 20,
+        "lowStock": false,
+        "specs": [
+          { "k": "Posturi", "v": "50" },
+          { "k": "Rețea", "v": "Dante" },
+          { "k": "Conexiune", "v": "Cablu" }
+        ]
+      },
+      {
+        "id": "cl5-consola",
+        "producer": "Yamaha",
+        "model": "CL5 Consolă",
+        "categoryKey": "sound",
+        "categoryLabel": "Sonorizare",
+        "fig": "MIXER DIGITAL",
+        "stock": 4,
+        "lowStock": true,
+        "specs": [
+          { "k": "Canale", "v": "72" },
+          { "k": "I/O", "v": "Dante" },
+          { "k": "Faders", "v": "34" }
+        ]
+      },
+      {
+        "id": "sm58-microfon",
+        "producer": "Shure",
+        "model": "SM58 Microfon",
+        "categoryKey": "microphones",
+        "categoryLabel": "Microfoane",
+        "fig": "MICROFON DINAMIC",
+        "stock": 40,
+        "lowStock": false,
+        "specs": [
+          { "k": "Tip", "v": "Dinamic" },
+          { "k": "Conector", "v": "XLR" },
+          { "k": "Bandă", "v": "50–15k Hz" }
+        ]
+      }
+    ]
+  },
+
+  "product": {
+    "breadcrumb": [
+      { "label": "Acasă", "href": "#acasa" },
+      { "label": "Echipamente", "href": "#echipamente" }
+    ],
+    "breadcrumbCurrent": "Bosch Integrus",
+    "kicker": "Bosch · Traducere simultană",
+    "title": "Integrus — receptor de traducere simultană",
+    "lede": "Receptor digital pe infraroșu, cu selecție automată a canalului și afișaj LCD — parte a sistemului Bosch Integrus.",
+    "figLabel": "FIG. 01 · FOTO EVENIMENT",
+    "badges": [
+      { "key": "shield", "label": "Conform IEC 61603" },
+      { "key": "check", "label": "Testat & calibrat" }
+    ],
+    "gallery": [
+      { "label": "RECEPTOR — FAȚĂ", "short": "FAȚĂ" },
+      { "label": "RECEPTOR — SPATE", "short": "SPATE" },
+      { "label": "AFIȘAJ LCD", "short": "LCD" },
+      { "label": "CU CĂȘTI", "short": "CĂȘTI" }
+    ],
+    "availabilityLabel": "Disponibilitate",
+    "availabilityValue": "În stoc: 300 buc",
+    "rateLabel": "Tarif orientativ / zi",
+    "rateValue": "la cerere",
+    "addLabel": "Adaugă la cerere de ofertă",
+    "addedLabel": "✓ Adăugat la cerere",
+    "quickQuote": "Solicită ofertă rapidă",
+    "specsTitle": "Specificații tehnice",
+    "specsSubtitle": "Bosch Integrus · LBB 4540",
+    "datasheet": "Fișă tehnică (PDF)",
+    "specsFootnote": "DATE PRODUCĂTOR · POT VARIA ÎN FUNCȚIE DE CONFIGURAȚIE",
+    "specs": [
+      { "k": "Tip transmisie", "v": "Infraroșu (IR)", "highlight": false },
+      { "k": "Canale", "v": "până la 32", "highlight": true },
+      { "k": "Sub-purtătoare audio", "v": "32", "highlight": false },
+      { "k": "Autonomie baterie", "v": "~20 h", "highlight": true },
+      { "k": "Timp de încărcare", "v": "3 h", "highlight": false },
+      { "k": "Standard conformitate", "v": "IEC 61603", "highlight": false },
+      { "k": "Selecție canal", "v": "Automată", "highlight": false },
+      { "k": "Afișaj", "v": "LCD monocrom", "highlight": false },
+      { "k": "Conector căști", "v": "Jack 3.5 mm", "highlight": false },
+      { "k": "Greutate", "v": "75 g", "highlight": false },
+      { "k": "Temperatură operare", "v": "0 – 40 °C", "highlight": false },
+      { "k": "Dimensiuni (Î×L×A)", "v": "92 × 52 × 22 mm", "highlight": false }
+    ]
+  },
+
+  "configurator": {
+    "eyebrow": "Cerere de ofertă",
+    "title": "Configurează evenimentul",
+    "note": "pași scurți · estimare live",
+    "sidebarEyebrow": "Pași",
+    "sidebarLede": "Alege opțiunile — estimarea se actualizează în timp real.",
+    "estimateLabel": "Estimare orientativă",
+    "estimateFootnote": "fără TVA · se confirmă în ofertă",
+    "estimateDisclaimer": "Estimare cu caracter informativ. Prețul final se confirmă în ofertă.",
+    "navLabels": [
+      "Tip eveniment",
+      "Interpretare",
+      "Sonorizare",
+      "Video",
+      "Streaming",
+      "Sumar"
+    ],
+    "backLabel": "‹ Înapoi",
+    "nextLabel": "Continuă",
+    "submitLabel": "Trimite cererea",
+    "summaryEyebrow": "Sumar — verificare finală",
+    "summaryTitle": "Recapitulare și estimare",
+    "summaryDesc": "Verificați configurația înainte de a trimite cererea.",
+    "recapLabels": {
+      "eventType": "Eveniment",
+      "interp": "Interpretare",
+      "sound": "Sonorizare",
+      "video": "Video",
+      "streaming": "Streaming"
+    },
+    "recapEmpty": "—",
+    "sent": {
+      "title": "Cererea a fost trimisă",
+      "desc": "Un inginer VicandisLux revine cu oferta detaliată în cel mult 24 de ore lucrătoare.",
+      "reference": "REF CERERE · VL-Q/2026-0417"
+    },
+    "steps": [
+      {
+        "field": "eventType",
+        "eyebrow": "01 — Context",
+        "title": "Ce tip de eveniment organizați?",
+        "desc": "Ne ajută să pregătim configurația potrivită de sală și echipamente.",
+        "options": [
+          { "key": "conf", "label": "Conferință", "desc": "", "recap": "Conferință" },
+          { "key": "corporate", "label": "Corporate", "desc": "", "recap": "Corporate" },
+          { "key": "instruire", "label": "Instruire", "desc": "", "recap": "Instruire" },
+          { "key": "public", "label": "Eveniment public", "desc": "", "recap": "Eveniment public" }
+        ]
+      },
+      {
+        "field": "interp",
+        "eyebrow": "02 — Interpretare",
+        "title": "Soluția de interpretare",
+        "desc": "Tipul de cabină determină izolarea fonică și logistica.",
+        "options": [
+          {
+            "key": "integral",
+            "label": "Cabină integrală (ISO 4043)",
+            "desc": "Izolare fonică completă · standard diplomatic",
+            "recap": "Cabină integrală"
+          },
+          {
+            "key": "masa",
+            "label": "Cabină de masă",
+            "desc": "Compactă · pentru săli mici",
+            "recap": "Cabină de masă"
+          },
+          {
+            "key": "portabil",
+            "label": "Sistem portabil (Tourguide)",
+            "desc": "Fără cabină · grupuri mobile",
+            "recap": "Sistem portabil"
+          },
+          {
+            "key": "nu",
+            "label": "Nu e necesar",
+            "desc": "Fără interpretare simultană",
+            "recap": "Nu"
+          }
+        ]
+      },
+      {
+        "field": "sound",
+        "eyebrow": "03 — Sonorizare",
+        "title": "Dimensiunea sonorizării",
+        "desc": "Difuzoare, mixaj și microfoane pentru voce clară în sală.",
+        "options": [
+          { "key": "mica", "label": "Sală mică — sub 100 persoane", "desc": "", "recap": "Mică" },
+          {
+            "key": "medie",
+            "label": "Sală medie — 100–300 persoane",
+            "desc": "",
+            "recap": "Medie"
+          },
+          {
+            "key": "mare",
+            "label": "Sală mare — peste 300 persoane",
+            "desc": "",
+            "recap": "Mare"
+          },
+          { "key": "nu", "label": "Nu e necesar", "desc": "", "recap": "Nu" }
+        ]
+      },
+      {
+        "field": "video",
+        "eyebrow": "04 — Imagine",
+        "title": "Video, proiecție sau LED",
+        "desc": "Alegeți soluția de afișare pentru conținut și prezentări.",
+        "options": [
+          {
+            "key": "proiectie",
+            "label": "Proiector + ecran",
+            "desc": "Prezentări și slide-uri",
+            "recap": "Proiecție"
+          },
+          {
+            "key": "led",
+            "label": "Ecran LED",
+            "desc": "Luminozitate mare · fundal de scenă",
+            "recap": "Ecran LED"
+          },
+          {
+            "key": "monitoare",
+            "label": "Monitoare / TV",
+            "desc": "Confidence sau semnalizare",
+            "recap": "Monitoare"
+          },
+          { "key": "nu", "label": "Nu e necesar", "desc": "Fără soluții video", "recap": "Nu" }
+        ]
+      },
+      {
+        "field": "streaming",
+        "eyebrow": "05 — Hibrid",
+        "title": "Streaming sau înregistrare",
+        "desc": "Pentru delegați la distanță sau arhivarea sesiunilor.",
+        "options": [
+          {
+            "key": "live",
+            "label": "Streaming live",
+            "desc": "Transmisie către delegați la distanță",
+            "recap": "Streaming live"
+          },
+          {
+            "key": "inregistrare",
+            "label": "Înregistrare",
+            "desc": "Arhivarea sesiunilor",
+            "recap": "Înregistrare"
+          },
+          {
+            "key": "ambele",
+            "label": "Streaming + înregistrare",
+            "desc": "Ambele, cu redundanță",
+            "recap": "Streaming + înregistrare"
+          },
+          {
+            "key": "nu",
+            "label": "Nu e necesar",
+            "desc": "Fără componentă hibridă",
+            "recap": "Nu"
+          }
+        ]
+      }
+    ]
+  },
+
+  "tenders": {
+    "eyebrow": "Dosar furnizor · Secțiune oficială",
+    "title": "Pregătiți pentru proceduri de achiziție publică",
+    "lede": "Suntem pregătiți pentru proceduri de achiziție publică și proiecte finanțate. Găsiți mai jos datele și documentele de care aveți nevoie — structurate pentru dosarul de licitație.",
+    "assurances": [
+      "Documente actualizate la 01.07.2026",
+      "IDNO & IBAN verificabile",
+      "Răspuns în 24h lucrătoare"
+    ],
+    "identification": {
+      "eyebrow": "02 / Identificare",
+      "title": "Date de identificare",
+      "desc": "Datele juridice și bancare, gata de introdus în formulare.",
+      "footnote": "FIG. 02 — DATE FURNIZOR · VALORI SENSIBILE MARCATE „[DE COMPLETAT]”",
+      "rows": [
+        {
+          "k": "Denumire juridică",
+          "v": "„VicandisLux” S.R.L.",
+          "mono": false,
+          "accent": false
+        },
+        { "k": "IDNO", "v": "[de completat]", "mono": true, "accent": true },
+        {
+          "k": "Adresă juridică",
+          "v": "MD-2005, mun. Chișinău, str. Mitropolit Bănulescu-Bodoni 25",
+          "mono": false,
+          "accent": false
+        },
+        {
+          "k": "Statut TVA",
+          "v": "Plătitor TVA · cod [de completat]",
+          "mono": false,
+          "accent": false
+        },
+        {
+          "k": "Bancă",
+          "v": "BC „Mobiasbancă” S.A. — filiala Centru, Chișinău",
+          "mono": false,
+          "accent": false
+        },
+        { "k": "IBAN", "v": "[de completat]", "mono": true, "accent": true }
+      ]
+    },
+    "documents": {
+      "eyebrow": "03 / Documente",
+      "title": "Documente descărcabile",
+      "desc": "Actele de eligibilitate, menținute la zi. Fiecare în format PDF, semnat electronic.",
+      "updatedPrefix": "Actualizat la",
+      "downloadLabel": "Descarcă",
+      "items": [
+        { "title": "Extras din Registrul de stat", "date": "12 iunie 2026", "meta": "PDF · 1.2 MB" },
+        { "title": "Certificat de înregistrare", "date": "12 iunie 2026", "meta": "PDF · 0.8 MB" },
+        {
+          "title": "Certificat lipsă datorii (SFS)",
+          "date": "01 iulie 2026",
+          "meta": "PDF · 0.6 MB"
+        },
+        {
+          "title": "Declarații standard (DUAE / eligibilitate)",
+          "date": "01 iulie 2026",
+          "meta": "PDF · 0.4 MB"
+        },
+        { "title": "Listă de referințe", "date": "20 iunie 2026", "meta": "PDF · 0.9 MB" }
+      ]
+    },
+    "references": {
+      "eyebrow": "04 / Referințe",
+      "title": "Experiență cu instituții",
+      "desc": "Proiecte pentru instituții publice și organizații internaționale.",
+      "columns": {
+        "year": "An",
+        "client": "Instituție",
+        "service": "Servicii",
+        "scale": "Amploare"
+      },
+      "items": [
+        {
+          "year": "2025",
+          "client": "Cancelaria de Stat a RM",
+          "service": "Interpretare 4 limbi · sonorizare · streaming",
+          "scale": "600 delegați"
+        },
+        {
+          "year": "2025",
+          "client": "Delegația UE în Moldova",
+          "service": "Cabine ISO 4043 · regie hibridă",
+          "scale": "2 zile"
+        },
+        {
+          "year": "2024",
+          "client": "PNUD Moldova (UNDP)",
+          "service": "Sistem portabil · înregistrare",
+          "scale": "12 sesiuni"
+        },
+        {
+          "year": "2024",
+          "client": "OSCE — Misiunea în Moldova",
+          "service": "Interpretare simultană · microfoane",
+          "scale": "180 delegați"
+        },
+        {
+          "year": "2023",
+          "client": "Banca Mondială",
+          "service": "Sonorizare · proiecție · translație RO-EN",
+          "scale": "320 participanți"
+        },
+        {
+          "year": "2023",
+          "client": "Ministerul Finanțelor",
+          "service": "Sistem de conferință · vot electronic",
+          "scale": "Anual"
+        }
+      ]
+    }
+  },
+
+  "pricing": {
+    "eyebrow": "Prețuri orientative",
+    "currencyNote": "Prețuri în EUR · fără TVA",
+    "title": "Prețuri clare, fără surprize la final",
+    "lede": "Îți arătăm de la ce pornesc pachetele și cât costă fiecare categorie de echipament pe zi. Prețul final depinde de câțiva factori — nimic ascuns.",
+    "badgeLabel": "Cel mai ales",
+    "fromLabel": "de la",
+    "perDay": "€ / zi",
+    "scalePrefix": "fără TVA · pentru",
+    "packages": [
+      {
+        "key": "s",
+        "tag": "Pachet S",
+        "title": "Seminar / eveniment mic",
+        "desc": "Săli până la ~80 de persoane, o singură zonă de sunet și proiecție.",
+        "price": "350",
+        "scale": "până la ~80 pers.",
+        "highlighted": false,
+        "cta": "Configurează",
+        "features": [
+          "Sonorizare pentru o sală mică (boxe + mixer)",
+          "2 microfoane wireless",
+          "Un videoproiector + ecran",
+          "Montaj și demontaj în ziua evenimentului",
+          "Un operator tehnic pe durata evenimentului"
+        ]
+      },
+      {
+        "key": "m",
+        "tag": "Pachet M",
+        "title": "Conferință medie",
+        "desc": "Conferințe de 100–300 de persoane, cu discursuri, prezentări și moderare.",
+        "price": "900",
+        "scale": "100–300 pers.",
+        "highlighted": true,
+        "cta": "Configurează",
+        "features": [
+          "Sistem line-array dimensionat pentru sală",
+          "Mixaj digital + până la 6 microfoane",
+          "Proiecție de mare luminozitate sau LED wall mic",
+          "Traducere simultană — 1 limbă (opțional)",
+          "Regie video pentru prezentări",
+          "Doi operatori tehnici dedicați"
+        ]
+      },
+      {
+        "key": "l",
+        "tag": "Pachet L",
+        "title": "Conferință internațională",
+        "desc": "Evenimente mari, multilingve, cu streaming și regie hibridă completă.",
+        "price": "2 400",
+        "scale": "300+ pers. & online",
+        "highlighted": false,
+        "cta": "Configurează",
+        "features": [
+          "Sonorizare completă pentru plenară + săli paralele",
+          "Traducere simultană — până la 4 limbi, cabine ISO",
+          "Captură multi-cameră + streaming redundant",
+          "Traducere integrată în stream",
+          "LED wall / proiecție de mare format",
+          "Echipă tehnică completă + inginer de regie"
+        ]
+      }
+    ],
+    "rates": {
+      "eyebrow": "02 / Tarife pe categorie",
+      "title": "Tabel orientativ de tarife",
+      "note": "Preț pe zi de eveniment, per categorie.",
+      "footnote": "Toate tarifele sunt în EUR, fără TVA. Valori orientative — oferta exactă se calculează pe eveniment.",
+      "columns": {
+        "category": "Categorie",
+        "includes": "Include tipic",
+        "from": "De la / zi",
+        "usual": "Uzual / zi"
+      },
+      "items": [
+        {
+          "category": "Sonorizare",
+          "includes": "line-array, mixer, microfoane",
+          "from": "250",
+          "usual": "250–1 200"
+        },
+        {
+          "category": "Traducere simultană",
+          "includes": "cabină, emițător, receptoare",
+          "from": "400",
+          "usual": "400–1 800"
+        },
+        {
+          "category": "Video & proiecție",
+          "includes": "proiector, ecran, switching",
+          "from": "300",
+          "usual": "300–1 500"
+        },
+        {
+          "category": "LED wall",
+          "includes": "panouri modulare + procesor",
+          "from": "600",
+          "usual": "600–3 000"
+        },
+        {
+          "category": "Streaming & hibrid",
+          "includes": "camere, encoder, uplink",
+          "from": "500",
+          "usual": "500–2 000"
+        },
+        {
+          "category": "Operator tehnic",
+          "includes": "inginer / tehnician dedicat",
+          "from": "120",
+          "usual": "120–180"
+        }
+      ]
+    }
+  },
+
+  "cases": {
+    "eyebrow": "Studii de caz",
+    "title": "Proiecte recente",
+    "linkLabel": "Vezi studiul de caz",
+    "ctaAll": "Vezi toate studiile de caz →",
+    "items": [
+      {
+        "fig": "FOTO EVENIMENT — SALĂ PLENARĂ",
+        "tag": "Conferință",
+        "title": "Forum regional de investiții",
+        "meta": "Conferință internațională · 6 limbi · 240 participanți"
+      },
+      {
+        "fig": "FOTO EVENIMENT — CABINE",
+        "tag": "Instituțional",
+        "title": "Sesiune plenară instituțională",
+        "meta": "Eveniment instituțional · 4 limbi · 400 delegați"
+      },
+      {
+        "fig": "FOTO EVENIMENT — SCENĂ & LED",
+        "tag": "Corporate",
+        "title": "Lansare de produs regională",
+        "meta": "Eveniment corporate · 2 limbi · 180 invitați"
+      }
+    ]
+  },
+
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Întrebări frecvente",
+    "lede": "Nu găsești răspunsul? Scrie-ne și revenim în aceeași zi lucrătoare.",
+    "items": [
+      {
+        "q": "Cât de din timp trebuie să rezerv echipamentul?",
+        "a": "Recomandăm 2–3 săptămâni înainte pentru evenimentele mari, dar gestionăm și solicitări urgente, în funcție de disponibilitatea din stoc."
+      },
+      {
+        "q": "Asigurați operator tehnic la eveniment?",
+        "a": "Da. Fiecare închiriere include un tehnician care instalează, testează și monitorizează echipamentele pe toată durata evenimentului."
+      },
+      {
+        "q": "Livrați în afara Chișinăului?",
+        "a": "Da, livrăm și instalăm în toată țara. Costul de transport se calculează în funcție de distanță și de volumul echipamentului."
+      },
+      {
+        "q": "Câte limbi pot fi traduse simultan?",
+        "a": "Sistemele noastre suportă până la 32 de canale — adică până la 32 de limbi traduse în paralel, plus canalul original din sală."
+      },
+      {
+        "q": "Oferiți cabine conforme ISO 4043?",
+        "a": "Da. Folosim cabine mobile izolate fonic conforme cu standardul ISO 4043, cu ventilație silențioasă și iluminare proprie pentru interpreți."
+      },
+      {
+        "q": "Cum primesc o ofertă de preț?",
+        "a": "Completează configuratorul sau sună-ne direct. Revenim cu o configurație recomandată și un preț, de regulă în aceeași zi lucrătoare."
+      }
+    ]
+  },
+
+  "contact": {
+    "title": "Ai un eveniment în plan?",
+    "lede": "Spune-ne detaliile și revenim cu o ofertă în cel mai scurt timp.",
+    "cta": "Solicită ofertă →",
+    "orCall": "sau sună direct",
+    "phone": "+373 22 000 000",
+    "phoneHref": "tel:+37322000000"
+  },
+
+  "footer": {
+    "desc": "Închiriem echipamente de traducere simultană, sonorizare și soluții audio-video pentru evenimente.",
+    "social": [
+      { "label": "LinkedIn ↗", "href": "#" },
+      { "label": "Facebook ↗", "href": "#" },
+      { "label": "Instagram ↗", "href": "#" },
+      { "label": "YouTube ↗", "href": "#" }
+    ],
+    "columns": [
+      {
+        "title": "Servicii",
+        "links": [
+          { "label": "Traducere simultană", "href": "#servicii" },
+          { "label": "Sonorizare profesională", "href": "#servicii" },
+          { "label": "Video & proiecție", "href": "#servicii" },
+          { "label": "Soluții hibride & streaming", "href": "#servicii" },
+          { "label": "Echipamente", "href": "#echipamente" }
+        ]
+      },
+      {
+        "title": "Companie",
+        "links": [
+          { "label": "Studii de caz", "href": "#studii" },
+          { "label": "Pentru licitații", "href": "#licitatii" },
+          { "label": "Prețuri", "href": "#preturi" },
+          { "label": "Întrebări frecvente", "href": "#faq" },
+          { "label": "Contact", "href": "#contact" }
+        ]
+      }
+    ],
+    "contactTitle": "Contact",
+    "phone": "+373 22 000 000",
+    "phoneHref": "tel:+37322000000",
+    "email": "office@vicandislux.md",
+    "addressLines": ["str. Ștefan cel Mare 100,", "MD-2001 Chișinău"],
+    "legalLine": "VICANDISLUX SRL · IDNO [de completat] · Chișinău, Republica Moldova",
+    "legalLinks": [
+      { "label": "Termeni și condiții", "href": "#" },
+      { "label": "Politica de confidențialitate", "href": "#" },
+      { "label": "Politica cookie", "href": "#" }
+    ],
+    "copyright": "© 2026"
+  }
+}
