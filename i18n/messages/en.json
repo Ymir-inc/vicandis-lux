@@ -16,7 +16,7 @@
       { "label": "Configurator", "href": "#configurator" },
       { "label": "Pricing", "href": "#preturi" },
       { "label": "Case studies", "href": "#studii" },
-      { "label": "For tenders", "href": "#licitatii" },
+      { "label": "References", "href": "#referinte" },
       { "label": "Contact", "href": "#contact" }
     ],
     "cta": "Request a quote →",
@@ -27,7 +27,7 @@
   },
 
   "contactChannels": [
-    { "key": "phone", "label": "Call", "href": "tel:+37322000000" },
+    { "key": "phone", "label": "Call", "href": "tel:+37369337792" },
     { "key": "viber", "label": "Viber", "href": "#" },
     { "key": "telegram", "label": "Telegram", "href": "#" },
     { "key": "whatsapp", "label": "WhatsApp", "href": "#" }
@@ -40,13 +40,13 @@
     "ctaPrimary": "Request a quote →",
     "ctaSecondary": "See the equipment",
     "sinceLabel": "Since",
-    "sinceYear": "2018",
+    "sinceYear": "2007",
     "facts": ["Nationwide coverage", "Support throughout the event"],
     "panel": {
       "fig": "FIG. 01 · EVENT PHOTO",
       "captionLines": ["EVENT PHOTO — INTERPRETER", "BOOTH & CONSOLE", "WARM LIGHT, SHALLOW DOF"],
       "stats": [
-        { "value": "32", "label": "CHANNELS", "accent": true },
+        { "value": "8", "label": "CHANNELS", "accent": true },
         { "value": "ISO", "label": "4043 BOOTHS", "accent": false }
       ]
     }
@@ -101,10 +101,10 @@
     "eyebrow": "Key figures",
     "note": "VicandisLux · MD",
     "items": [
-      { "value": "2018", "suffix": "", "label": "Year founded", "variant": "num" },
-      { "value": "500", "suffix": "+", "label": "Events served", "variant": "num" },
+      { "value": "2007", "suffix": "", "label": "Year founded", "variant": "num" },
+      { "value": "1000", "suffix": "+", "label": "Events served", "variant": "num" },
       { "value": "300", "suffix": "+", "label": "Receivers in stock", "variant": "num" },
-      { "value": "32", "suffix": "", "label": "Interpretation channels", "variant": "num" },
+      { "value": "8", "suffix": "", "label": "Interpretation channels", "variant": "num" },
       {
         "value": "Nationwide coverage",
         "suffix": "",
@@ -136,8 +136,8 @@
       },
       {
         "num": "04",
-        "title": "On-site support",
-        "desc": "A technician monitors the equipment throughout the event."
+        "title": "Support during the event",
+        "desc": "A technician monitors the equipment throughout the entire event."
       }
     ]
   },
@@ -348,9 +348,9 @@
     "note": "short steps · live estimate",
     "sidebarEyebrow": "Steps",
     "sidebarLede": "Choose your options — the estimate updates in real time.",
-    "estimateLabel": "Indicative estimate",
+    "estimateLabel": "Configuration summary",
     "estimateFootnote": "excl. VAT · confirmed in the quote",
-    "estimateDisclaimer": "This estimate is for guidance only. The final price is confirmed in the quote.",
+    "estimateDisclaimer": "The final price is confirmed in the quote, after checking availability.",
     "navLabels": ["Event type", "Interpretation", "Sound", "Video", "Streaming", "Summary"],
     "backLabel": "‹ Back",
     "nextLabel": "Continue",
@@ -498,68 +498,7 @@
   "tenders": {
     "eyebrow": "Supplier dossier · Official section",
     "title": "Ready for public procurement procedures",
-    "lede": "We are prepared for public procurement procedures and donor-funded projects. Below you will find the data and documents you need — structured for the tender file.",
-    "assurances": [
-      "Documents updated 01.07.2026",
-      "Verifiable IDNO & IBAN",
-      "Response within 24 working hours"
-    ],
-    "identification": {
-      "eyebrow": "02 / Identification",
-      "title": "Identification details",
-      "desc": "Legal and banking details, ready to enter into forms.",
-      "footnote": "FIG. 02 — SUPPLIER DATA · SENSITIVE VALUES MARKED “[TO BE COMPLETED]”",
-      "rows": [
-        {
-          "k": "Legal name",
-          "v": "“VicandisLux” S.R.L.",
-          "mono": false,
-          "accent": false
-        },
-        { "k": "IDNO", "v": "[to be completed]", "mono": true, "accent": true },
-        {
-          "k": "Registered address",
-          "v": "MD-2005, Chișinău, str. Mitropolit Bănulescu-Bodoni 25",
-          "mono": false,
-          "accent": false
-        },
-        {
-          "k": "VAT status",
-          "v": "VAT payer · code [to be completed]",
-          "mono": false,
-          "accent": false
-        },
-        {
-          "k": "Bank",
-          "v": "BC “Mobiasbancă” S.A. — Centru branch, Chișinău",
-          "mono": false,
-          "accent": false
-        },
-        { "k": "IBAN", "v": "[to be completed]", "mono": true, "accent": true }
-      ]
-    },
-    "documents": {
-      "eyebrow": "03 / Documents",
-      "title": "Downloadable documents",
-      "desc": "Eligibility documents, kept up to date. Each in PDF format, electronically signed.",
-      "updatedPrefix": "Updated",
-      "downloadLabel": "Download",
-      "items": [
-        { "title": "Extract from the State Register", "date": "12 June 2026", "meta": "PDF · 1.2 MB" },
-        { "title": "Certificate of registration", "date": "12 June 2026", "meta": "PDF · 0.8 MB" },
-        {
-          "title": "Tax clearance certificate (SFS)",
-          "date": "1 July 2026",
-          "meta": "PDF · 0.6 MB"
-        },
-        {
-          "title": "Standard declarations (DUAE / eligibility)",
-          "date": "1 July 2026",
-          "meta": "PDF · 0.4 MB"
-        },
-        { "title": "List of references", "date": "20 June 2026", "meta": "PDF · 0.9 MB" }
-      ]
-    },
+    "lede": "Projects for public institutions and international organisations, with simultaneous interpretation, sound and hybrid production.",
     "references": {
       "eyebrow": "04 / References",
       "title": "Experience with institutions",
@@ -613,12 +552,12 @@
 
   "pricing": {
     "eyebrow": "Indicative pricing",
-    "currencyNote": "Prices in EUR · excl. VAT",
+    "currencyNote": "Prices in MDL · excl. VAT",
     "title": "Clear pricing, no surprises at the end",
     "lede": "We show you where the packages start and what each equipment category costs per day. The final price depends on a few factors — nothing hidden.",
     "badgeLabel": "Most chosen",
     "fromLabel": "from",
-    "perDay": "€ / day",
+    "perDay": "MDL / day",
     "scalePrefix": "excl. VAT · for",
     "packages": [
       {
@@ -626,7 +565,7 @@
         "tag": "Package S",
         "title": "Seminar / small event",
         "desc": "Rooms of up to ~80 people, a single sound zone and projection.",
-        "price": "350",
+        "price": "3,000",
         "scale": "up to ~80 people",
         "highlighted": false,
         "cta": "Configure",
@@ -643,7 +582,7 @@
         "tag": "Package M",
         "title": "Medium conference",
         "desc": "Conferences of 100–300 people, with speeches, presentations and moderation.",
-        "price": "900",
+        "price": "4,000",
         "scale": "100–300 people",
         "highlighted": true,
         "cta": "Configure",
@@ -653,23 +592,22 @@
           "High-brightness projection or a small LED wall",
           "Simultaneous interpretation — 1 language (optional)",
           "Video production for presentations",
-          "Two dedicated technical operators"
+          "One dedicated technical operator"
         ]
       },
       {
         "key": "l",
         "tag": "Package L",
         "title": "International conference",
-        "desc": "Large, multilingual events with streaming and full hybrid production.",
-        "price": "2,400",
-        "scale": "300+ people & online",
+        "desc": "Large, multilingual events with full interpretation and complete production.",
+        "price": "7,000",
+        "scale": "approx. 200 people",
         "highlighted": false,
         "cta": "Configure",
         "features": [
-          "Full sound for the plenary + breakout rooms",
-          "Simultaneous interpretation — up to 4 languages, ISO booths",
-          "Multi-camera capture + redundant streaming",
-          "Interpretation integrated into the stream",
+          "Full sound for the plenary",
+          "Full interpretation — up to 4 languages, ISO booths",
+          "Digital mixing + up to 6 microphones + interpretation",
           "LED wall / large-format projection",
           "Full technical team + production engineer"
         ]
@@ -679,49 +617,42 @@
       "eyebrow": "02 / Rates by category",
       "title": "Indicative rate table",
       "note": "Price per event day, per category.",
-      "footnote": "All rates are in EUR, excl. VAT. Indicative values — the exact quote is calculated per event.",
+      "footnote": "All rates are in MDL, excl. VAT. Indicative values — the exact quote is calculated per event.",
       "columns": {
         "category": "Category",
         "includes": "Typically includes",
-        "from": "From / day",
-        "usual": "Typical / day"
+        "from": "Rate / day (MDL)"
       },
       "items": [
         {
           "category": "Sound",
           "includes": "line-array, mixer, microphones",
-          "from": "250",
-          "usual": "250–1,200"
+          "from": "3,000"
         },
         {
           "category": "Simultaneous interpretation",
           "includes": "booth, transmitter, receivers",
-          "from": "400",
-          "usual": "400–1,800"
+          "from": "4,000"
         },
         {
           "category": "Video & projection",
           "includes": "projector, screen, switching",
-          "from": "300",
-          "usual": "300–1,500"
+          "from": "2,500"
         },
         {
           "category": "LED wall",
           "includes": "modular panels + processor",
-          "from": "600",
-          "usual": "600–3,000"
+          "from": "4,000"
         },
         {
           "category": "Streaming & hybrid",
           "includes": "cameras, encoder, uplink",
-          "from": "500",
-          "usual": "500–2,000"
+          "from": "4,000"
         },
         {
           "category": "Technical operator",
           "includes": "dedicated engineer / technician",
-          "from": "120",
-          "usual": "120–180"
+          "from": "included / 1,500"
         }
       ]
     }
@@ -736,20 +667,20 @@
       {
         "fig": "EVENT PHOTO — PLENARY HALL",
         "tag": "Conference",
-        "title": "Regional investment forum",
-        "meta": "International conference · 6 languages · 240 participants"
+        "title": "Regional forum",
+        "meta": "400 people · 3 rooms · simultaneous interpretation"
       },
       {
         "fig": "EVENT PHOTO — BOOTHS",
         "tag": "Institutional",
         "title": "Institutional plenary session",
-        "meta": "Institutional event · 4 languages · 400 delegates"
+        "meta": "Institutional event · 2 languages · 50 people"
       },
       {
         "fig": "EVENT PHOTO — STAGE & LED",
         "tag": "Corporate",
-        "title": "Regional product launch",
-        "meta": "Corporate event · 2 languages · 180 guests"
+        "title": "Product launch",
+        "meta": "Corporate event"
       }
     ]
   },
@@ -773,7 +704,7 @@
       },
       {
         "q": "How many languages can be interpreted simultaneously?",
-        "a": "Our systems support up to 32 channels — that is up to 32 languages interpreted in parallel, plus the original floor channel."
+        "a": "Our systems support up to 16 channels — that is up to 16 languages interpreted in parallel, plus the original floor channel."
       },
       {
         "q": "Do you offer ISO 4043 compliant booths?",
@@ -791,17 +722,16 @@
     "lede": "Tell us the details and we'll come back with a quote as soon as possible.",
     "cta": "Request a quote →",
     "orCall": "or call us directly",
-    "phone": "+373 22 000 000",
-    "phoneHref": "tel:+37322000000"
+    "phone": "+373 69 337 792",
+    "phoneHref": "tel:+37369337792"
   },
 
   "footer": {
     "desc": "We rent simultaneous interpretation equipment, sound systems and audio-visual solutions for events.",
     "social": [
-      { "label": "LinkedIn ↗", "href": "#" },
       { "label": "Facebook ↗", "href": "#" },
       { "label": "Instagram ↗", "href": "#" },
-      { "label": "YouTube ↗", "href": "#" }
+      { "label": "Viber ↗", "href": "#" }
     ],
     "columns": [
       {
@@ -818,7 +748,7 @@
         "title": "Company",
         "links": [
           { "label": "Case studies", "href": "#studii" },
-          { "label": "For tenders", "href": "#licitatii" },
+          { "label": "References", "href": "#referinte" },
           { "label": "Pricing", "href": "#preturi" },
           { "label": "Frequently asked questions", "href": "#faq" },
           { "label": "Contact", "href": "#contact" }
@@ -826,11 +756,11 @@
       }
     ],
     "contactTitle": "Contact",
-    "phone": "+373 22 000 000",
-    "phoneHref": "tel:+37322000000",
-    "email": "office@vicandislux.md",
-    "addressLines": ["str. Ștefan cel Mare 100,", "MD-2001 Chișinău"],
-    "legalLine": "VICANDISLUX SRL · IDNO [to be completed] · Chișinău, Republic of Moldova",
+    "phone": "+373 69 337 792",
+    "phoneHref": "tel:+37369337792",
+    "email": "director@vicandislux.md",
+    "addressLines": ["str. Milescu Spătaru 7/1,", "Chișinău"],
+    "legalLine": "VICANDISLUX SRL · IDNO 1003600168698 · Chișinău, Republic of Moldova",
     "legalLinks": [
       { "label": "Terms and conditions", "href": "#" },
       { "label": "Privacy policy", "href": "#" },

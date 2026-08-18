@@ -205,7 +205,6 @@ export default function Pricing({ t }: { t: Messages['pricing'] }) {
               <span>{rates.columns.category}</span>
               <span>{rates.columns.includes}</span>
               <span style={{ textAlign: 'right' }}>{rates.columns.from}</span>
-              <span style={{ textAlign: 'right' }}>{rates.columns.usual}</span>
             </div>
             {rates.items.map((r) => (
               <div className="rate-row" key={r.category}>
@@ -236,18 +235,6 @@ export default function Pricing({ t }: { t: Messages['pricing'] }) {
                 >
                   <span className="rate-lbl">{rates.columns.from}&nbsp;</span>
                   {r.from}
-                </span>
-                <span
-                  className="mono"
-                  style={{
-                    fontSize: 16,
-                    color: 'var(--soft)',
-                    textAlign: 'right',
-                    fontVariantNumeric: 'tabular-nums',
-                  }}
-                >
-                  <span className="rate-lbl">{rates.columns.usual}&nbsp;</span>
-                  {r.usual}
                 </span>
               </div>
             ))}

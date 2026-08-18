@@ -126,7 +126,7 @@ export default function Catalog({ t }: Props) {
                       />
                       <span>
                         {opt.label}
-                        {opt.count && <span style={{ color: '#54524A' }}> ({opt.count})</span>}
+                        {opt.count && <span style={{ color: '#57544C' }}> ({opt.count})</span>}
                       </span>
                     </label>
                   ))}
@@ -159,7 +159,7 @@ export default function Catalog({ t }: Props) {
               <div className="cards3" style={{ marginTop: 24 }}>
                 {shown.map((p) => {
                   const isAdded = !!added[p.id];
-                  const dotColor = p.lowStock ? '#B99364' : '#2FBF71';
+                  const dotColor = p.lowStock ? '#8A6A34' : '#2FBF71';
                   return (
                     <div className="pcard" key={p.id}>
                       <div className="ph" style={{ height: 170 }}>
@@ -216,7 +216,7 @@ export default function Catalog({ t }: Props) {
                           </span>
                           <span
                             className="mono"
-                            style={{ fontSize: 10, letterSpacing: '.05em', color: '#54524A' }}
+                            style={{ fontSize: 10, letterSpacing: '.05em', color: '#57544C' }}
                           >
                             {p.categoryLabel}
                           </span>
@@ -271,13 +271,13 @@ export default function Catalog({ t }: Props) {
                             borderTop: '1px solid var(--border)',
                           }}
                         >
-                          <a href="#produs" className="slink">
+                          <a href="#configurator" className="slink">
                             {t.detailsLabel} <span className="arw">→</span>
                           </a>
                           <button
                             onClick={() => toggle(p.id)}
                             className="add"
-                            style={{ borderColor: isAdded ? '#C6FF3A' : 'rgba(255,255,255,0.10)' }}
+                            style={{ borderColor: isAdded ? '#D6A94B' : 'rgba(255,255,255,0.10)' }}
                             aria-pressed={isAdded}
                           >
                             {isAdded ? (

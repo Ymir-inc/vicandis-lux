@@ -1,0 +1,6 @@
+# https://www.rfc-editor.org/rfc/rfc9116
+# Placeholder security contact — confirm the address and refresh Expires before
+# production launch (see tasks/OWNER-TODO.md).
+Contact: mailto:office@vicandislux.md
+Expires: 2027-01-01T00:00:00.000Z
+Preferred-Languages: ro, ru, en

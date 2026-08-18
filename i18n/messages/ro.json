@@ -14,7 +14,7 @@
       { "label": "Configurator", "href": "#configurator" },
       { "label": "Prețuri", "href": "#preturi" },
       { "label": "Studii de caz", "href": "#studii" },
-      { "label": "Pentru licitații", "href": "#licitatii" },
+      { "label": "Referințe", "href": "#referinte" },
       { "label": "Contact", "href": "#contact" }
     ],
     "cta": "Solicită ofertă →",
@@ -25,7 +25,7 @@
   },
 
   "contactChannels": [
-    { "key": "phone", "label": "Sună", "href": "tel:+37322000000" },
+    { "key": "phone", "label": "Sună", "href": "tel:+37369337792" },
     { "key": "viber", "label": "Viber", "href": "#" },
     { "key": "telegram", "label": "Telegram", "href": "#" },
     { "key": "whatsapp", "label": "WhatsApp", "href": "#" }
@@ -38,13 +38,13 @@
     "ctaPrimary": "Solicită ofertă →",
     "ctaSecondary": "Vezi echipamentele",
     "sinceLabel": "Din",
-    "sinceYear": "2018",
+    "sinceYear": "2007",
     "facts": ["Acoperire națională", "Asistență pe durata evenimentului"],
     "panel": {
       "fig": "FIG. 01 · FOTO EVENIMENT",
       "captionLines": ["FOTO EVENIMENT — CABINĂ", "INTERPRET & CONSOLĂ", "LUMINĂ CALDĂ, DOF REDUS"],
       "stats": [
-        { "value": "32", "label": "CANALE", "accent": true },
+        { "value": "8", "label": "CANALE", "accent": true },
         { "value": "ISO", "label": "4043 CABINE", "accent": false }
       ]
     }
@@ -99,10 +99,10 @@
     "eyebrow": "Indicatori",
     "note": "VicandisLux · MD",
     "items": [
-      { "value": "2018", "suffix": "", "label": "Anul înființării", "variant": "num" },
-      { "value": "500", "suffix": "+", "label": "Evenimente deservite", "variant": "num" },
+      { "value": "2007", "suffix": "", "label": "Anul înființării", "variant": "num" },
+      { "value": "1000", "suffix": "+", "label": "Evenimente deservite", "variant": "num" },
       { "value": "300", "suffix": "+", "label": "Receptoare în stoc", "variant": "num" },
-      { "value": "32", "suffix": "", "label": "Canale de traducere", "variant": "num" },
+      { "value": "8", "suffix": "", "label": "Canale de traducere", "variant": "num" },
       { "value": "Acoperire națională", "suffix": "", "label": "Republica Moldova", "variant": "text" }
     ]
   },
@@ -129,8 +129,8 @@
       },
       {
         "num": "04",
-        "title": "Asistență la eveniment",
-        "desc": "Un tehnician monitorizează echipamentele pe toată durata."
+        "title": "Asistență pe durata evenimentului",
+        "desc": "Un tehnician monitorizează echipamentele pe toată durata evenimentului."
       }
     ]
   },
@@ -341,9 +341,9 @@
     "note": "pași scurți · estimare live",
     "sidebarEyebrow": "Pași",
     "sidebarLede": "Alege opțiunile — estimarea se actualizează în timp real.",
-    "estimateLabel": "Estimare orientativă",
+    "estimateLabel": "Sumar configurație",
     "estimateFootnote": "fără TVA · se confirmă în ofertă",
-    "estimateDisclaimer": "Estimare cu caracter informativ. Prețul final se confirmă în ofertă.",
+    "estimateDisclaimer": "Prețul final se confirmă în ofertă, după verificarea disponibilității.",
     "navLabels": [
       "Tip eveniment",
       "Interpretare",
@@ -503,68 +503,7 @@
   "tenders": {
     "eyebrow": "Dosar furnizor · Secțiune oficială",
     "title": "Pregătiți pentru proceduri de achiziție publică",
-    "lede": "Suntem pregătiți pentru proceduri de achiziție publică și proiecte finanțate. Găsiți mai jos datele și documentele de care aveți nevoie — structurate pentru dosarul de licitație.",
-    "assurances": [
-      "Documente actualizate la 01.07.2026",
-      "IDNO & IBAN verificabile",
-      "Răspuns în 24h lucrătoare"
-    ],
-    "identification": {
-      "eyebrow": "02 / Identificare",
-      "title": "Date de identificare",
-      "desc": "Datele juridice și bancare, gata de introdus în formulare.",
-      "footnote": "FIG. 02 — DATE FURNIZOR · VALORI SENSIBILE MARCATE „[DE COMPLETAT]”",
-      "rows": [
-        {
-          "k": "Denumire juridică",
-          "v": "„VicandisLux” S.R.L.",
-          "mono": false,
-          "accent": false
-        },
-        { "k": "IDNO", "v": "[de completat]", "mono": true, "accent": true },
-        {
-          "k": "Adresă juridică",
-          "v": "MD-2005, mun. Chișinău, str. Mitropolit Bănulescu-Bodoni 25",
-          "mono": false,
-          "accent": false
-        },
-        {
-          "k": "Statut TVA",
-          "v": "Plătitor TVA · cod [de completat]",
-          "mono": false,
-          "accent": false
-        },
-        {
-          "k": "Bancă",
-          "v": "BC „Mobiasbancă” S.A. — filiala Centru, Chișinău",
-          "mono": false,
-          "accent": false
-        },
-        { "k": "IBAN", "v": "[de completat]", "mono": true, "accent": true }
-      ]
-    },
-    "documents": {
-      "eyebrow": "03 / Documente",
-      "title": "Documente descărcabile",
-      "desc": "Actele de eligibilitate, menținute la zi. Fiecare în format PDF, semnat electronic.",
-      "updatedPrefix": "Actualizat la",
-      "downloadLabel": "Descarcă",
-      "items": [
-        { "title": "Extras din Registrul de stat", "date": "12 iunie 2026", "meta": "PDF · 1.2 MB" },
-        { "title": "Certificat de înregistrare", "date": "12 iunie 2026", "meta": "PDF · 0.8 MB" },
-        {
-          "title": "Certificat lipsă datorii (SFS)",
-          "date": "01 iulie 2026",
-          "meta": "PDF · 0.6 MB"
-        },
-        {
-          "title": "Declarații standard (DUAE / eligibilitate)",
-          "date": "01 iulie 2026",
-          "meta": "PDF · 0.4 MB"
-        },
-        { "title": "Listă de referințe", "date": "20 iunie 2026", "meta": "PDF · 0.9 MB" }
-      ]
-    },
+    "lede": "Proiecte pentru instituții publice și organizații internaționale, cu traducere simultană, sonorizare și regie hibridă.",
     "references": {
       "eyebrow": "04 / Referințe",
       "title": "Experiență cu instituții",
@@ -618,12 +557,12 @@
 
   "pricing": {
     "eyebrow": "Prețuri orientative",
-    "currencyNote": "Prețuri în EUR · fără TVA",
+    "currencyNote": "Prețuri în MDL · fără TVA",
     "title": "Prețuri clare, fără surprize la final",
     "lede": "Îți arătăm de la ce pornesc pachetele și cât costă fiecare categorie de echipament pe zi. Prețul final depinde de câțiva factori — nimic ascuns.",
     "badgeLabel": "Cel mai ales",
     "fromLabel": "de la",
-    "perDay": "€ / zi",
+    "perDay": "MDL / zi",
     "scalePrefix": "fără TVA · pentru",
     "packages": [
       {
@@ -631,7 +570,7 @@
         "tag": "Pachet S",
         "title": "Seminar / eveniment mic",
         "desc": "Săli până la ~80 de persoane, o singură zonă de sunet și proiecție.",
-        "price": "350",
+        "price": "3 000",
         "scale": "până la ~80 pers.",
         "highlighted": false,
         "cta": "Configurează",
@@ -648,7 +587,7 @@
         "tag": "Pachet M",
         "title": "Conferință medie",
         "desc": "Conferințe de 100–300 de persoane, cu discursuri, prezentări și moderare.",
-        "price": "900",
+        "price": "4 000",
         "scale": "100–300 pers.",
         "highlighted": true,
         "cta": "Configurează",
@@ -658,23 +597,22 @@
           "Proiecție de mare luminozitate sau LED wall mic",
           "Traducere simultană — 1 limbă (opțional)",
           "Regie video pentru prezentări",
-          "Doi operatori tehnici dedicați"
+          "Un operator tehnic dedicat"
         ]
       },
       {
         "key": "l",
         "tag": "Pachet L",
         "title": "Conferință internațională",
-        "desc": "Evenimente mari, multilingve, cu streaming și regie hibridă completă.",
-        "price": "2 400",
-        "scale": "300+ pers. & online",
+        "desc": "Evenimente mari, multilingve, cu traducere integrală și regie completă.",
+        "price": "7 000",
+        "scale": "orientativ 200 persoane",
         "highlighted": false,
         "cta": "Configurează",
         "features": [
-          "Sonorizare completă pentru plenară + săli paralele",
-          "Traducere simultană — până la 4 limbi, cabine ISO",
-          "Captură multi-cameră + streaming redundant",
-          "Traducere integrată în stream",
+          "Sonorizare completă pentru plenară",
+          "Traducere integrală — până la 4 limbi, cabine ISO",
+          "Mixaj digital + până la 6 microfoane + traducere",
           "LED wall / proiecție de mare format",
           "Echipă tehnică completă + inginer de regie"
         ]
@@ -684,49 +622,42 @@
       "eyebrow": "02 / Tarife pe categorie",
       "title": "Tabel orientativ de tarife",
       "note": "Preț pe zi de eveniment, per categorie.",
-      "footnote": "Toate tarifele sunt în EUR, fără TVA. Valori orientative — oferta exactă se calculează pe eveniment.",
+      "footnote": "Toate tarifele sunt în MDL, fără TVA. Valori orientative — oferta exactă se calculează pe eveniment.",
       "columns": {
         "category": "Categorie",
         "includes": "Include tipic",
-        "from": "De la / zi",
-        "usual": "Uzual / zi"
+        "from": "Tarif / zi (MDL)"
       },
       "items": [
         {
           "category": "Sonorizare",
           "includes": "line-array, mixer, microfoane",
-          "from": "250",
-          "usual": "250–1 200"
+          "from": "3 000"
         },
         {
           "category": "Traducere simultană",
           "includes": "cabină, emițător, receptoare",
-          "from": "400",
-          "usual": "400–1 800"
+          "from": "4 000"
         },
         {
           "category": "Video & proiecție",
           "includes": "proiector, ecran, switching",
-          "from": "300",
-          "usual": "300–1 500"
+          "from": "2 500"
         },
         {
           "category": "LED wall",
           "includes": "panouri modulare + procesor",
-          "from": "600",
-          "usual": "600–3 000"
+          "from": "4 000"
         },
         {
           "category": "Streaming & hibrid",
           "includes": "camere, encoder, uplink",
-          "from": "500",
-          "usual": "500–2 000"
+          "from": "4 000"
         },
         {
           "category": "Operator tehnic",
           "includes": "inginer / tehnician dedicat",
-          "from": "120",
-          "usual": "120–180"
+          "from": "inclus / 1 500"
         }
       ]
     }
@@ -741,20 +672,20 @@
       {
         "fig": "FOTO EVENIMENT — SALĂ PLENARĂ",
         "tag": "Conferință",
-        "title": "Forum regional de investiții",
-        "meta": "Conferință internațională · 6 limbi · 240 participanți"
+        "title": "Forum regional",
+        "meta": "400 persoane · 3 săli · traducere simultană"
       },
       {
         "fig": "FOTO EVENIMENT — CABINE",
         "tag": "Instituțional",
         "title": "Sesiune plenară instituțională",
-        "meta": "Eveniment instituțional · 4 limbi · 400 delegați"
+        "meta": "Eveniment instituțional · 2 limbi · 50 persoane"
       },
       {
         "fig": "FOTO EVENIMENT — SCENĂ & LED",
         "tag": "Corporate",
-        "title": "Lansare de produs regională",
-        "meta": "Eveniment corporate · 2 limbi · 180 invitați"
+        "title": "Lansare de produs",
+        "meta": "Eveniment corporate"
       }
     ]
   },
@@ -778,7 +709,7 @@
       },
       {
         "q": "Câte limbi pot fi traduse simultan?",
-        "a": "Sistemele noastre suportă până la 32 de canale — adică până la 32 de limbi traduse în paralel, plus canalul original din sală."
+        "a": "Sistemele noastre suportă până la 16 de canale — adică până la 16 de limbi traduse în paralel, plus canalul original din sală."
       },
       {
         "q": "Oferiți cabine conforme ISO 4043?",
@@ -796,17 +727,16 @@
     "lede": "Spune-ne detaliile și revenim cu o ofertă în cel mai scurt timp.",
     "cta": "Solicită ofertă →",
     "orCall": "sau sună direct",
-    "phone": "+373 22 000 000",
-    "phoneHref": "tel:+37322000000"
+    "phone": "+373 69 337 792",
+    "phoneHref": "tel:+37369337792"
   },
 
   "footer": {
     "desc": "Închiriem echipamente de traducere simultană, sonorizare și soluții audio-video pentru evenimente.",
     "social": [
-      { "label": "LinkedIn ↗", "href": "#" },
       { "label": "Facebook ↗", "href": "#" },
       { "label": "Instagram ↗", "href": "#" },
-      { "label": "YouTube ↗", "href": "#" }
+      { "label": "Viber ↗", "href": "#" }
     ],
     "columns": [
       {
@@ -823,7 +753,7 @@
         "title": "Companie",
         "links": [
           { "label": "Studii de caz", "href": "#studii" },
-          { "label": "Pentru licitații", "href": "#licitatii" },
+          { "label": "Referințe", "href": "#referinte" },
           { "label": "Prețuri", "href": "#preturi" },
           { "label": "Întrebări frecvente", "href": "#faq" },
           { "label": "Contact", "href": "#contact" }
@@ -831,11 +761,11 @@
       }
     ],
     "contactTitle": "Contact",
-    "phone": "+373 22 000 000",
-    "phoneHref": "tel:+37322000000",
-    "email": "office@vicandislux.md",
-    "addressLines": ["str. Ștefan cel Mare 100,", "MD-2001 Chișinău"],
-    "legalLine": "VICANDISLUX SRL · IDNO [de completat] · Chișinău, Republica Moldova",
+    "phone": "+373 69 337 792",
+    "phoneHref": "tel:+37369337792",
+    "email": "director@vicandislux.md",
+    "addressLines": ["str. Milescu Spătaru 7/1,", "Chișinău"],
+    "legalLine": "VICANDISLUX SRL · IDNO 1003600168698 · Chișinău, Republica Moldova",
     "legalLinks": [
       { "label": "Termeni și condiții", "href": "#" },
       { "label": "Politica de confidențialitate", "href": "#" },

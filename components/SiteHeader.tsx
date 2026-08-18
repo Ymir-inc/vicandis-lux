@@ -41,11 +41,22 @@ function LangSwitcher({
   );
 }
 
-function Brand({ onClick, style }: { onClick?: () => void; style?: React.CSSProperties }) {
+function Brand({
+  onClick,
+  style,
+  markHeight = 42,
+}: {
+  onClick?: () => void;
+  style?: React.CSSProperties;
+  markHeight?: number;
+}) {
   return (
     <a href="#acasa" className="brand" onClick={onClick} style={style}>
-      <span className="dot" />
-      VICANDIS<b>LUX</b>
+      <img
+        src="/brand/vicandislux-mark.webp"
+        alt="VicandisLux"
+        style={{ height: markHeight, width: 'auto', display: 'block' }}
+      />
     </a>
   );
 }
@@ -102,7 +113,7 @@ export default function SiteHeader({ locale, nav, channels }: Props) {
 
       <div className="drawer" style={{ display: open ? 'flex' : 'none' }} role="dialog" aria-modal="true">
         <div className="drawer-head">
-          <Brand onClick={close} />
+          <Brand onClick={close} markHeight={40} />
           <button className="xbtn" aria-label={nav.closeMenu} onClick={close}>
             <CloseIcon />
           </button>
@@ -143,7 +154,7 @@ export default function SiteHeader({ locale, nav, channels }: Props) {
           <div className="contact4">
             {channels.map((c) => (
               <a key={c.key} href={c.href}>
-                <ChannelIcon name={c.key} stroke="#C6FF3A" />
+                <ChannelIcon name={c.key} stroke="#D6A94B" />
                 {c.label}
               </a>
             ))}

@@ -1,33 +1,30 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 import type { Messages } from '@/i18n/getMessages';
 import {
   emptyAnswers,
-  estimate,
   type ConfiguratorAnswers,
   type ConfiguratorField,
 } from '@/lib/estimate';
 import { CheckIcon, InfoIcon } from './icons';
 
-const ACCENT = '#C6FF3A';
+const ACCENT = '#D6A94B';
 const BORDER = 'rgba(255,255,255,0.10)';
-const TEXT = '#EDEBE4';
-const SOFT = '#C9C6BC';
-const MUTED = '#8C897E';
+const TEXT = '#F7F5F0';
+const SOFT = '#CFCBC2';
+const MUTED = '#8E8A80';
 
 /** Index of the recap step, which sits after the five question steps. */
 const SUMMARY_STEP = 5;
 
-type Props = { t: Messages['configurator']; numberLocale: string };
+type Props = { t: Messages['configurator'] };
 
-export default function Configurator({ t, numberLocale }: Props) {
+export default function Configurator({ t }: Props) {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<ConfiguratorAnswers>(emptyAnswers);
   const [sent, setSent] = useState(false);
 
-  const format = useMemo(() => new Intl.NumberFormat(numberLocale), [numberLocale]);
-  const { low, high } = estimate(answers);
   const isSummary = step === SUMMARY_STEP;
   const current = t.steps[Math.min(step, t.steps.length - 1)];
 
@@ -84,7 +81,7 @@ export default function Configurator({ t, numberLocale }: Props) {
                     onClick={() => setStep(i)}
                     aria-current={isCurrent ? 'step' : undefined}
                     style={{
-                      background: isCurrent ? 'rgba(198,255,58,0.07)' : 'transparent',
+                      background: isCurrent ? 'rgba(214,169,75,0.07)' : 'transparent',
                       borderLeftColor: isCurrent ? ACCENT : 'transparent',
                     }}
                   >
@@ -112,39 +109,6 @@ export default function Configurator({ t, numberLocale }: Props) {
                   </button>
                 );
               })}
-            </div>
-
-            <div style={{ marginTop: 'auto', paddingTop: 24, borderTop: '1px solid var(--border)' }}>
-              <div
-                className="mono"
-                style={{
-                  fontSize: 10,
-                  letterSpacing: '.14em',
-                  textTransform: 'uppercase',
-                  color: 'var(--muted)',
-                }}
-              >
-                {t.estimateLabel}
-              </div>
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginTop: 10 }}>
-                <span
-                  style={{
-                    fontFamily: 'var(--d)',
-                    fontWeight: 600,
-                    fontSize: 34,
-                    letterSpacing: '-0.02em',
-                    color: 'var(--accent)',
-                  }}
-                >
-                  € {format.format(low)}
-                </span>
-                <span className="mono" style={{ fontSize: 12, color: 'var(--muted)' }}>
-                  – {format.format(high)}
-                </span>
-              </div>
-              <div className="mono" style={{ fontSize: 10, color: 'var(--faint)', marginTop: 6 }}>
-                {t.estimateFootnote}
-              </div>
             </div>
           </div>
 
@@ -293,31 +257,6 @@ export default function Configurator({ t, numberLocale }: Props) {
                           }}
                         >
                           {t.estimateLabel}
-                        </div>
-                        <div
-                          style={{
-                            display: 'flex',
-                            alignItems: 'baseline',
-                            gap: 10,
-                            marginTop: 12,
-                            flexWrap: 'wrap',
-                          }}
-                        >
-                          <span
-                            style={{
-                              fontFamily: 'var(--d)',
-                              fontWeight: 700,
-                              fontSize: 'clamp(40px,4vw,48px)',
-                              letterSpacing: '-0.03em',
-                              color: 'var(--accent)',
-                              lineHeight: 1,
-                            }}
-                          >
-                            € {format.format(low)}
-                          </span>
-                          <span className="mono" style={{ fontSize: 15, color: 'var(--soft)' }}>
-                            – € {format.format(high)}
-                          </span>
                         </div>
                       </div>
                       <div style={{ padding: '14px 20px 4px' }}>

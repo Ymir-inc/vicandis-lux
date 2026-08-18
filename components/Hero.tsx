@@ -88,12 +88,30 @@ export default function Hero({ t }: { t: Messages['hero'] }) {
             </div>
           </div>
 
-          <div className="rise hero-panel" style={{ animationDelay: '.24s' }}>
-            <div className="stripe" />
+          <div className="rise hero-panel" style={{ animationDelay: '.24s', overflow: 'hidden' }}>
             <div
               style={{
                 position: 'absolute',
                 inset: 0,
+                backgroundImage: 'url(/brand/hero-conferinta.jpg)',
+                backgroundPosition: '52% 76%',
+                backgroundSize: 'cover',
+                filter: 'saturate(.72) contrast(1.04) brightness(.86)',
+              }}
+            />
+            <div
+              style={{
+                position: 'absolute',
+                inset: 0,
+                background:
+                  'linear-gradient(180deg, rgba(17,17,16,.72), rgba(17,17,16,.30) 42%, rgba(17,17,16,.88)), linear-gradient(90deg, rgba(17,17,16,.78), transparent 46%)',
+              }}
+            />
+            <div
+              style={{
+                position: 'absolute',
+                inset: 0,
+                zIndex: 1,
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',

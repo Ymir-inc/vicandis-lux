@@ -9,6 +9,8 @@ export default function NotFound() {
   return (
     <html lang={localeTags[defaultLocale]}>
       <body>
+        {/* React hoists this into <head>; a 404 should never be indexed. */}
+        <meta name="robots" content="noindex, follow" />
         <main
           style={{
             minHeight: '100dvh',

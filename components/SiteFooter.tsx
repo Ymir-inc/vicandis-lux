@@ -15,9 +15,12 @@ export default function SiteFooter({ t }: { t: Messages['footer'] }) {
       <div className="container-vl">
         <div className="foot-grid">
           <div>
-            <a href="#acasa" className="brand" style={{ fontSize: 22, marginBottom: 20 }}>
-              <span className="dot" />
-              VICANDIS<b>LUX</b>
+            <a href="#acasa" className="brand" style={{ marginBottom: 20 }}>
+              <img
+                src="/brand/vicandislux-logo.webp"
+                alt="VicandisLux"
+                style={{ height: 76, width: 'auto', display: 'block' }}
+              />
             </a>
             <p className="lede" style={{ fontSize: 14.5, color: 'var(--muted)', maxWidth: 340 }}>
               {t.desc}
