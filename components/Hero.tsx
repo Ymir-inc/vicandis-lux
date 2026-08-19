@@ -122,25 +122,6 @@ export default function Hero({ t }: { t: Messages['hero'] }) {
               <div className="mono" style={{ fontSize: 11, letterSpacing: '.12em', color: 'var(--muted)' }}>
                 {t.panel.fig}
               </div>
-              <div
-                className="mono"
-                style={{
-                  alignSelf: 'center',
-                  textAlign: 'center',
-                  fontSize: 12,
-                  letterSpacing: '.08em',
-                  lineHeight: 1.9,
-                  color: 'var(--muted)',
-                  maxWidth: 300,
-                }}
-              >
-                {t.panel.captionLines.map((line, i) => (
-                  <span key={line}>
-                    {line}
-                    {i < t.panel.captionLines.length - 1 && <br />}
-                  </span>
-                ))}
-              </div>
               <div className="chip-stat" style={{ alignSelf: 'flex-start' }}>
                 {t.panel.stats.map((stat, i) => (
                   <span key={stat.label} style={{ display: 'contents' }}>
