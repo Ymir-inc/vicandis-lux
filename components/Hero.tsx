@@ -1,5 +1,6 @@
 import type { Messages } from '@/i18n/getMessages';
 import { buildWaveform } from '@/lib/waveform';
+import { BASE_PATH } from '@/i18n/site';
 
 const bars = buildWaveform();
 
@@ -93,7 +94,7 @@ export default function Hero({ t }: { t: Messages['hero'] }) {
               style={{
                 position: 'absolute',
                 inset: 0,
-                backgroundImage: 'url(/brand/hero-conferinta.jpg)',
+                backgroundImage: `url(${BASE_PATH}/brand/hero-conferinta.jpg)`,
                 backgroundPosition: '52% 76%',
                 backgroundSize: 'cover',
                 filter: 'saturate(.72) contrast(1.04) brightness(.86)',

@@ -1,4 +1,5 @@
 import type { Messages } from '@/i18n/getMessages';
+import { BASE_PATH } from '@/i18n/site';
 
 const columnTitleStyle: React.CSSProperties = {
   fontSize: 11,
@@ -17,7 +18,7 @@ export default function SiteFooter({ t }: { t: Messages['footer'] }) {
           <div>
             <a href="#acasa" className="brand" style={{ marginBottom: 20 }}>
               <img
-                src="/brand/vicandislux-logo.webp"
+                src={`${BASE_PATH}/brand/vicandislux-logo.webp`}
                 alt="VicandisLux"
                 style={{ height: 76, width: 'auto', display: 'block' }}
               />

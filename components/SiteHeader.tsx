@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { localeLabels, locales, type Locale } from '@/i18n/config';
 import type { Messages } from '@/i18n/getMessages';
+import { BASE_PATH } from '@/i18n/site';
 import { ChannelIcon, CloseIcon } from './icons';
 
 type Props = {
@@ -53,7 +54,7 @@ function Brand({
   return (
     <a href="#acasa" className="brand" onClick={onClick} style={style}>
       <img
-        src="/brand/vicandislux-mark.webp"
+        src={`${BASE_PATH}/brand/vicandislux-mark.webp`}
         alt="VicandisLux"
         style={{ height: markHeight, width: 'auto', display: 'block' }}
       />
