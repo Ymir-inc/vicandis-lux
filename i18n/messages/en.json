@@ -663,6 +663,9 @@
     "title": "Recent projects",
     "linkLabel": "View case study",
     "ctaAll": "View all case studies →",
+    "prevLabel": "Previous photo",
+    "nextLabel": "Next photo",
+    "photoAlt": "Photo from a VicandisLux event — conference and simultaneous-interpretation equipment",
     "items": [
       {
         "fig": "EVENT PHOTO — PLENARY HALL",
