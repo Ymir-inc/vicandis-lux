@@ -111,6 +111,20 @@ export default function SiteFooter({ t }: { t: Messages['footer'] }) {
               </a>
             ))}
             <span>{t.copyright}</span>
+            <span
+              className="powered-by"
+              style={{ display: 'inline-flex', alignItems: 'center', gap: 7 }}
+            >
+              Powered by
+              <img
+                src={`${BASE_PATH}/brand/mimir.png`}
+                alt="Mimir"
+                width={16}
+                height={16}
+                style={{ display: 'block', borderRadius: '50%' }}
+              />
+              <span style={{ color: 'var(--soft)' }}>Mimir</span>
+            </span>
           </div>
         </div>
       </div>
