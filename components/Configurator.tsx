@@ -8,6 +8,7 @@ import {
   type ConfiguratorField,
 } from '@/lib/estimate';
 import { CheckIcon, InfoIcon } from './icons';
+import { ORG } from '@/i18n/site';
 
 const ACCENT = '#D6A94B';
 const BORDER = 'rgba(255,255,255,0.10)';
@@ -38,6 +39,33 @@ export default function Configurator({ t }: Props) {
       v: chosen?.recap || t.recapEmpty,
     };
   });
+
+  /**
+   * Deliver the request. Prefers a real form endpoint if one is configured
+   * (`NEXT_PUBLIC_FORM_ENDPOINT`), otherwise opens a pre-filled email to the
+   * office — the visitor's own mail client supplies their reply address, so the
+   * lead is never silently lost on this static site.
+   */
+  const submit = () => {
+    const summary = recap.map((r) => `${r.k}: ${r.v}`).join('\n');
+    const endpoint = process.env.NEXT_PUBLIC_FORM_ENDPOINT;
+    const mailto = `mailto:${ORG.email}?subject=${encodeURIComponent(
+      t.mailSubject,
+    )}&body=${encodeURIComponent(`${t.mailIntro}\n\n${summary}`)}`;
+
+    if (endpoint) {
+      fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ kind: 'configurator', config: recap, summary }),
+      }).catch(() => {
+        window.location.href = mailto;
+      });
+    } else {
+      window.location.href = mailto;
+    }
+    setSent(true);
+  };
 
   return (
     <section id="configurator" className="sec divide">
@@ -314,7 +342,7 @@ export default function Configurator({ t }: Props) {
                   className="btn btn-solid"
                   style={{ minWidth: 180 }}
                   onClick={() =>
-                    isSummary ? setSent(true) : setStep((s) => Math.min(SUMMARY_STEP, s + 1))
+                    isSummary ? submit() : setStep((s) => Math.min(SUMMARY_STEP, s + 1))
                   }
                 >
                   {isSummary ? t.submitLabel : t.nextLabel} <span>{isSummary ? '↗' : '→'}</span>

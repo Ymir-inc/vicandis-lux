@@ -89,6 +89,13 @@ const plexMonoCyrillic = IBM_Plex_Mono({
 /** Locales whose content is written in Cyrillic script. */
 const CYRILLIC_LOCALES: ReadonlySet<Locale> = new Set<Locale>(['ru']);
 
+/** Localised label for the keyboard skip-to-content link. */
+const SKIP_LABEL: Record<Locale, string> = {
+  ro: 'Sari la conținut',
+  ru: 'Перейти к содержимому',
+  en: 'Skip to content',
+};
+
 function fontsFor(locale: Locale) {
   const cyrillic = CYRILLIC_LOCALES.has(locale);
   return [
@@ -188,7 +195,19 @@ export default async function LocaleLayout({
 
   return (
     <html lang={localeTags[locale]} className={fontsFor(locale)}>
+      <head>
+        {/* Warm the LCP hero photo (a CSS background, so it can't self-preload). */}
+        <link
+          rel="preload"
+          as="image"
+          href={assetUrl('/brand/hero-conferinta.jpg')}
+          fetchPriority="high"
+        />
+      </head>
       <body>
+        <a href="#main" className="skip-link">
+          {SKIP_LABEL[locale as Locale]}
+        </a>
         <StructuredData locale={locale} t={t} />
         {children}
       </body>

@@ -355,6 +355,8 @@
     "backLabel": "‹ Back",
     "nextLabel": "Continue",
     "submitLabel": "Send request",
+    "mailSubject": "Quote request — VicandisLux configurator",
+    "mailIntro": "Hello, I would like a quote for the configuration below:",
     "summaryEyebrow": "Summary — final check",
     "summaryTitle": "Recap and estimate",
     "summaryDesc": "Check your configuration before sending the request.",

@@ -1189,6 +1189,25 @@
     display: none;
   }
 
+  /* skip to content (keyboard) */
+  .skip-link {
+    position: absolute;
+    left: 12px;
+    top: -56px;
+    z-index: 200;
+    background: var(--accent);
+    color: #111110;
+    font-family: var(--m);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    padding: 10px 16px;
+    border-radius: 3px;
+    transition: top 0.16s ease;
+  }
+  .skip-link:focus {
+    top: 12px;
+  }
+
   /* projects carousel */
   .carousel:focus-visible {
     outline: 2px solid var(--accent);

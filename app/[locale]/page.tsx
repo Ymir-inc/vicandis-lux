@@ -24,7 +24,7 @@ export default async function SitePage({ params }: { params: Promise<{ locale: s
   return (
     <>
       <SiteHeader locale={locale} nav={t.nav} channels={t.contactChannels} />
-      <main>
+      <main id="main">
         <Hero t={t.hero} />
         <Services t={t.services} />
         <Stats t={t.stats} />

@@ -84,6 +84,8 @@ export default function CaseStudies({ t }: { t: Messages['cases'] }) {
                   <img
                     src={src}
                     alt={`${t.photoAlt} (${i + 1}/${COUNT})`}
+                    width={1600}
+                    height={900}
                     loading={i === 0 ? 'eager' : 'lazy'}
                     decoding="async"
                     draggable={false}

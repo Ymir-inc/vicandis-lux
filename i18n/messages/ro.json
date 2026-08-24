@@ -355,6 +355,8 @@
     "backLabel": "‹ Înapoi",
     "nextLabel": "Continuă",
     "submitLabel": "Trimite cererea",
+    "mailSubject": "Cerere de ofertă — configurator VicandisLux",
+    "mailIntro": "Bună ziua, aș dori o ofertă pentru configurația de mai jos:",
     "summaryEyebrow": "Sumar — verificare finală",
     "summaryTitle": "Recapitulare și estimare",
     "summaryDesc": "Verificați configurația înainte de a trimite cererea.",
