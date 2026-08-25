@@ -1,4 +1,5 @@
 import type { Messages } from '@/i18n/getMessages';
+import type { Locale } from '@/i18n/config';
 import { BASE_PATH } from '@/i18n/site';
 
 const columnTitleStyle: React.CSSProperties = {
@@ -9,7 +10,13 @@ const columnTitleStyle: React.CSSProperties = {
   marginBottom: 20,
 };
 
-export default function SiteFooter({ t }: { t: Messages['footer'] }) {
+export default function SiteFooter({
+  t,
+  locale,
+}: {
+  t: Messages['footer'];
+  locale: Locale;
+}) {
   return (
     <footer className="foot">
       <div className="foot-spine" />
@@ -106,7 +113,11 @@ export default function SiteFooter({ t }: { t: Messages['footer'] }) {
             }}
           >
             {t.legalLinks.map((link) => (
-              <a key={link.label} href={link.href} className="flink">
+              <a
+                key={link.label}
+                href={`${BASE_PATH}/${locale}/${link.href}/`}
+                className="flink"
+              >
                 {link.label}
               </a>
             ))}

@@ -772,9 +772,9 @@
     "addressLines": ["str. Milescu Spătaru 7/1,", "Chișinău"],
     "legalLine": "VICANDISLUX SRL · IDNO 1003600168698 · Chișinău, Republica Moldova",
     "legalLinks": [
-      { "label": "Termeni și condiții", "href": "#" },
-      { "label": "Politica de confidențialitate", "href": "#" },
-      { "label": "Politica cookie", "href": "#" }
+      { "label": "Termeni și condiții", "href": "terms" },
+      { "label": "Politica de confidențialitate", "href": "privacy" },
+      { "label": "Politica cookie", "href": "cookies" }
     ],
     "copyright": "© 2026"
   }

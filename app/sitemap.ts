@@ -21,11 +21,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ) as Record<string, string>;
 
   // priority/changeFrequency omitted deliberately — Google ignores both.
-  return locales.map((locale) => ({
+  const home = locales.map((locale) => ({
     url: localeUrl(locale),
     lastModified: new Date(),
     alternates: {
       languages: { ...languages, 'x-default': `${SITE_BASE}/ro/` },
     },
   }));
+
+  const legalSlugs = ['privacy', 'terms', 'cookies'] as const;
+  const legalPages = legalSlugs.flatMap((slug) =>
+    locales.map((locale) => ({
+      url: `${SITE_BASE}/${locale}/${slug}/`,
+      lastModified: new Date(),
+      alternates: {
+        languages: Object.fromEntries(
+          locales.map((l) => [localeTags[l], `${SITE_BASE}/${l}/${slug}/`]),
+        ) as Record<string, string>,
+      },
+    })),
+  );
+
+  return [...home, ...legalPages];
 }

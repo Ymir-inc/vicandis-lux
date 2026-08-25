@@ -37,7 +37,7 @@ export default async function SitePage({ params }: { params: Promise<{ locale: s
         <Faq t={t.faq} />
         <Contact t={t.contact} />
       </main>
-      <SiteFooter t={t.footer} />
+      <SiteFooter t={t.footer} locale={locale} />
       <MobileContactBar channels={t.contactChannels} />
     </>
   );
