@@ -5,9 +5,10 @@ import type { Messages } from '@/i18n/getMessages';
 import { BASE_PATH } from '@/i18n/site';
 
 const COUNT = 8;
-const photos = Array.from(
+/** Path stem per photo; variants live at `<stem>-768.jpg`, `-1200.jpg`, `.jpg` (1600w). */
+const stems = Array.from(
   { length: COUNT },
-  (_, i) => `${BASE_PATH}/projects/proiect-${String(i + 1).padStart(2, '0')}.jpg`,
+  (_, i) => `${BASE_PATH}/projects/proiect-${String(i + 1).padStart(2, '0')}`,
 );
 
 export default function CaseStudies({ t }: { t: Messages['cases'] }) {
@@ -72,17 +73,19 @@ export default function CaseStudies({ t }: { t: Messages['cases'] }) {
               className="carousel-track"
               style={{ transform: `translateX(-${active * 100}%)` }}
             >
-              {photos.map((src, i) => (
+              {stems.map((stem, i) => (
                 <div
                   className="carousel-slide"
-                  key={src}
+                  key={stem}
                   role="group"
                   aria-roledescription="slide"
                   aria-label={`${i + 1} / ${COUNT}`}
                   aria-hidden={i !== active}
                 >
                   <img
-                    src={src}
+                    src={`${stem}.jpg`}
+                    srcSet={`${stem}-768.jpg 768w, ${stem}-1200.jpg 1200w, ${stem}.jpg 1600w`}
+                    sizes="(min-width: 1440px) 1400px, 92vw"
                     alt={`${t.photoAlt} (${i + 1}/${COUNT})`}
                     width={1600}
                     height={900}
@@ -110,7 +113,7 @@ export default function CaseStudies({ t }: { t: Messages['cases'] }) {
           </div>
 
           <div className="carousel-dots" role="tablist" aria-label={t.title}>
-            {photos.map((_, i) => (
+            {stems.map((_, i) => (
               <button
                 key={i}
                 className={`carousel-dot${i === active ? ' on' : ''}`}

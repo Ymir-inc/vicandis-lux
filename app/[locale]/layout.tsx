@@ -196,11 +196,14 @@ export default async function LocaleLayout({
   return (
     <html lang={localeTags[locale]} className={fontsFor(locale)}>
       <head>
-        {/* Warm the LCP hero photo (a CSS background, so it can't self-preload). */}
+        {/* Warm the LCP hero photo (a CSS background, so it can't self-preload).
+            Responsive: phones fetch the 800px variant, wider screens the 1600px. */}
         <link
           rel="preload"
           as="image"
           href={assetUrl('/brand/hero-conferinta.jpg')}
+          imageSrcSet={`${assetUrl('/brand/hero-conferinta-800.jpg')} 800w, ${assetUrl('/brand/hero-conferinta.jpg')} 1600w`}
+          imageSizes="100vw"
           fetchPriority="high"
         />
       </head>

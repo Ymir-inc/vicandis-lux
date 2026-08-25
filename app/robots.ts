@@ -21,7 +21,24 @@ export default function robots(): MetadataRoute.Robots {
   }
 
   return {
-    rules: [{ userAgent: '*', allow: '/' }],
+    rules: [
+      // AI answer engines — explicitly welcomed; this is how the site gets cited.
+      {
+        userAgent: [
+          'OAI-SearchBot',
+          'ChatGPT-User',
+          'Claude-SearchBot',
+          'Claude-User',
+          'PerplexityBot',
+        ],
+        allow: '/',
+      },
+      // Aggressive scraper that ignores crawl norms.
+      { userAgent: 'Bytespider', disallow: '/' },
+      // Everyone else (incl. Googlebot and AI *training* crawlers): full access.
+      // Flip training crawlers to disallow here if that becomes a business need.
+      { userAgent: '*', allow: '/' },
+    ],
     sitemap: `${SITE_BASE}/sitemap.xml`,
     host: SITE_BASE,
   };

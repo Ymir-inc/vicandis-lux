@@ -1189,6 +1189,21 @@
     display: none;
   }
 
+  /* hero photo — small file on phones, full-res on wider screens */
+  .hero-photo {
+    position: absolute;
+    inset: 0;
+    background-image: var(--hero-sm);
+    background-position: 52% 76%;
+    background-size: cover;
+    filter: saturate(0.72) contrast(1.04) brightness(0.86);
+  }
+  @media (min-width: 768px) {
+    .hero-photo {
+      background-image: var(--hero-lg);
+    }
+  }
+
   /* skip to content (keyboard) */
   .skip-link {
     position: absolute;

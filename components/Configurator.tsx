@@ -227,7 +227,11 @@ export default function Configurator({ t }: Props) {
                   </p>
 
                   {!isSummary && (
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                    <div
+                      role="group"
+                      aria-label={current.title}
+                      style={{ display: 'flex', flexDirection: 'column', gap: 10 }}
+                    >
                       {current.options.map((o) => {
                         const on = answers[current.field as ConfiguratorField] === o.key;
                         return (

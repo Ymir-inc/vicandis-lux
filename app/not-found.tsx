@@ -36,6 +36,22 @@ export default function NotFound() {
           <Link href={`/${defaultLocale}/`} className="btn btn-solid">
             {t.nav.links[0].label} →
           </Link>
+          <div
+            className="mono"
+            style={{
+              display: 'flex',
+              gap: 18,
+              flexWrap: 'wrap',
+              justifyContent: 'center',
+              fontSize: 13,
+            }}
+          >
+            {t.nav.links.slice(1).map((link) => (
+              <Link key={link.href} href={`/${defaultLocale}/${link.href}`} className="flink">
+                {link.label}
+              </Link>
+            ))}
+          </div>
         </main>
       </body>
     </html>

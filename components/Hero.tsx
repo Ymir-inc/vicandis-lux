@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react';
 import type { Messages } from '@/i18n/getMessages';
 import { buildWaveform } from '@/lib/waveform';
 import { BASE_PATH } from '@/i18n/site';
@@ -91,14 +92,13 @@ export default function Hero({ t }: { t: Messages['hero'] }) {
 
           <div className="rise hero-panel" style={{ animationDelay: '.24s', overflow: 'hidden' }}>
             <div
-              style={{
-                position: 'absolute',
-                inset: 0,
-                backgroundImage: `url(${BASE_PATH}/brand/hero-conferinta.jpg)`,
-                backgroundPosition: '52% 76%',
-                backgroundSize: 'cover',
-                filter: 'saturate(.72) contrast(1.04) brightness(.86)',
-              }}
+              className="hero-photo"
+              style={
+                {
+                  '--hero-sm': `url(${BASE_PATH}/brand/hero-conferinta-800.jpg)`,
+                  '--hero-lg': `url(${BASE_PATH}/brand/hero-conferinta.jpg)`,
+                } as CSSProperties
+              }
             />
             <div
               style={{

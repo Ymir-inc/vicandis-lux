@@ -20,11 +20,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     locales.map((l) => [localeTags[l], localeUrl(l)]),
   ) as Record<string, string>;
 
+  // priority/changeFrequency omitted deliberately — Google ignores both.
   return locales.map((locale) => ({
     url: localeUrl(locale),
     lastModified: new Date(),
-    changeFrequency: 'monthly',
-    priority: locale === 'ro' ? 1 : 0.8,
     alternates: {
       languages: { ...languages, 'x-default': `${SITE_BASE}/ro/` },
     },
