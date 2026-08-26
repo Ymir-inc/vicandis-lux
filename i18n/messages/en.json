@@ -55,7 +55,7 @@
   "services": {
     "eyebrow": "Services",
     "title": "What we offer",
-    "countLine": "05 services",
+    "countLine": "06 services",
     "countLineStrong": "a single supplier",
     "linkLabel": "Learn more",
     "items": [
@@ -85,14 +85,21 @@
         "num": "04",
         "title": "Video & projection",
         "desc": "Projectors, screens and LED walls for a clear image in front of a large audience.",
-        "wide": true
+        "wide": false
       },
       {
         "key": "support",
         "num": "05",
         "title": "Technical support & operators",
         "desc": "Our team delivers, installs and monitors everything for the duration of the event.",
-        "wide": true
+        "wide": false
+      },
+      {
+        "key": "tourguide",
+        "num": "06",
+        "title": "Tour guide systems",
+        "desc": "Portable receivers for guided tours, delegations and on-site visits — interpretation and guiding without a booth.",
+        "wide": false
       }
     ]
   },
