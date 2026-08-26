@@ -39,17 +39,6 @@ export default function Catalog({ t }: Props) {
                 </span>
               </div>
               <figcaption style={{ padding: '18px 20px 22px' }}>
-                <span
-                  className="mono"
-                  style={{
-                    fontSize: 11,
-                    letterSpacing: '.1em',
-                    textTransform: 'uppercase',
-                    color: 'var(--muted)',
-                  }}
-                >
-                  {p.producer}
-                </span>
                 <h3
                   style={{
                     fontFamily: 'var(--d)',
@@ -58,7 +47,7 @@ export default function Catalog({ t }: Props) {
                     letterSpacing: '-0.02em',
                     lineHeight: 1.1,
                     color: 'var(--text)',
-                    margin: '6px 0 0',
+                    margin: 0,
                   }}
                 >
                   {p.model}
