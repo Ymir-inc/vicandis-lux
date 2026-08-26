@@ -33,6 +33,12 @@ const SERVICE_PATHS: Record<string, string[]> = {
   ],
   video: ['M2 3h20v14H2z', 'M8 21h8', 'M12 17v4'],
   support: ['M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6'],
+  tourguide: [
+    'M5 12.55a11 11 0 0 1 14.08 0',
+    'M1.42 9a16 16 0 0 1 21.16 0',
+    'M8.53 16.11a6 6 0 0 1 6.95 0',
+    'M12 20h.01',
+  ],
 };
 
 export function ServiceIcon({ name }: { name: string }) {

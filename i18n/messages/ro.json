@@ -53,7 +53,7 @@
   "services": {
     "eyebrow": "Servicii",
     "title": "Ce oferim",
-    "countLine": "05 servicii",
+    "countLine": "06 servicii",
     "countLineStrong": "un singur furnizor",
     "linkLabel": "Află mai mult",
     "items": [
@@ -83,14 +83,21 @@
         "num": "04",
         "title": "Video & proiecție",
         "desc": "Videoproiectoare, ecrane și ecrane LED pentru o imagine clară în fața unei audiențe numeroase.",
-        "wide": true
+        "wide": false
       },
       {
         "key": "support",
         "num": "05",
         "title": "Suport tehnic & operatori",
         "desc": "Echipa noastră livrează, instalează și monitorizează totul pe durata evenimentului.",
-        "wide": true
+        "wide": false
+      },
+      {
+        "key": "tourguide",
+        "num": "06",
+        "title": "Sisteme tour guide",
+        "desc": "Receptoare portabile pentru tururi ghidate, delegații și vizite în teren — traducere și ghidaj fără cabină.",
+        "wide": false
       }
     ]
   },
