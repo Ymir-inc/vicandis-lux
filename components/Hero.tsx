@@ -115,13 +115,10 @@ export default function Hero({ t }: { t: Messages['hero'] }) {
                 zIndex: 1,
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'space-between',
+                justifyContent: 'flex-end',
                 padding: 28,
               }}
             >
-              <div className="mono" style={{ fontSize: 11, letterSpacing: '.12em', color: 'var(--muted)' }}>
-                {t.panel.fig}
-              </div>
               <div className="chip-stat" style={{ alignSelf: 'flex-start' }}>
                 {t.panel.stats.map((stat, i) => (
                   <span key={stat.label} style={{ display: 'contents' }}>
