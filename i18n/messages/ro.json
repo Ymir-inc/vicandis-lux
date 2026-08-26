@@ -10,7 +10,7 @@
     "links": [
       { "label": "Acasă", "href": "#acasa" },
       { "label": "Servicii", "href": "#servicii" },
-      { "label": "Echipamente", "href": "#echipamente" },
+      { "label": "Showcase", "href": "#echipamente" },
       { "label": "Configurator", "href": "#configurator" },
       { "label": "Prețuri", "href": "#preturi" },
       { "label": "Studii de caz", "href": "#studii" },
@@ -137,7 +137,7 @@
 
   "catalog": {
     "eyebrow": "Inventar",
-    "title": "Echipamente",
+    "title": "Showcase",
     "searchPlaceholder": "Caută după model sau producător…",
     "searchLabel": "Caută echipamente",
     "requestListLabel": "Listă cerere",
@@ -291,7 +291,7 @@
   "product": {
     "breadcrumb": [
       { "label": "Acasă", "href": "#acasa" },
-      { "label": "Echipamente", "href": "#echipamente" }
+      { "label": "Showcase", "href": "#echipamente" }
     ],
     "breadcrumbCurrent": "Bosch Integrus",
     "kicker": "Bosch · Traducere simultană",
@@ -751,7 +751,7 @@
           { "label": "Sonorizare profesională", "href": "#servicii" },
           { "label": "Video & proiecție", "href": "#servicii" },
           { "label": "Soluții hibride & streaming", "href": "#servicii" },
-          { "label": "Echipamente", "href": "#echipamente" }
+          { "label": "Showcase", "href": "#echipamente" }
         ]
       },
       {

@@ -12,7 +12,7 @@
     "links": [
       { "label": "Главная", "href": "#acasa" },
       { "label": "Услуги", "href": "#servicii" },
-      { "label": "Оборудование", "href": "#echipamente" },
+      { "label": "Showcase", "href": "#echipamente" },
       { "label": "Конфигуратор", "href": "#configurator" },
       { "label": "Цены", "href": "#preturi" },
       { "label": "Кейсы", "href": "#studii" },
@@ -148,7 +148,7 @@
 
   "catalog": {
     "eyebrow": "Каталог",
-    "title": "Оборудование",
+    "title": "Showcase",
     "searchPlaceholder": "Поиск по модели или производителю…",
     "searchLabel": "Поиск оборудования",
     "requestListLabel": "Список запроса",
@@ -302,7 +302,7 @@
   "product": {
     "breadcrumb": [
       { "label": "Главная", "href": "#acasa" },
-      { "label": "Оборудование", "href": "#echipamente" }
+      { "label": "Showcase", "href": "#echipamente" }
     ],
     "breadcrumbCurrent": "Bosch Integrus",
     "kicker": "Bosch · Синхронный перевод",
@@ -777,7 +777,7 @@
           { "label": "Профессиональное озвучивание", "href": "#servicii" },
           { "label": "Видео и проекция", "href": "#servicii" },
           { "label": "Гибридные решения и стриминг", "href": "#servicii" },
-          { "label": "Оборудование", "href": "#echipamente" }
+          { "label": "Showcase", "href": "#echipamente" }
         ]
       },
       {
