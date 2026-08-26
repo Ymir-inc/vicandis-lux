@@ -12,7 +12,7 @@
     "links": [
       { "label": "Home", "href": "#acasa" },
       { "label": "Services", "href": "#servicii" },
-      { "label": "Showcase", "href": "#echipamente" },
+      { "label": "Equipment", "href": "#echipamente" },
       { "label": "Configurator", "href": "#configurator" },
       { "label": "Pricing", "href": "#preturi" },
       { "label": "Case studies", "href": "#studii" },
@@ -144,7 +144,7 @@
 
   "catalog": {
     "eyebrow": "Inventory",
-    "title": "Showcase",
+    "title": "Equipment",
     "searchPlaceholder": "Search by model or manufacturer…",
     "searchLabel": "Search equipment",
     "requestListLabel": "Quote list",
@@ -298,7 +298,7 @@
   "product": {
     "breadcrumb": [
       { "label": "Home", "href": "#acasa" },
-      { "label": "Showcase", "href": "#echipamente" }
+      { "label": "Equipment", "href": "#echipamente" }
     ],
     "breadcrumbCurrent": "Bosch Integrus",
     "kicker": "Bosch · Simultaneous interpretation",
@@ -746,7 +746,7 @@
           { "label": "Professional sound", "href": "#servicii" },
           { "label": "Video & projection", "href": "#servicii" },
           { "label": "Hybrid solutions & streaming", "href": "#servicii" },
-          { "label": "Showcase", "href": "#echipamente" }
+          { "label": "Equipment", "href": "#echipamente" }
         ]
       },
       {
