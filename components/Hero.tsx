@@ -1,5 +1,7 @@
+import type { CSSProperties } from 'react';
 import type { Messages } from '@/i18n/getMessages';
 import { buildWaveform } from '@/lib/waveform';
+import { BASE_PATH } from '@/i18n/site';
 
 const bars = buildWaveform();
 
@@ -88,12 +90,29 @@ export default function Hero({ t }: { t: Messages['hero'] }) {
             </div>
           </div>
 
-          <div className="rise hero-panel" style={{ animationDelay: '.24s' }}>
-            <div className="stripe" />
+          <div className="rise hero-panel" style={{ animationDelay: '.24s', overflow: 'hidden' }}>
+            <div
+              className="hero-photo"
+              style={
+                {
+                  '--hero-sm': `url(${BASE_PATH}/brand/hero-conferinta-800.jpg)`,
+                  '--hero-lg': `url(${BASE_PATH}/brand/hero-conferinta.jpg)`,
+                } as CSSProperties
+              }
+            />
             <div
               style={{
                 position: 'absolute',
                 inset: 0,
+                background:
+                  'linear-gradient(180deg, rgba(17,17,16,.72), rgba(17,17,16,.30) 42%, rgba(17,17,16,.88)), linear-gradient(90deg, rgba(17,17,16,.78), transparent 46%)',
+              }}
+            />
+            <div
+              style={{
+                position: 'absolute',
+                inset: 0,
+                zIndex: 1,
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
@@ -102,25 +121,6 @@ export default function Hero({ t }: { t: Messages['hero'] }) {
             >
               <div className="mono" style={{ fontSize: 11, letterSpacing: '.12em', color: 'var(--muted)' }}>
                 {t.panel.fig}
-              </div>
-              <div
-                className="mono"
-                style={{
-                  alignSelf: 'center',
-                  textAlign: 'center',
-                  fontSize: 12,
-                  letterSpacing: '.08em',
-                  lineHeight: 1.9,
-                  color: 'var(--muted)',
-                  maxWidth: 300,
-                }}
-              >
-                {t.panel.captionLines.map((line, i) => (
-                  <span key={line}>
-                    {line}
-                    {i < t.panel.captionLines.length - 1 && <br />}
-                  </span>
-                ))}
               </div>
               <div className="chip-stat" style={{ alignSelf: 'flex-start' }}>
                 {t.panel.stats.map((stat, i) => (

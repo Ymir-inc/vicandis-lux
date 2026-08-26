@@ -9,7 +9,7 @@ export default function MobileContactBar({ channels }: { channels: Messages['con
     <div className="botbar">
       {channels.map((c) => (
         <a key={c.key} href={c.href}>
-          <ChannelIcon name={c.key} size={21} stroke="#EDEBE4" />
+          <ChannelIcon name={c.key} size={21} stroke="#F7F5F0" />
           <span className="mono" style={labelStyle}>
             {c.label}
           </span>

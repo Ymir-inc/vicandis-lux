@@ -9,6 +9,8 @@ export default function NotFound() {
   return (
     <html lang={localeTags[defaultLocale]}>
       <body>
+        {/* React hoists this into <head>; a 404 should never be indexed. */}
+        <meta name="robots" content="noindex, follow" />
         <main
           style={{
             minHeight: '100dvh',
@@ -34,6 +36,22 @@ export default function NotFound() {
           <Link href={`/${defaultLocale}/`} className="btn btn-solid">
             {t.nav.links[0].label} →
           </Link>
+          <div
+            className="mono"
+            style={{
+              display: 'flex',
+              gap: 18,
+              flexWrap: 'wrap',
+              justifyContent: 'center',
+              fontSize: 13,
+            }}
+          >
+            {t.nav.links.slice(1).map((link) => (
+              <Link key={link.href} href={`/${defaultLocale}/${link.href}`} className="flink">
+                {link.label}
+              </Link>
+            ))}
+          </div>
         </main>
       </body>
     </html>

@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { isLocale, numberLocales } from '@/i18n/config';
+import { isLocale } from '@/i18n/config';
 import { getMessages } from '@/i18n/getMessages';
 import SiteHeader from '@/components/SiteHeader';
 import Hero from '@/components/Hero';
@@ -7,7 +7,6 @@ import Services from '@/components/Services';
 import Stats from '@/components/Stats';
 import Process from '@/components/Process';
 import Catalog from '@/components/Catalog';
-import ProductDetail from '@/components/ProductDetail';
 import Configurator from '@/components/Configurator';
 import Tenders from '@/components/Tenders';
 import Pricing from '@/components/Pricing';
@@ -25,21 +24,20 @@ export default async function SitePage({ params }: { params: Promise<{ locale: s
   return (
     <>
       <SiteHeader locale={locale} nav={t.nav} channels={t.contactChannels} />
-      <main>
+      <main id="main">
         <Hero t={t.hero} />
         <Services t={t.services} />
         <Stats t={t.stats} />
         <Process t={t.process} />
         <Catalog t={t.catalog} />
-        <ProductDetail t={t.product} />
-        <Configurator t={t.configurator} numberLocale={numberLocales[locale]} />
+        <Configurator t={t.configurator} />
         <Tenders t={t.tenders} />
         <Pricing t={t.pricing} />
         <CaseStudies t={t.cases} />
         <Faq t={t.faq} />
         <Contact t={t.contact} />
       </main>
-      <SiteFooter t={t.footer} />
+      <SiteFooter t={t.footer} locale={locale} />
       <MobileContactBar channels={t.contactChannels} />
     </>
   );

@@ -12,14 +12,14 @@
   --color-surface2: #151513;
   --color-paper: #f4f2ec;
   --color-ink: #111110;
-  --color-text: #edebe4;
-  --color-soft: #c9c6bc;
-  --color-muted: #8c897e;
-  --color-faint: #54524a;
+  --color-text: #f7f5f0;
+  --color-soft: #cfcbc2;
+  --color-muted: #8e8a80;
+  --color-faint: #57544c;
   --color-success: #2fbf71;
   --color-error: #e5484d;
-  --color-brass: #b99364;
-  --color-accent: #c6ff3a;
+  --color-brass: #8a6a34;
+  --color-accent: #d6a94b;
   --color-line: rgba(255, 255, 255, 0.1);
 
   /* Resolved per locale in app/[locale]/layout.tsx — Latin locales get
@@ -38,14 +38,14 @@
   --ink: #111110;
   --pmuted: #5e5b52;
   --pline: rgba(17, 17, 16, 0.14);
-  --text: #edebe4;
-  --soft: #c9c6bc;
-  --muted: #8c897e;
-  --faint: #54524a;
+  --text: #f7f5f0;
+  --soft: #cfcbc2;
+  --muted: #8e8a80;
+  --faint: #57544c;
   --success: #2fbf71;
   --error: #e5484d;
-  --brass: #b99364;
-  --accent: #c6ff3a;
+  --brass: #8a6a34;
+  --accent: #d6a94b;
   --border: rgba(255, 255, 255, 0.1);
   --d: var(--font-display-face, ui-sans-serif), sans-serif;
   --b: var(--font-body-face, ui-sans-serif), sans-serif;
@@ -59,7 +59,7 @@
   body {
     margin: 0;
     background: #0c0c0b;
-    color: #edebe4;
+    color: #f7f5f0;
     font-family: var(--b);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -74,14 +74,14 @@
     font-family: inherit;
   }
   input {
-    accent-color: #c6ff3a;
+    accent-color: #d6a94b;
   }
   ::selection {
-    background: #c6ff3a;
+    background: #d6a94b;
     color: #111110;
   }
   :focus-visible {
-    outline: 2px solid #c6ff3a;
+    outline: 2px solid #d6a94b;
     outline-offset: 2px;
   }
   ::placeholder {
@@ -230,7 +230,7 @@
     padding: 15px 25px;
   }
   .btn-ghost:hover {
-    background: rgba(198, 255, 58, 0.07);
+    background: rgba(214, 169, 75, 0.07);
   }
 
   /* header */
@@ -690,7 +690,7 @@
   }
   .search input:focus {
     border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(198, 255, 58, 0.14);
+    box-shadow: 0 0 0 3px rgba(214, 169, 75, 0.14);
   }
   .search svg {
     position: absolute;
@@ -791,7 +791,7 @@
       border-color 0.16s ease;
   }
   .add:hover {
-    background: rgba(198, 255, 58, 0.08);
+    background: rgba(214, 169, 75, 0.08);
     border-color: var(--accent);
   }
   .kv {
@@ -949,7 +949,7 @@
   }
   .opt.on {
     border-color: var(--accent);
-    background: rgba(198, 255, 58, 0.06);
+    background: rgba(214, 169, 75, 0.06);
   }
   .opt.on .radio {
     border-color: var(--accent);
@@ -998,6 +998,17 @@
     grid-template-columns: 360px 1fr;
     gap: 64px;
     align-items: start;
+  }
+  /*
+    The heading column tracks the questions while they scroll — but only in the
+    two-column layout. Both Chromium and WebKit resolve a sticky grid item's
+    containing block to the whole grid container rather than its own grid area,
+    so once the grid collapses to one column the heading slides down over the
+    question list. Switched off with the second column, below.
+  */
+  .faq-aside {
+    position: sticky;
+    top: 100px;
   }
   .faq-q {
     width: 100%;
@@ -1072,8 +1083,8 @@
       background 0.18s ease;
   }
   .docrow:hover {
-    border-color: rgba(198, 255, 58, 0.5);
-    background: rgba(198, 255, 58, 0.03);
+    border-color: rgba(214, 169, 75, 0.5);
+    background: rgba(214, 169, 75, 0.03);
   }
   /* Flex items default to min-width:auto, so the title column refuses to shrink
      and forces the whole row wider than a narrow viewport. */
@@ -1122,7 +1133,7 @@
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 18px;
-    align-items: start;
+    align-items: stretch;
   }
   .pkg {
     position: relative;
@@ -1142,17 +1153,17 @@
   }
   .pkg.hi {
     border-color: var(--accent);
-    background: linear-gradient(180deg, rgba(198, 255, 58, 0.06), var(--surface) 40%);
+    background: linear-gradient(180deg, rgba(214, 169, 75, 0.06), var(--surface) 40%);
     box-shadow:
       0 0 0 1px var(--accent),
-      0 24px 60px -30px rgba(198, 255, 58, 0.35);
+      0 24px 60px -30px rgba(214, 169, 75, 0.35);
   }
   .pkg.hi:hover {
     border-color: var(--accent);
   }
   .rate-head {
     display: grid;
-    grid-template-columns: 2.2fr 1.4fr 1fr 1fr;
+    grid-template-columns: 2.2fr 1.6fr 1.1fr;
     padding: 16px 26px;
     background: var(--surface2);
     border-bottom: 1px solid var(--border);
@@ -1164,7 +1175,7 @@
   }
   .rate-row {
     display: grid;
-    grid-template-columns: 2.2fr 1.4fr 1fr 1fr;
+    grid-template-columns: 2.2fr 1.6fr 1.1fr;
     align-items: center;
     padding: 20px 26px;
     border-bottom: 1px solid var(--border);
@@ -1176,6 +1187,149 @@
   .rate-lbl,
   .exp-lbl {
     display: none;
+  }
+
+  /* hero photo — small file on phones, full-res on wider screens */
+  .hero-photo {
+    position: absolute;
+    inset: 0;
+    background-image: var(--hero-sm);
+    background-position: 52% 76%;
+    background-size: cover;
+    filter: saturate(0.72) contrast(1.04) brightness(0.86);
+  }
+  @media (min-width: 768px) {
+    .hero-photo {
+      background-image: var(--hero-lg);
+    }
+  }
+
+  /* skip to content (keyboard) */
+  .skip-link {
+    position: absolute;
+    left: 12px;
+    top: -56px;
+    z-index: 200;
+    background: var(--accent);
+    color: #111110;
+    font-family: var(--m);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    padding: 10px 16px;
+    border-radius: 3px;
+    transition: top 0.16s ease;
+  }
+  .skip-link:focus {
+    top: 12px;
+  }
+
+  /* projects carousel */
+  .carousel:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+    border-radius: 4px;
+  }
+  .carousel-stage {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    background: var(--surface2);
+  }
+  .carousel-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .carousel-slide {
+    position: relative;
+    flex: 0 0 100%;
+    height: 100%;
+  }
+  .carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    user-select: none;
+  }
+  .carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text);
+    border: 1px solid var(--border);
+    background: rgba(12, 12, 11, 0.5);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    border-radius: 50%;
+    cursor: pointer;
+    transition:
+      background 0.18s ease,
+      border-color 0.18s ease,
+      color 0.18s ease;
+  }
+  .carousel-nav:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #111110;
+  }
+  .carousel-nav.prev {
+    left: 16px;
+  }
+  .carousel-nav.next {
+    right: 16px;
+  }
+  .carousel-count {
+    position: absolute;
+    right: 16px;
+    bottom: 14px;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--text);
+    background: rgba(12, 12, 11, 0.5);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    padding: 6px 10px;
+    border-radius: 2px;
+    font-variant-numeric: tabular-nums;
+  }
+  .carousel-dots {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 18px;
+  }
+  .carousel-dot {
+    width: 9px;
+    height: 9px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: var(--faint);
+    cursor: pointer;
+    transition:
+      background 0.18s ease,
+      transform 0.18s ease;
+  }
+  .carousel-dot:hover {
+    background: var(--muted);
+  }
+  .carousel-dot.on {
+    background: var(--accent);
+    transform: scale(1.25);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .carousel-track {
+      transition: none;
+    }
   }
 
   /* footer */
@@ -1235,7 +1389,7 @@
     border-left: 1px solid var(--border);
   }
   .botbar a:active {
-    background: rgba(198, 255, 58, 0.14);
+    background: rgba(214, 169, 75, 0.14);
   }
   .botbar a:active svg {
     stroke: var(--accent);
@@ -1303,8 +1457,12 @@
     padding: 16px 26px;
   }
   .faq-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 28px;
+  }
+  /* Stacked above the questions, sticky would overlay them instead of tracking. */
+  .faq-aside {
+    position: static;
   }
   .lic-row {
     grid-template-columns: minmax(0, 1fr);

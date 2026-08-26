@@ -13,7 +13,7 @@ export default function Faq({ t }: { t: Messages['faq'] }) {
   return (
     <section id="faq" className="sec divide">
       <div className="container-vl faq-grid">
-        <div style={{ position: 'sticky', top: 100 }}>
+        <div className="faq-aside">
           <div className="eyebrow">
             <span className="dot" />
             {t.eyebrow}

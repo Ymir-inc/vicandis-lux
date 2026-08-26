@@ -1,9 +1,18 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 import { notFound } from 'next/navigation';
 import { IBM_Plex_Mono, IBM_Plex_Sans, Manrope, Space_Grotesk } from 'next/font/google';
 import { isLocale, locales, localeTags, type Locale } from '@/i18n/config';
 import { getMessages } from '@/i18n/getMessages';
+import {
+  IS_PREVIEW,
+  ORG,
+  SITE_BASE,
+  SITE_ORIGIN,
+  assetUrl,
+  localeUrl,
+} from '@/i18n/site';
+import StructuredData from '@/components/StructuredData';
 import '../globals.css';
 
 /*
@@ -80,6 +89,13 @@ const plexMonoCyrillic = IBM_Plex_Mono({
 /** Locales whose content is written in Cyrillic script. */
 const CYRILLIC_LOCALES: ReadonlySet<Locale> = new Set<Locale>(['ru']);
 
+/** Localised label for the keyboard skip-to-content link. */
+const SKIP_LABEL: Record<Locale, string> = {
+  ro: 'Sari la conținut',
+  ru: 'Перейти к содержимому',
+  en: 'Skip to content',
+};
+
 function fontsFor(locale: Locale) {
   const cyrillic = CYRILLIC_LOCALES.has(locale);
   return [
@@ -91,17 +107,14 @@ function fontsFor(locale: Locale) {
     .join(' ');
 }
 
-const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
-
-/**
- * The throwaway client preview carries placeholder company data (fake IDNO,
- * fake phone number) and must never be indexed under the client's brand.
- */
-const IS_PREVIEW = process.env.NEXT_PUBLIC_PREVIEW === '1';
-
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
+
+export const viewport: Viewport = {
+  themeColor: '#0c0c0b',
+  colorScheme: 'dark',
+};
 
 export async function generateMetadata({
   params,
@@ -112,23 +125,59 @@ export async function generateMetadata({
   if (!isLocale(locale)) return {};
   const t = getMessages(locale);
 
+  const languages = {
+    ...Object.fromEntries(locales.map((l) => [localeTags[l], localeUrl(l)])),
+    'x-default': `${SITE_BASE}/ro/`,
+  };
+
+  const ogImage = {
+    url: assetUrl('/og.png'),
+    width: 1200,
+    height: 630,
+    alt: t.meta.siteName,
+  };
+
   return {
+    // Origin only: canonical/alternate/OG URLs below already carry the sub-path.
+    metadataBase: new URL(SITE_ORIGIN),
     title: t.meta.title,
     description: t.meta.description,
-    ...(IS_PREVIEW && { robots: { index: false, follow: false } }),
-    alternates: {
-      canonical: `${BASE_PATH}/${locale}/`,
-      languages: {
-        ...Object.fromEntries(locales.map((l) => [localeTags[l], `${BASE_PATH}/${l}/`])),
-        'x-default': `${BASE_PATH}/ro/`,
-      },
-    },
+    applicationName: t.meta.siteName,
+    authors: [{ name: ORG.legalName }],
+    creator: ORG.legalName,
+    publisher: ORG.legalName,
+    referrer: 'strict-origin-when-cross-origin',
+    // Explicit tel: links handle calling; stop the OS auto-linking stray numbers.
+    formatDetection: { telephone: false, email: false, address: false },
+    alternates: { canonical: localeUrl(locale), languages },
+    robots: IS_PREVIEW
+      ? { index: false, follow: false, nocache: true }
+      : {
+          index: true,
+          follow: true,
+          googleBot: {
+            index: true,
+            follow: true,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+            'max-video-preview': -1,
+          },
+        },
     openGraph: {
       type: 'website',
+      url: localeUrl(locale),
       siteName: t.meta.siteName,
       title: t.meta.title,
       description: t.meta.description,
       locale: localeTags[locale].replace('-', '_'),
+      alternateLocale: locales.filter((l) => l !== locale).map((l) => localeTags[l].replace('-', '_')),
+      images: [ogImage],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: t.meta.title,
+      description: t.meta.description,
+      images: [ogImage.url],
     },
   };
 }
@@ -142,10 +191,29 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
+  const t = getMessages(locale);
 
   return (
     <html lang={localeTags[locale]} className={fontsFor(locale)}>
-      <body>{children}</body>
+      <head>
+        {/* Warm the LCP hero photo (a CSS background, so it can't self-preload).
+            Responsive: phones fetch the 800px variant, wider screens the 1600px. */}
+        <link
+          rel="preload"
+          as="image"
+          href={assetUrl('/brand/hero-conferinta.jpg')}
+          imageSrcSet={`${assetUrl('/brand/hero-conferinta-800.jpg')} 800w, ${assetUrl('/brand/hero-conferinta.jpg')} 1600w`}
+          imageSizes="100vw"
+          fetchPriority="high"
+        />
+      </head>
+      <body>
+        <a href="#main" className="skip-link">
+          {SKIP_LABEL[locale as Locale]}
+        </a>
+        <StructuredData locale={locale} t={t} />
+        {children}
+      </body>
     </html>
   );
 }

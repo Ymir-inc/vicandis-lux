@@ -1,4 +1,6 @@
 import type { Messages } from '@/i18n/getMessages';
+import type { Locale } from '@/i18n/config';
+import { BASE_PATH } from '@/i18n/site';
 
 const columnTitleStyle: React.CSSProperties = {
   fontSize: 11,
@@ -8,16 +10,25 @@ const columnTitleStyle: React.CSSProperties = {
   marginBottom: 20,
 };
 
-export default function SiteFooter({ t }: { t: Messages['footer'] }) {
+export default function SiteFooter({
+  t,
+  locale,
+}: {
+  t: Messages['footer'];
+  locale: Locale;
+}) {
   return (
     <footer className="foot">
       <div className="foot-spine" />
       <div className="container-vl">
         <div className="foot-grid">
           <div>
-            <a href="#acasa" className="brand" style={{ fontSize: 22, marginBottom: 20 }}>
-              <span className="dot" />
-              VICANDIS<b>LUX</b>
+            <a href="#acasa" className="brand" style={{ marginBottom: 20 }}>
+              <img
+                src={`${BASE_PATH}/brand/vicandislux-logo.webp`}
+                alt="VicandisLux"
+                style={{ height: 76, width: 'auto', display: 'block' }}
+              />
             </a>
             <p className="lede" style={{ fontSize: 14.5, color: 'var(--muted)', maxWidth: 340 }}>
               {t.desc}
@@ -102,11 +113,29 @@ export default function SiteFooter({ t }: { t: Messages['footer'] }) {
             }}
           >
             {t.legalLinks.map((link) => (
-              <a key={link.label} href={link.href} className="flink">
+              <a
+                key={link.label}
+                href={`${BASE_PATH}/${locale}/${link.href}/`}
+                className="flink"
+              >
                 {link.label}
               </a>
             ))}
             <span>{t.copyright}</span>
+            <span
+              className="powered-by"
+              style={{ display: 'inline-flex', alignItems: 'center', gap: 7 }}
+            >
+              Powered by
+              <img
+                src={`${BASE_PATH}/brand/mimir.png`}
+                alt="Mimir"
+                width={16}
+                height={16}
+                style={{ display: 'block', borderRadius: '50%' }}
+              />
+              <span style={{ color: 'var(--soft)' }}>Mimir</span>
+            </span>
           </div>
         </div>
       </div>

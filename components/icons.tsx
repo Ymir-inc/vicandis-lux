@@ -84,7 +84,7 @@ export function ChannelIcon({ name, size = 20, stroke }: { name: string; size?: 
 
 export function CloseIcon({ size = 18 }: { size?: number }) {
   return (
-    <Icon size={size} stroke="#EDEBE4" strokeWidth="1.6" strokeLinejoin={undefined} aria-hidden="true">
+    <Icon size={size} stroke="#F7F5F0" strokeWidth="1.6" strokeLinejoin={undefined} aria-hidden="true">
       <path d="M18 6 6 18M6 6l12 12" />
     </Icon>
   );
@@ -92,7 +92,7 @@ export function CloseIcon({ size = 18 }: { size?: number }) {
 
 export function SearchIcon() {
   return (
-    <Icon size={16} stroke="#8C897E" strokeWidth="1.6" strokeLinejoin={undefined} aria-hidden="true">
+    <Icon size={16} stroke="#8E8A80" strokeWidth="1.6" strokeLinejoin={undefined} aria-hidden="true">
       <circle cx="11" cy="11" r="7" />
       <path d="m21 21-4.3-4.3" />
     </Icon>
@@ -103,7 +103,7 @@ export function FilterIcon() {
   return (
     <Icon
       size={14}
-      stroke="#C6FF3A"
+      stroke="#D6A94B"
       strokeWidth="1.6"
       strokeLinejoin={undefined}
       style={{ marginRight: 7 }}
@@ -116,14 +116,14 @@ export function FilterIcon() {
 
 export function ShieldCheckIcon() {
   return (
-    <Icon size={14} stroke="#C6FF3A" strokeWidth="1.6" aria-hidden="true">
+    <Icon size={14} stroke="#D6A94B" strokeWidth="1.6" aria-hidden="true">
       <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
       <path d="m9 12 2 2 4-4" />
     </Icon>
   );
 }
 
-export function CheckIcon({ size = 14, stroke = '#C6FF3A', strokeWidth = '1.6' }: {
+export function CheckIcon({ size = 14, stroke = '#D6A94B', strokeWidth = '1.6' }: {
   size?: number;
   stroke?: string;
   strokeWidth?: string;
@@ -137,7 +137,7 @@ export function CheckIcon({ size = 14, stroke = '#C6FF3A', strokeWidth = '1.6' }
 
 export function DatasheetIcon() {
   return (
-    <Icon className="di" size={15} stroke="#8C897E" strokeWidth="1.6" aria-hidden="true">
+    <Icon className="di" size={15} stroke="#8E8A80" strokeWidth="1.6" aria-hidden="true">
       <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
     </Icon>
   );
@@ -158,7 +158,7 @@ export function InfoIcon() {
       height="16"
       viewBox="0 0 24 24"
       fill="none"
-      stroke="#8C897E"
+      stroke="#8E8A80"
       strokeWidth="1.6"
       style={{ flex: 'none', marginTop: 1 }}
       aria-hidden="true"
