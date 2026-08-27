@@ -9,6 +9,8 @@ const CONTAIN = new Set(['traducere']);
 const WHITE_TILE = new Set(['traducere', 'proiectie']);
 /** object-position override to fill on the product band (crops surrounding white). */
 const POSITION: Record<string, string> = { proiectie: '50% 40%' };
+/** Fine zoom on top of object-fit (with a white tile, <1 adds breathing room). */
+const SCALE: Record<string, number> = { proiectie: 0.95 };
 
 /**
  * Equipment showcase: a plain gallery of photos with a title. Each product `id`
@@ -62,6 +64,7 @@ export default function Catalog({ t }: Props) {
                     objectPosition: POSITION[p.id] ?? 'center',
                     padding: contain ? 14 : 0,
                     boxSizing: 'border-box',
+                    transform: SCALE[p.id] ? `scale(${SCALE[p.id]})` : undefined,
                   }}
                 />
               </div>
