@@ -213,96 +213,12 @@
       }
     ],
     "products": [
-      {
-        "id": "integrus-int-tx-08",
-        "producer": "Bosch",
-        "model": "Integrus INT-TX 08",
-        "categoryKey": "interpretation",
-        "categoryLabel": "Синхронный перевод",
-        "fig": "ИК-ПЕРЕДАТЧИК",
-        "stock": 8,
-        "lowStock": true,
-        "specs": [
-          { "k": "Каналы", "v": "32" },
-          { "k": "Передача", "v": "IR" },
-          { "k": "Покрытие", "v": "1200 м²" }
-        ]
-      },
-      {
-        "id": "tourguide-2020-d",
-        "producer": "Sennheiser",
-        "model": "Tourguide 2020-D",
-        "categoryKey": "portable",
-        "categoryLabel": "Портативные системы",
-        "fig": "TOURGUIDE",
-        "stock": 120,
-        "lowStock": false,
-        "specs": [
-          { "k": "Каналы", "v": "32" },
-          { "k": "Передача", "v": "RF" },
-          { "k": "Радиус", "v": "100 м" }
-        ]
-      },
-      {
-        "id": "lbb-4540-receptor",
-        "producer": "Bosch",
-        "model": "LBB 4540 Приёмник",
-        "categoryKey": "interpretation",
-        "categoryLabel": "Синхронный перевод",
-        "fig": "ИК-ПРИЁМНИК",
-        "stock": 300,
-        "lowStock": false,
-        "specs": [
-          { "k": "Каналы", "v": "32" },
-          { "k": "Передача", "v": "IR" },
-          { "k": "Автономность", "v": "20 ч" }
-        ]
-      },
-      {
-        "id": "microflex-mxc",
-        "producer": "Shure",
-        "model": "Microflex MXC",
-        "categoryKey": "conference",
-        "categoryLabel": "Конференц-системы",
-        "fig": "КОНФЕРЕНЦ-ПУЛЬТ",
-        "stock": 20,
-        "lowStock": false,
-        "specs": [
-          { "k": "Пультов", "v": "50" },
-          { "k": "Сеть", "v": "Dante" },
-          { "k": "Подключение", "v": "Кабель" }
-        ]
-      },
-      {
-        "id": "cl5-consola",
-        "producer": "Yamaha",
-        "model": "CL5 Консоль",
-        "categoryKey": "sound",
-        "categoryLabel": "Звуковое оборудование",
-        "fig": "ЦИФРОВОЙ МИКШЕР",
-        "stock": 4,
-        "lowStock": true,
-        "specs": [
-          { "k": "Каналы", "v": "72" },
-          { "k": "I/O", "v": "Dante" },
-          { "k": "Фейдеры", "v": "34" }
-        ]
-      },
-      {
-        "id": "sm58-microfon",
-        "producer": "Shure",
-        "model": "SM58 Микрофон",
-        "categoryKey": "microphones",
-        "categoryLabel": "Микрофоны",
-        "fig": "ДИНАМИЧЕСКИЙ МИКРОФОН",
-        "stock": 40,
-        "lowStock": false,
-        "specs": [
-          { "k": "Тип", "v": "Динамический" },
-          { "k": "Разъём", "v": "XLR" },
-          { "k": "Диапазон", "v": "50–15k Гц" }
-        ]
-      }
+      { "id": "traducere", "title": "Системы синхронного перевода" },
+      { "id": "tourguide", "title": "Системы tour guide" },
+      { "id": "proiectie", "title": "Системы проекции" },
+      { "id": "sonorizare", "title": "Системы звукоусиления" },
+      { "id": "audiovizual", "title": "Аудиовизуальные системы" },
+      { "id": "hibride", "title": "Гибридные решения и стриминг" }
     ]
   },
 

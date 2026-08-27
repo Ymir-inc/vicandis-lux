@@ -209,96 +209,12 @@
       }
     ],
     "products": [
-      {
-        "id": "integrus-int-tx-08",
-        "producer": "Bosch",
-        "model": "Integrus INT-TX 08",
-        "categoryKey": "interpretation",
-        "categoryLabel": "Simultaneous interpretation",
-        "fig": "IR TRANSMITTER",
-        "stock": 8,
-        "lowStock": true,
-        "specs": [
-          { "k": "Channels", "v": "32" },
-          { "k": "Transmission", "v": "IR" },
-          { "k": "Coverage", "v": "1200 m²" }
-        ]
-      },
-      {
-        "id": "tourguide-2020-d",
-        "producer": "Sennheiser",
-        "model": "Tourguide 2020-D",
-        "categoryKey": "portable",
-        "categoryLabel": "Portable systems",
-        "fig": "TOURGUIDE",
-        "stock": 120,
-        "lowStock": false,
-        "specs": [
-          { "k": "Channels", "v": "32" },
-          { "k": "Transmission", "v": "RF" },
-          { "k": "Range", "v": "100 m" }
-        ]
-      },
-      {
-        "id": "lbb-4540-receptor",
-        "producer": "Bosch",
-        "model": "LBB 4540 Receiver",
-        "categoryKey": "interpretation",
-        "categoryLabel": "Simultaneous interpretation",
-        "fig": "IR RECEIVER",
-        "stock": 300,
-        "lowStock": false,
-        "specs": [
-          { "k": "Channels", "v": "32" },
-          { "k": "Transmission", "v": "IR" },
-          { "k": "Battery life", "v": "20 h" }
-        ]
-      },
-      {
-        "id": "microflex-mxc",
-        "producer": "Shure",
-        "model": "Microflex MXC",
-        "categoryKey": "conference",
-        "categoryLabel": "Conference systems",
-        "fig": "CONFERENCE UNIT",
-        "stock": 20,
-        "lowStock": false,
-        "specs": [
-          { "k": "Units", "v": "50" },
-          { "k": "Network", "v": "Dante" },
-          { "k": "Connection", "v": "Cable" }
-        ]
-      },
-      {
-        "id": "cl5-consola",
-        "producer": "Yamaha",
-        "model": "CL5 Console",
-        "categoryKey": "sound",
-        "categoryLabel": "Sound systems",
-        "fig": "DIGITAL MIXER",
-        "stock": 4,
-        "lowStock": true,
-        "specs": [
-          { "k": "Channels", "v": "72" },
-          { "k": "I/O", "v": "Dante" },
-          { "k": "Faders", "v": "34" }
-        ]
-      },
-      {
-        "id": "sm58-microfon",
-        "producer": "Shure",
-        "model": "SM58 Microphone",
-        "categoryKey": "microphones",
-        "categoryLabel": "Microphones",
-        "fig": "DYNAMIC MICROPHONE",
-        "stock": 40,
-        "lowStock": false,
-        "specs": [
-          { "k": "Type", "v": "Dynamic" },
-          { "k": "Connector", "v": "XLR" },
-          { "k": "Response", "v": "50–15k Hz" }
-        ]
-      }
+      { "id": "traducere", "title": "Simultaneous interpretation systems" },
+      { "id": "tourguide", "title": "Tour guide systems" },
+      { "id": "proiectie", "title": "Projection systems" },
+      { "id": "sonorizare", "title": "Sound systems" },
+      { "id": "audiovizual", "title": "Audio-visual systems" },
+      { "id": "hibride", "title": "Hybrid & streaming solutions" }
     ]
   },
 
