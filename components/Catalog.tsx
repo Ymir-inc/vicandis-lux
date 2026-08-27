@@ -3,6 +3,9 @@ import { BASE_PATH } from '@/i18n/site';
 
 type Props = { t: Messages['catalog'] };
 
+/** Product shots that get cropped by `cover`; show them whole instead. */
+const CONTAIN = new Set(['traducere', 'proiectie']);
+
 /**
  * Equipment showcase: a plain gallery of photos with a title. Each product `id`
  * is also its photo slug at /equipment/<id>.jpg.
@@ -22,9 +25,19 @@ export default function Catalog({ t }: Props) {
         </div>
 
         <div className="cards3" style={{ marginTop: 44 }}>
-          {t.products.map((p) => (
+          {t.products.map((p) => {
+            const contain = CONTAIN.has(p.id);
+            return (
             <figure className="pcard" key={p.id} style={{ margin: 0 }}>
-              <div className="ph" style={{ height: 220, position: 'relative', overflow: 'hidden' }}>
+              <div
+                className="ph"
+                style={{
+                  height: 220,
+                  position: 'relative',
+                  overflow: 'hidden',
+                  background: contain ? 'var(--surface2)' : undefined,
+                }}
+              >
                 <img
                   src={`${BASE_PATH}/equipment/${p.id}.jpg`}
                   alt={p.title}
@@ -37,7 +50,9 @@ export default function Catalog({ t }: Props) {
                     inset: 0,
                     width: '100%',
                     height: '100%',
-                    objectFit: 'cover',
+                    objectFit: contain ? 'contain' : 'cover',
+                    padding: contain ? 14 : 0,
+                    boxSizing: 'border-box',
                   }}
                 />
               </div>
@@ -57,7 +72,8 @@ export default function Catalog({ t }: Props) {
                 </h3>
               </figcaption>
             </figure>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
