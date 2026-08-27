@@ -5,6 +5,8 @@ type Props = { t: Messages['catalog'] };
 
 /** Product shots that get cropped by `cover`; show them whole instead. */
 const CONTAIN = new Set(['traducere', 'proiectie']);
+/** Product shots on a white studio background — fill the letterbox white to match. */
+const WHITE_TILE = new Set(['traducere']);
 
 /**
  * Equipment showcase: a plain gallery of photos with a title. Each product `id`
@@ -35,7 +37,11 @@ export default function Catalog({ t }: Props) {
                   height: 220,
                   position: 'relative',
                   overflow: 'hidden',
-                  background: contain ? 'var(--surface2)' : undefined,
+                  background: WHITE_TILE.has(p.id)
+                    ? '#ffffff'
+                    : contain
+                      ? 'var(--surface2)'
+                      : undefined,
                 }}
               >
                 <img
