@@ -5,7 +5,7 @@ import type { Messages } from '@/i18n/getMessages';
 import { BASE_PATH } from '@/i18n/site';
 
 /** Photo numbers shown, in order. Variants live at `<stem>-768.jpg`, `-1200.jpg`, `.jpg` (1600w). */
-const NUMBERS = ['01', '02', '04', '05', '06', '07', '08'];
+const NUMBERS = ['01', '02', '04', '05', '06', '07', '08', '09', '10', '11'];
 const COUNT = NUMBERS.length;
 const stems = NUMBERS.map((n) => `${BASE_PATH}/projects/proiect-${n}`);
 
