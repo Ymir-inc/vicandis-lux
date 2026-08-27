@@ -6,7 +6,9 @@ type Props = { t: Messages['catalog'] };
 /** Product shots that get cropped by `cover`; show them whole instead. */
 const CONTAIN = new Set(['traducere', 'proiectie']);
 /** Product shots on a white studio background — fill the letterbox white to match. */
-const WHITE_TILE = new Set(['traducere']);
+const WHITE_TILE = new Set(['traducere', 'proiectie']);
+/** Per-id zoom factor applied on top of object-fit: contain. */
+const ZOOM: Record<string, number> = { proiectie: 1.2 };
 
 /**
  * Equipment showcase: a plain gallery of photos with a title. Each product `id`
@@ -59,6 +61,7 @@ export default function Catalog({ t }: Props) {
                     objectFit: contain ? 'contain' : 'cover',
                     padding: contain ? 14 : 0,
                     boxSizing: 'border-box',
+                    transform: ZOOM[p.id] ? `scale(${ZOOM[p.id]})` : undefined,
                   }}
                 />
               </div>
