@@ -6,11 +6,11 @@ type Props = { t: Messages['catalog'] };
 /** Product shots that get cropped by `cover`; show them whole instead. */
 const CONTAIN = new Set(['traducere', 'tourguide']);
 /** Product shots on a white studio background — fill the letterbox white to match. */
-const WHITE_TILE = new Set(['traducere', 'proiectie', 'tourguide']);
-/** object-position override to fill on the product band (crops surrounding white). */
-const POSITION: Record<string, string> = { proiectie: '50% 40%' };
+const WHITE_TILE = new Set(['traducere', 'tourguide']);
+/** object-position override to fill on a specific band (crops surrounding area). */
+const POSITION: Record<string, string> = {};
 /** Fine zoom on top of object-fit (with a white tile, <1 adds breathing room). */
-const SCALE: Record<string, number> = { proiectie: 0.95, traducere: 1.2, tourguide: 1.2 };
+const SCALE: Record<string, number> = { traducere: 1.2, tourguide: 1.2 };
 
 /**
  * Equipment showcase: a plain gallery of photos with a title. Each product `id`
