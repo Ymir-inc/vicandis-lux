@@ -4,12 +4,10 @@ import { useCallback, useRef, useState } from 'react';
 import type { Messages } from '@/i18n/getMessages';
 import { BASE_PATH } from '@/i18n/site';
 
-const COUNT = 8;
-/** Path stem per photo; variants live at `<stem>-768.jpg`, `-1200.jpg`, `.jpg` (1600w). */
-const stems = Array.from(
-  { length: COUNT },
-  (_, i) => `${BASE_PATH}/projects/proiect-${String(i + 1).padStart(2, '0')}`,
-);
+/** Photo numbers shown, in order. Variants live at `<stem>-768.jpg`, `-1200.jpg`, `.jpg` (1600w). */
+const NUMBERS = ['01', '02', '04', '05', '06', '07', '08'];
+const COUNT = NUMBERS.length;
+const stems = NUMBERS.map((n) => `${BASE_PATH}/projects/proiect-${n}`);
 
 export default function CaseStudies({ t }: { t: Messages['cases'] }) {
   const [active, setActive] = useState(0);
