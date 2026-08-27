@@ -4,13 +4,13 @@ import { BASE_PATH } from '@/i18n/site';
 type Props = { t: Messages['catalog'] };
 
 /** Product shots that get cropped by `cover`; show them whole instead. */
-const CONTAIN = new Set(['traducere']);
+const CONTAIN = new Set(['traducere', 'tourguide']);
 /** Product shots on a white studio background — fill the letterbox white to match. */
-const WHITE_TILE = new Set(['traducere', 'proiectie']);
+const WHITE_TILE = new Set(['traducere', 'proiectie', 'tourguide']);
 /** object-position override to fill on the product band (crops surrounding white). */
 const POSITION: Record<string, string> = { proiectie: '50% 40%' };
 /** Fine zoom on top of object-fit (with a white tile, <1 adds breathing room). */
-const SCALE: Record<string, number> = { proiectie: 0.95, traducere: 1.2 };
+const SCALE: Record<string, number> = { proiectie: 0.95, traducere: 1.2, tourguide: 1.2 };
 
 /**
  * Equipment showcase: a plain gallery of photos with a title. Each product `id`
