@@ -9,6 +9,8 @@ export default function Stats({ t }: { t: Messages['stats'] }) {
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
+            gap: '8px 16px',
+            flexWrap: 'wrap',
             padding: '26px 0',
             borderBottom: '1px solid var(--border)',
           }}
