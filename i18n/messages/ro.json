@@ -202,96 +202,12 @@
       }
     ],
     "products": [
-      {
-        "id": "integrus-int-tx-08",
-        "producer": "Bosch",
-        "model": "Integrus INT-TX 08",
-        "categoryKey": "interpretation",
-        "categoryLabel": "Traducere simultană",
-        "fig": "EMIȚĂTOR IR",
-        "stock": 8,
-        "lowStock": true,
-        "specs": [
-          { "k": "Canale", "v": "32" },
-          { "k": "Transmisie", "v": "IR" },
-          { "k": "Acoperire", "v": "1200 m²" }
-        ]
-      },
-      {
-        "id": "tourguide-2020-d",
-        "producer": "Sennheiser",
-        "model": "Tourguide 2020-D",
-        "categoryKey": "portable",
-        "categoryLabel": "Sisteme portabile",
-        "fig": "TOURGUIDE",
-        "stock": 120,
-        "lowStock": false,
-        "specs": [
-          { "k": "Canale", "v": "32" },
-          { "k": "Transmisie", "v": "RF" },
-          { "k": "Rază", "v": "100 m" }
-        ]
-      },
-      {
-        "id": "lbb-4540-receptor",
-        "producer": "Bosch",
-        "model": "LBB 4540 Receptor",
-        "categoryKey": "interpretation",
-        "categoryLabel": "Traducere simultană",
-        "fig": "RECEPTOR IR",
-        "stock": 300,
-        "lowStock": false,
-        "specs": [
-          { "k": "Canale", "v": "32" },
-          { "k": "Transmisie", "v": "IR" },
-          { "k": "Autonomie", "v": "20 h" }
-        ]
-      },
-      {
-        "id": "microflex-mxc",
-        "producer": "Shure",
-        "model": "Microflex MXC",
-        "categoryKey": "conference",
-        "categoryLabel": "Sisteme de conferință",
-        "fig": "POST CONFERINȚĂ",
-        "stock": 20,
-        "lowStock": false,
-        "specs": [
-          { "k": "Posturi", "v": "50" },
-          { "k": "Rețea", "v": "Dante" },
-          { "k": "Conexiune", "v": "Cablu" }
-        ]
-      },
-      {
-        "id": "cl5-consola",
-        "producer": "Yamaha",
-        "model": "CL5 Consolă",
-        "categoryKey": "sound",
-        "categoryLabel": "Sonorizare",
-        "fig": "MIXER DIGITAL",
-        "stock": 4,
-        "lowStock": true,
-        "specs": [
-          { "k": "Canale", "v": "72" },
-          { "k": "I/O", "v": "Dante" },
-          { "k": "Faders", "v": "34" }
-        ]
-      },
-      {
-        "id": "sm58-microfon",
-        "producer": "Shure",
-        "model": "SM58 Microfon",
-        "categoryKey": "microphones",
-        "categoryLabel": "Microfoane",
-        "fig": "MICROFON DINAMIC",
-        "stock": 40,
-        "lowStock": false,
-        "specs": [
-          { "k": "Tip", "v": "Dinamic" },
-          { "k": "Conector", "v": "XLR" },
-          { "k": "Bandă", "v": "50–15k Hz" }
-        ]
-      }
+      { "id": "traducere", "title": "Sisteme traducere simultană" },
+      { "id": "tourguide", "title": "Sisteme tour guide" },
+      { "id": "proiectie", "title": "Sisteme proiecție" },
+      { "id": "sonorizare", "title": "Sisteme sonorizare" },
+      { "id": "audiovizual", "title": "Sisteme Audio Vizual" },
+      { "id": "hibride", "title": "Sisteme Soluții Hibride și Streaming" }
     ]
   },
 

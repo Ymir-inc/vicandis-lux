@@ -1,10 +1,11 @@
 import type { Messages } from '@/i18n/getMessages';
+import { BASE_PATH } from '@/i18n/site';
 
 type Props = { t: Messages['catalog'] };
 
 /**
- * Equipment showcase: a plain gallery of photos with a title. No selection,
- * request list, specs or actions — just the items on display.
+ * Equipment showcase: a plain gallery of photos with a title. Each product `id`
+ * is also its photo slug at /equipment/<id>.jpg.
  */
 export default function Catalog({ t }: Props) {
   return (
@@ -23,20 +24,22 @@ export default function Catalog({ t }: Props) {
         <div className="cards3" style={{ marginTop: 44 }}>
           {t.products.map((p) => (
             <figure className="pcard" key={p.id} style={{ margin: 0 }}>
-              <div className="ph" style={{ height: 220 }}>
-                <span
-                  className="mono"
+              <div className="ph" style={{ height: 220, position: 'relative', overflow: 'hidden' }}>
+                <img
+                  src={`${BASE_PATH}/equipment/${p.id}.jpg`}
+                  alt={p.title}
+                  width={1200}
+                  height={800}
+                  loading="lazy"
+                  decoding="async"
                   style={{
                     position: 'absolute',
-                    left: 13,
-                    top: 12,
-                    fontSize: 10,
-                    letterSpacing: '.1em',
-                    color: 'var(--muted)',
+                    inset: 0,
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
                   }}
-                >
-                  {p.fig}
-                </span>
+                />
               </div>
               <figcaption style={{ padding: '18px 20px 22px' }}>
                 <h3
@@ -45,12 +48,12 @@ export default function Catalog({ t }: Props) {
                     fontWeight: 600,
                     fontSize: 20,
                     letterSpacing: '-0.02em',
-                    lineHeight: 1.1,
+                    lineHeight: 1.15,
                     color: 'var(--text)',
                     margin: 0,
                   }}
                 >
-                  {p.model}
+                  {p.title}
                 </h3>
               </figcaption>
             </figure>
