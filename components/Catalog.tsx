@@ -4,11 +4,11 @@ import { BASE_PATH } from '@/i18n/site';
 type Props = { t: Messages['catalog'] };
 
 /** Product shots that get cropped by `cover`; show them whole instead. */
-const CONTAIN = new Set(['traducere', 'proiectie']);
+const CONTAIN = new Set(['traducere']);
 /** Product shots on a white studio background — fill the letterbox white to match. */
 const WHITE_TILE = new Set(['traducere', 'proiectie']);
-/** Per-id zoom factor applied on top of object-fit: contain. */
-const ZOOM: Record<string, number> = { proiectie: 1.8 };
+/** object-position override to fill on the product band (crops surrounding white). */
+const POSITION: Record<string, string> = { proiectie: '50% 40%' };
 
 /**
  * Equipment showcase: a plain gallery of photos with a title. Each product `id`
@@ -59,9 +59,9 @@ export default function Catalog({ t }: Props) {
                     width: '100%',
                     height: '100%',
                     objectFit: contain ? 'contain' : 'cover',
+                    objectPosition: POSITION[p.id] ?? 'center',
                     padding: contain ? 14 : 0,
                     boxSizing: 'border-box',
-                    transform: ZOOM[p.id] ? `scale(${ZOOM[p.id]})` : undefined,
                   }}
                 />
               </div>
