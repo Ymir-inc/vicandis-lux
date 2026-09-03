@@ -1,7 +1,6 @@
 'use client';
 
 import { useCallback, useEffect, useState } from 'react';
-import Link from 'next/link';
 import { localeLabels, locales, type Locale } from '@/i18n/config';
 import type { Messages } from '@/i18n/getMessages';
 import { BASE_PATH } from '@/i18n/site';
@@ -28,14 +27,17 @@ function LangSwitcher({
       {locales.map((l, i) => (
         <span key={l} style={{ display: 'contents' }}>
           {i > 0 && <span style={{ color: 'var(--border)' }}>/</span>}
-          <Link
-            href={`/${l}/`}
+          {/* Full navigation (not next/link): a client-side locale switch would keep
+              the previous locale's <html> font-class + lang, so Cyrillic (ru) would
+              fall back to a system font. A real navigation re-renders the correct shell. */}
+          <a
+            href={`${BASE_PATH}/${l}/`}
             className={l === locale ? 'on' : undefined}
             hrefLang={l}
             aria-current={l === locale ? 'true' : undefined}
           >
             {localeLabels[l]}
-          </Link>
+          </a>
         </span>
       ))}
     </div>
