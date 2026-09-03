@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, type CSSProperties } from 'react';
 import type { Messages } from '@/i18n/getMessages';
 import {
   emptyAnswers,
@@ -25,6 +25,9 @@ export default function Configurator({ t }: Props) {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<ConfiguratorAnswers>(emptyAnswers);
   const [sent, setSent] = useState(false);
+  const [contact, setContact] = useState({ name: '', email: '', phone: '', website: '' });
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState(false);
 
   const isSummary = step === SUMMARY_STEP;
   const current = t.steps[Math.min(step, t.steps.length - 1)];
@@ -41,30 +44,62 @@ export default function Configurator({ t }: Props) {
   });
 
   /**
-   * Deliver the request. Prefers a real form endpoint if one is configured
-   * (`NEXT_PUBLIC_FORM_ENDPOINT`), otherwise opens a pre-filled email to the
-   * office — the visitor's own mail client supplies their reply address, so the
-   * lead is never silently lost on this static site.
+   * Deliver the request. POSTs to the same-origin `/api/quote` endpoint (which
+   * emails the office via Resend). If that ever fails, falls back to a pre-filled
+   * email so the lead is never lost.
    */
-  const submit = () => {
-    const summary = recap.map((r) => `${r.k}: ${r.v}`).join('\n');
-    const endpoint = process.env.NEXT_PUBLIC_FORM_ENDPOINT;
-    const mailto = `mailto:${ORG.email}?subject=${encodeURIComponent(
-      t.mailSubject,
-    )}&body=${encodeURIComponent(`${t.mailIntro}\n\n${summary}`)}`;
+  const submit = async () => {
+    if (contact.website) {
+      // honeypot — silently accept and drop
+      setSent(true);
+      return;
+    }
+    if (!contact.name.trim() || !contact.email.trim()) {
+      setError(true);
+      return;
+    }
+    setError(false);
+    setSending(true);
 
-    if (endpoint) {
-      fetch(endpoint, {
+    const summary = recap.map((r) => `${r.k}: ${r.v}`).join('\n');
+    const payload = {
+      kind: 'configurator',
+      name: contact.name.trim(),
+      email: contact.email.trim(),
+      phone: contact.phone.trim(),
+      config: recap,
+      summary,
+    };
+
+    try {
+      const res = await fetch('/api/quote', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ kind: 'configurator', config: recap, summary }),
-      }).catch(() => {
-        window.location.href = mailto;
+        body: JSON.stringify(payload),
       });
-    } else {
-      window.location.href = mailto;
+      if (!res.ok) throw new Error('bad status');
+      setSent(true);
+    } catch {
+      const body = `${t.mailIntro}\n\n${summary}\n\n${contact.name} · ${contact.email} · ${contact.phone}`;
+      window.location.href = `mailto:${ORG.email}?subject=${encodeURIComponent(
+        t.mailSubject,
+      )}&body=${encodeURIComponent(body)}`;
+      setSent(true);
+    } finally {
+      setSending(false);
     }
-    setSent(true);
+  };
+
+  const field: CSSProperties = {
+    background: 'var(--surface)',
+    border: `1px solid ${BORDER}`,
+    borderRadius: 3,
+    padding: '12px 14px',
+    color: TEXT,
+    fontFamily: 'var(--b)',
+    fontSize: 14,
+    width: '100%',
+    boxSizing: 'border-box',
   };
 
   return (
@@ -328,6 +363,62 @@ export default function Configurator({ t }: Props) {
                       </div>
                     </div>
                   )}
+
+                  {isSummary && (
+                    <div style={{ marginTop: 16, display: 'flex', flexDirection: 'column', gap: 10 }}>
+                      <div
+                        className="mono"
+                        style={{
+                          fontSize: 11,
+                          letterSpacing: '.12em',
+                          textTransform: 'uppercase',
+                          color: 'var(--muted)',
+                        }}
+                      >
+                        {t.contactTitle}
+                      </div>
+                      <input
+                        style={field}
+                        value={contact.name}
+                        onChange={(e) => setContact((c) => ({ ...c, name: e.target.value }))}
+                        placeholder={t.nameLabel}
+                        aria-label={t.nameLabel}
+                        autoComplete="name"
+                      />
+                      <input
+                        style={field}
+                        type="email"
+                        value={contact.email}
+                        onChange={(e) => setContact((c) => ({ ...c, email: e.target.value }))}
+                        placeholder={t.emailLabel}
+                        aria-label={t.emailLabel}
+                        autoComplete="email"
+                      />
+                      <input
+                        style={field}
+                        type="tel"
+                        value={contact.phone}
+                        onChange={(e) => setContact((c) => ({ ...c, phone: e.target.value }))}
+                        placeholder={t.phoneLabel}
+                        aria-label={t.phoneLabel}
+                        autoComplete="tel"
+                      />
+                      {/* honeypot: hidden from users, catches bots */}
+                      <input
+                        value={contact.website}
+                        onChange={(e) => setContact((c) => ({ ...c, website: e.target.value }))}
+                        tabIndex={-1}
+                        autoComplete="off"
+                        aria-hidden="true"
+                        style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, opacity: 0 }}
+                      />
+                      {error && (
+                        <div className="mono" style={{ fontSize: 12, color: 'var(--error)' }}>
+                          {t.contactRequired}
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </>
               )}
             </div>
@@ -344,7 +435,8 @@ export default function Configurator({ t }: Props) {
                 <div style={{ flex: 1 }} />
                 <button
                   className="btn btn-solid"
-                  style={{ minWidth: 180 }}
+                  style={{ minWidth: 180, opacity: sending ? 0.6 : 1 }}
+                  disabled={sending}
                   onClick={() =>
                     isSummary ? submit() : setStep((s) => Math.min(SUMMARY_STEP, s + 1))
                   }
