@@ -140,7 +140,7 @@ const server = http.createServer((req, res) => {
         headers: { Authorization: `Bearer ${RESEND_API_KEY}`, 'Content-Type': 'application/json' },
         body: JSON.stringify({
           from: QUOTE_FROM,
-          to: [QUOTE_TO],
+          to: QUOTE_TO.split(',').map((s) => s.trim()).filter(Boolean),
           reply_to: email,
           subject: `Cerere ofertă — ${name}`,
           html,
