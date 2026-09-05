@@ -1,18 +1,17 @@
 # VicandisLux
 
-Marketing site for VicandisLux (Chișinău) — rental of simultaneous-interpretation and
-professional sound equipment.
+Marketing site for **VicandisLux** (Chișinău) — rental of simultaneous-interpretation and
+professional sound/AV equipment. Trilingual (RO source · RU · EN).
 
-Implemented from the Claude Design handoff bundle in
-[`vicandislux-design-system/`](vicandislux-design-system/), specifically
-`project/VicandisLux Site.dc.html`. That bundle is reference material, not build input —
-it is excluded from TypeScript, ESLint and the bundler.
+Live: **https://vicandislux.md**
 
 ## Stack
 
-Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS 4 · static export.
+Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS 4 · **static export** (`output: 'export'`).
 
-There is no server runtime and no API routes. `npm run build` emits a deployable `out/`.
+The site itself is fully static (`npm run build` → `out/`). The one dynamic piece is a tiny,
+self-hosted **quote endpoint** (`server/quote.mjs`) that runs on the production server behind
+nginx and emails each configurator submission via Resend — it is not part of the Next build.
 
 ## Commands
 
@@ -22,142 +21,131 @@ There is no server runtime and no API routes. `npm run build` emits a deployable
 | `npm run build`     | Production build → static export in `out/`     |
 | `npm run typecheck` | `tsc --noEmit`                                 |
 | `npm run lint`      | ESLint (flat config, `eslint-config-next`)     |
+| `./deploy-preview.sh` | Build + publish the throwaway GitHub Pages preview (noindex) |
+
+## Deployment
+
+**DNS** is on **Hetzner DNS** (nameservers `hydrogen`/`oxygen.ns.hetzner.com`, `helium.ns.hetzner.de`).
+`vicandislux.md` + `www` → the production server.
+
+**Production host:** an Ubuntu server (`2.28.45.53`) running **nginx**, serving the static export from
+`/var/www/vicandislux/html`, with **Let's Encrypt** TLS (certbot `--nginx`, auto-renewing via
+`certbot.timer`), HTTP→HTTPS redirect, HSTS, and a CSP + security-header set. nginx also proxies
+`/api/` to the quote service.
+
+**Deploy the site** (static files):
+
+```bash
+NEXT_PUBLIC_SITE_URL=https://vicandislux.md npm run build
+rsync -az --delete out/ root@2.28.45.53:/var/www/vicandislux/html/
+```
+
+**Quote endpoint** (`server/quote.mjs`): deployed to `/opt/vlx-quote/quote.mjs`, run by the
+`vlx-quote` systemd service on `127.0.0.1:8081`, configured via `/etc/vlx-quote.env`:
+
+```
+RESEND_API_KEY=re_...
+QUOTE_TO=inbox@example.com          # comma-separated for multiple recipients
+QUOTE_FROM="VicandisLux <quote@vicandislux.md>"
+PORT=8081
+```
+
+Update it with `rsync server/quote.mjs …:/opt/vlx-quote/ && systemctl restart vlx-quote`.
+The sending domain `vicandislux.md` is verified in Resend (EU region).
+
+### Environment variables (build)
+
+| Var | Effect |
+| --- | ------ |
+| `NEXT_PUBLIC_SITE_URL` | Absolute origin baked into canonical/OG/sitemap/JSON-LD. Prod: `https://vicandislux.md`. |
+| `NEXT_PUBLIC_BASE_PATH` | Sub-path for the GitHub Pages preview only. |
+| `NEXT_PUBLIC_PREVIEW` | `1` on the preview → `noindex` + `robots: Disallow: /`, no sitemap. |
+| `NEXT_PUBLIC_ORG_VERIFIED` | `1` to publish real NAP (address/phone) in JSON-LD. Currently **off**. |
 
 ## Layout
 
 ```
 app/
   layout.tsx            pass-through; <html>/<body> live in [locale] so lang follows the route
-  not-found.tsx         404, renders its own document shell
-  globals.css           design tokens + the design's component classes, ported verbatim
+  not-found.tsx         designed 404 (returns 404), own document shell
+  globals.css           design tokens (brass palette) + the design's component classes
+  robots.ts sitemap.ts manifest.ts   build-time metadata routes (env-aware)
+  llms.txt/route.ts     llms.txt
   [locale]/
-    layout.tsx          <html lang>, next/font, metadata + hreflang alternates
-    page.tsx            composes the fourteen sections
-components/             one component per section; `'use client'` only where there is state
+    layout.tsx          <html lang>, next/font, metadata + hreflang, LCP hero preload
+    page.tsx            composes the page sections
+    privacy|terms|cookies/page.tsx   legal pages (shared LegalPage component)
+components/             one component per section; 'use client' only where there is state
 i18n/
   config.ts             locales, hreflang tags, number-format locales
   getMessages.ts        loads a catalogue and fills gaps from Romanian
+  legal.ts              legal-page copy (ro/ru/en) — DRAFT, pending review
+  site.ts               absolute-URL helpers + ORG identity + env flags
   messages/{ro,ru,en}.json
 lib/
-  estimate.ts           configurator price weights + range calculation
   waveform.ts           deterministic hero waveform generator
-public/index.html       `/` → `/ro/` (static export has no redirect support)
+  estimate.ts           configurator answer types (the price-range calc is no longer surfaced)
+server/
+  quote.mjs             the /api/quote email service (runs on the host, not in the build)
+public/
+  index.html            `/` → `/ro/` redirect (static export has no root route)
+  brand/ equipment/ projects/   real photography (WebP logos, JPEG event photos)
+  _headers .well-known/security.txt   headers file (nginx is authoritative) + security.txt
 ```
-
-### Styling
-
-Design tokens live in `@theme` (so Tailwind utilities such as `text-accent` and
-`border-line` resolve to them) and are mirrored as the short `--d` / `--b` / `--m`
-aliases the ported CSS uses. The design's authored classes (`.btn`, `.card`, `.cfg`, …)
-were carried over as written, because they are what makes the layout pixel-accurate;
-Tailwind utilities are available for anything new.
-
-`.container` was renamed `.container-vl` to avoid colliding with Tailwind's own class.
 
 ### Fonts
 
 Self-hosted via `next/font/google`, selected per script in `app/[locale]/layout.tsx`:
 
-| Role    | Latin (ro, en)                | Cyrillic (ru)                 |
-| ------- | ----------------------------- | ----------------------------- |
-| Display | Space Grotesk                 | Manrope                       |
-| Body    | IBM Plex Sans (latin)         | IBM Plex Sans (+ cyrillic)    |
-| Mono    | IBM Plex Mono (latin)         | IBM Plex Mono (+ cyrillic)    |
+| Role    | Latin (ro, en)        | Cyrillic (ru)              |
+| ------- | --------------------- | -------------------------- |
+| Display | Space Grotesk         | Manrope                    |
+| Body    | IBM Plex Sans (latin) | IBM Plex Sans (+ cyrillic) |
+| Mono    | IBM Plex Mono (latin) | IBM Plex Mono (+ cyrillic) |
 
-**Space Grotesk has no Cyrillic glyphs at all**, so Russian headings would fall back to
-Helvetica and lose the design's voice. Manrope is the closest geometric grotesque on
-Google Fonts that ships Cyrillic. This is the one place where a Russian visitor sees
-different typography from a Romanian one — swap it if the brand has a licensed Cyrillic
-display face.
+**Space Grotesk has no Cyrillic glyphs**, so Russian headings use Manrope (closest geometric
+grotesque on Google Fonts with Cyrillic). Both variants write the same CSS variables and only one
+class lands on `<html>`. `preload: false` throughout, so each locale downloads only the subset it
+renders.
 
-Both script variants write to the same CSS variables (`--font-display-face`, etc.) and
-only one class lands on `<html>`, so a Latin page never applies a Cyrillic face.
-`preload: false` is set throughout: Next preloads every face in a route's module graph,
-which meant 254 KB of hints per page with both scripts in one layout. Letting the browser
-resolve `unicode-range` instead, each locale downloads only what it renders — 152 KB (ro),
-168 KB (ru), 143 KB (en).
+> The language switcher does a **full navigation** (plain `<a>`, not `next/link`) on purpose: a
+> client-side locale switch would keep the previous locale's `<html>` font-class/`lang`, leaving
+> Russian rendered in a Latin fallback.
 
 ### Internationalisation
 
-Romanian is the source language and the contract every other catalogue is measured
-against. Russian and English are fully translated. `getMessages()` deep-merges a locale
-over `ro.json`, so any key a future translator has not supplied renders in Romanian
-instead of breaking; arrays are taken whole or not at all, so a partially translated list
-can never mix two languages.
+Romanian is the source language; `getMessages()` deep-merges a locale over `ro.json`, so a missing
+key renders in Romanian rather than breaking (arrays are taken whole, never spliced).
 
-Number formatting follows the active locale, independently of the copy — the same
-configurator answers render `€ 5.550` (ro), `€ 5,550` (en) and `€ 5 550` (ru).
+**Do not translate** values under `key`, `field`, `categoryKey`, `id`, `href`, `variant`, `type`, or
+the boolean flags — they drive logic. Left untranslated by intent: brand/manufacturer/model names,
+standards (ISO 4043), and legal identifiers (legal entity, IDNO).
 
-**Do not translate** values under the keys `key`, `field`, `categoryKey`, `id`, `href`,
-`variant`, `type`, or the boolean flags (`wide`, `highlighted`, `highlight`, `mono`,
-`accent`, `lowStock`). They drive icon lookup, category filtering and price weights.
-The option keys in `configurator.steps[].options[].key` must match `lib/estimate.ts`.
+## The equipment showcase & configurator
 
-Left untranslated by intent: the brand name, manufacturer and model names, standards
-(ISO 4043, IEC 61603), the registered legal entity, bank name, IBAN/IDNO and street
-addresses — these are legal or postal identifiers. Institution names use their official
-English/Russian forms (e.g. *Cancelaria de Stat a RM* → *State Chancellery of the
-Republic of Moldova* / *Государственная канцелярия РМ*).
+- **Echipamente** is a photo showcase (6 system categories, real photos in `public/equipment/`) —
+  no search/filters/cart; the old catalog behaviour was removed.
+- **Proiecte recente** is a photo carousel (`public/projects/`, keyboard + swipe + srcset).
+- **Configurator** collects the configuration + contact details and POSTs to `/api/quote`; the
+  server emails the office via Resend (branded HTML + text). A `mailto:` fallback is kept.
 
-## Deviations from the prototype
+## Status / open items
 
-Everything below is a deliberate change, each reversible in one edit.
+Resolved this cycle: real photography, real company data (IDNO `1003600168698`, phone
+`+373 69 337 792`, address str. Milescu Spătaru 7/1), MDL pricing, working quote email, production
+deploy with HTTPS. See `tasks/OWNER-TODO.md` for the live decision log.
 
-**Bugs in the prototype, fixed**
+Still open:
 
-- **Horizontal scroll below ~430px.** The header row (brand + CTA + burger) was wider
-  than the viewport, pushing the menu button off-screen. The header CTA is now hidden
-  ≤560px; it remains in the drawer and the sticky bottom bar.
-- **More horizontal scroll at ≤360px.** `1fr` grid tracks in `.lic-row`, `.cat-body` and
-  `.foot-grid` inherit `min-width: auto` and were blown out by their content; they are
-  now `minmax(0, 1fr)`, with `min-width: 0` on the document-row flex children.
-- **Anchor links landed under the sticky header** — the design had `scroll-behavior:
-  smooth` and a sticky header but no `scroll-margin-top`. Added.
-- **Mobile reference-table labels never appeared.** The design styled `.exp-lbl` in a
-  media query but set `display:none` inline, which always won. The labels now show, and
-  the column header hides when stacked — matching what the sibling rate table does.
-- **Invalid HTML** — the bottom contact bar nested `<button>` inside `<a>`. It is now
-  plain links, with the CSS retargeted.
-- **Second `<h1>`** on the product-detail section, which is mid-page. It is an `<h2>`
-  carrying the `.h1` class, so it looks identical.
-- **Gallery thumbnail labels** were derived with `label.split(' ')[0]`, which produced
-  `RECEPTOR / RECEPTOR / AFIȘAJ / CU` — two duplicates and a stray preposition, and worse
-  once translated. `product.gallery` entries now carry an explicit `short`.
+- **`director@vicandislux.md` cannot receive mail yet** — the domain has no inbound MX/mailbox
+  (email hosting is a pending decision). Resend only *sends*.
+- **Legal pages are DRAFT** (`i18n/legal.ts`, stamped "DOCUMENT ÎN LUCRU") — need review before
+  relying on them.
+- **Social links are `#` placeholders**; JSON-LD `sameAs` is empty.
+- **`ORG_VERIFIED` is off**, so structured data omits address/phone; not upgraded to `LocalBusiness`.
+- **No analytics / search-console** installed (deliberate — zero third-party origins, so no cookie
+  banner is required).
+- Audit polish outstanding: enable HTTP/2, `www`→apex 301, tighten `<title>`/meta-description
+  lengths. See the compliance audit / `tasks/`.
 
-**Additions**
-
-- Drawer closes on `Escape` and locks background scroll while open.
-- `aria-expanded` / `aria-controls` / `aria-pressed` on the accordion, chips, gallery
-  thumbs and toggle buttons; the equipment count is an `aria-live` region.
-- `prefers-reduced-motion` disables the hero entry animation and the looping waveform.
-
-**Typography**
-
-- `„VicandisLux"` → `„VicandisLux”` (and two similar strings). The design paired an
-  opening `„` with a straight `"`; Romanian convention is `„ … ”`. Each locale uses its
-  own convention: `„…”` (ro), `«…»` (ru), `“…”` (en).
-
-## Known gaps
-
-These are places where the prototype is deliberately a mock and needs real data before
-launch. None are implementation shortcuts.
-
-- **No photography.** Every image is the design's striped CSS placeholder labelled
-  `FOTO EVENIMENT`. Replacing them is a separate pass.
-- **Catalog search and sidebar filters are presentational**, exactly as designed — the
-  design binds no behaviour to them, their counts (`Bosch (14)`) describe a catalogue
-  larger than the six sample products, and transmission/capacity have no backing fields.
-  Only the category chips filter. Wiring the rest needs a real product source.
-- **The configurator does not submit anywhere.** It shows the design's success state and
-  a hard-coded reference (`VL-Q/2026-0417`). It needs a form endpoint.
-- **Placeholder company data.** IDNO, IBAN and VAT code read `[de completat]` /
-  `[to be completed]` / `[заполнить]`; the document links, social links and case-study
-  links point at `#`.
-- **The Russian and English copy is my translation, not a certified one.** The marketing
-  text is safe to ship; have a native reviewer check the procurement section
-  (`tenders.*`) and the legal footer before submitting anything to a tender authority.
-- **Phone `+373 22 000 000` and the addresses are placeholders** — note the header/footer
-  address (str. Ștefan cel Mare 100) and the tender address (str. Mitropolit
-  Bănulescu-Bodoni 25) disagree in the design; both were carried over as-is.
-- Only `VicandisLux Site.dc.html` is built. The bundle contains ~20 further designs
-  (Blog, Case Study, Service Template, …), several of which restate sections of this page.
+The RU/EN copy is a translation, not certified — have a native reviewer check the legal pages.
