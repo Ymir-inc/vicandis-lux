@@ -499,7 +499,7 @@
         "tag": "Pachet S",
         "title": "Seminar / eveniment mic",
         "desc": "Săli până la ~80 de persoane, o singură zonă de sunet și proiecție.",
-        "price": "3 000",
+        "price": "2 999",
         "scale": "până la ~80 pers.",
         "highlighted": false,
         "cta": "Configurează",
@@ -516,7 +516,7 @@
         "tag": "Pachet M",
         "title": "Conferință medie",
         "desc": "Conferințe de 100–300 de persoane, cu discursuri, prezentări și moderare.",
-        "price": "4 000",
+        "price": "3 999",
         "scale": "100–300 pers.",
         "highlighted": true,
         "cta": "Configurează",
@@ -534,7 +534,7 @@
         "tag": "Pachet L",
         "title": "Conferință internațională",
         "desc": "Evenimente mari, multilingve, cu traducere integrală și regie completă.",
-        "price": "7 000",
+        "price": "6 999",
         "scale": "orientativ 200 persoane",
         "highlighted": false,
         "cta": "Configurează",
@@ -561,32 +561,32 @@
         {
           "category": "Sonorizare",
           "includes": "line-array, mixer, microfoane",
-          "from": "3 000"
+          "from": "2 999"
         },
         {
           "category": "Traducere simultană",
           "includes": "cabină, emițător, receptoare",
-          "from": "4 000"
+          "from": "3 999"
         },
         {
           "category": "Video & proiecție",
           "includes": "proiector, ecran, switching",
-          "from": "2 500"
+          "from": "2 499"
         },
         {
           "category": "LED wall",
           "includes": "panouri modulare + procesor",
-          "from": "4 000"
+          "from": "3 999"
         },
         {
           "category": "Streaming & hibrid",
           "includes": "camere, encoder, uplink",
-          "from": "4 000"
+          "from": "3 999"
         },
         {
           "category": "Operator tehnic",
           "includes": "inginer / tehnician dedicat",
-          "from": "inclus / 1 500"
+          "from": "inclus / 1 499"
         }
       ]
     }
