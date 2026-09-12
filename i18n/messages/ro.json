@@ -26,9 +26,8 @@
 
   "contactChannels": [
     { "key": "phone", "label": "Sună", "href": "tel:+37369337792" },
-    { "key": "viber", "label": "Viber", "href": "#" },
-    { "key": "telegram", "label": "Telegram", "href": "#" },
-    { "key": "whatsapp", "label": "WhatsApp", "href": "#" }
+    { "key": "viber", "label": "Viber", "href": "viber://chat?number=%2B37369337792" },
+    { "key": "whatsapp", "label": "WhatsApp", "href": "https://wa.me/37369337792" }
   ],
 
   "hero": {
@@ -667,9 +666,10 @@
   "footer": {
     "desc": "Închiriem echipamente de traducere simultană, sonorizare și soluții audio-video pentru evenimente.",
     "social": [
-      { "label": "Facebook ↗", "href": "#" },
-      { "label": "Instagram ↗", "href": "#" },
-      { "label": "Viber ↗", "href": "#" }
+      { "label": "Facebook ↗", "href": "https://www.facebook.com/share/1dBKCQu4Z4/" },
+      { "label": "Instagram ↗", "href": "https://www.instagram.com/vicandissrl/" },
+      { "label": "Viber ↗", "href": "viber://chat?number=%2B37369337792" },
+      { "label": "WhatsApp ↗", "href": "https://wa.me/37369337792" }
     ],
     "columns": [
       {

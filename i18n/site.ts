@@ -57,8 +57,17 @@ export const ORG = {
     postalCode: '',
     country: 'MD',
   },
-  /** Social profiles — replace `#` placeholders with real URLs before emitting. */
-  sameAs: [] as string[],
+  /**
+   * Profile pages that unambiguously identify the organisation.
+   *
+   * Only pages belong here. The Viber deep link and the wa.me click-to-chat URL
+   * are contact mechanisms, not profiles — schema.org treats `sameAs` as
+   * identity, so listing a chat hand-off there is wrong structured data.
+   */
+  sameAs: [
+    'https://www.facebook.com/share/1dBKCQu4Z4/',
+    'https://www.instagram.com/vicandissrl/',
+  ] as string[],
 } as const;
 
 export const ALL_LOCALE_URLS = locales.map(localeUrl);

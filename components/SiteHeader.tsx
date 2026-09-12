@@ -154,7 +154,7 @@ export default function SiteHeader({ locale, nav, channels }: Props) {
           >
             {nav.directContact}
           </div>
-          <div className="contact4">
+          <div className="contact-row">
             {channels.map((c) => (
               <a key={c.key} href={c.href}>
                 <ChannelIcon name={c.key} stroke="#D6A94B" />

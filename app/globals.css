@@ -399,12 +399,15 @@
     padding: 16px 22px 26px;
     border-top: 1px solid var(--border);
   }
-  .contact4 {
+  .contact-row {
+    /* Tracks follow the channel count: the list shrinks whenever the owner
+       drops a messaging app, and a fixed column count would strand a gap. */
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
     gap: 8px;
   }
-  .contact4 a {
+  .contact-row a {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -418,7 +421,7 @@
     color: var(--text);
     transition: border-color 0.16s ease;
   }
-  .contact4 a:hover {
+  .contact-row a:hover {
     border-color: var(--accent);
   }
   .xbtn {
@@ -1602,7 +1605,8 @@
     left: 0;
     right: 0;
     z-index: 45;
-    grid-template-columns: repeat(4, 1fr);
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
     height: 66px;
     background: rgba(27, 27, 25, 0.94);
     border-top: 1px solid var(--border);
