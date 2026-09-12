@@ -494,7 +494,7 @@
         "tag": "Package S",
         "title": "Seminar / small event",
         "desc": "Rooms of up to ~80 people, a single sound zone and projection.",
-        "price": "3,000",
+        "price": "2,999",
         "scale": "up to ~80 people",
         "highlighted": false,
         "cta": "Configure",
@@ -511,7 +511,7 @@
         "tag": "Package M",
         "title": "Medium conference",
         "desc": "Conferences of 100–300 people, with speeches, presentations and moderation.",
-        "price": "4,000",
+        "price": "3,999",
         "scale": "100–300 people",
         "highlighted": true,
         "cta": "Configure",
@@ -529,7 +529,7 @@
         "tag": "Package L",
         "title": "International conference",
         "desc": "Large, multilingual events with full interpretation and complete production.",
-        "price": "7,000",
+        "price": "6,999",
         "scale": "approx. 200 people",
         "highlighted": false,
         "cta": "Configure",
@@ -556,32 +556,32 @@
         {
           "category": "Sound",
           "includes": "line-array, mixer, microphones",
-          "from": "3,000"
+          "from": "2,999"
         },
         {
           "category": "Simultaneous interpretation",
           "includes": "booth, transmitter, receivers",
-          "from": "4,000"
+          "from": "3,999"
         },
         {
           "category": "Video & projection",
           "includes": "projector, screen, switching",
-          "from": "2,500"
+          "from": "2,499"
         },
         {
           "category": "LED wall",
           "includes": "modular panels + processor",
-          "from": "4,000"
+          "from": "3,999"
         },
         {
           "category": "Streaming & hybrid",
           "includes": "cameras, encoder, uplink",
-          "from": "4,000"
+          "from": "3,999"
         },
         {
           "category": "Technical operator",
           "includes": "dedicated engineer / technician",
-          "from": "included / 1,500"
+          "from": "included / 1,499"
         }
       ]
     }
