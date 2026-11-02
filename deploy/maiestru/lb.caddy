@@ -1,0 +1,25 @@
+# vicandislux.md on maiestru-lb (178.104.32.40): TLS termination, then plain
+# HTTP to the origin on maiestru-prod-1 (10.0.0.3:80, see site.caddy).
+#
+# Staged at /etc/caddy/sites-staged/vicandis-lux.caddy and NOT imported until
+# cutover: loading it before DNS points here would make Caddy request
+# Let's Encrypt certificates that cannot validate yet. Cutover steps are in
+# deploy/maiestru/README.md.
+
+vicandislux.md, www.vicandislux.md {
+	encode gzip zstd
+
+	# The old host sent HSTS (with preload). Only this hop speaks HTTPS.
+	header Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+
+	reverse_proxy 10.0.0.3:80 {
+		# The origin routes by Host; without this header the check would hit
+		# the box's default :80 site (MAIESTRU) instead of this one.
+		health_uri /
+		health_headers {
+			Host vicandislux.md
+		}
+		health_interval 30s
+		health_timeout 5s
+	}
+}

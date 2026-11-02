@@ -1,0 +1,42 @@
+# VicandisLux quote endpoint (server/quote.mjs) on a MAIESTRU API box.
+# Installed by ./deploy.sh to /etc/systemd/system/vicandis-lux-quote.service.
+# Listens on 127.0.0.1:8180 only; Caddy proxies /api/* to it (site.caddy).
+[Unit]
+Description=VicandisLux quote endpoint (127.0.0.1:8180)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# RESEND_API_KEY, QUOTE_TO, QUOTE_FROM. Mode 600, root. Never in the repo.
+EnvironmentFile=/etc/vicandis-lux/quote.env
+# The port is pinned here, not in the env file, so it always matches site.caddy
+# even if the env file still carries the old host's PORT=8081.
+ExecStart=/usr/bin/env PORT=8180 node /opt/vicandis-lux/quote/quote.mjs
+Restart=on-failure
+RestartSec=2
+
+# Least privilege: throwaway unprivileged user, read-only system, no home.
+DynamicUser=yes
+NoNewPrivileges=yes
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectSystem=strict
+ProtectHome=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectKernelLogs=yes
+ProtectControlGroups=yes
+ProtectClock=yes
+ProtectHostname=yes
+RestrictNamespaces=yes
+RestrictRealtime=yes
+RestrictSUIDSGID=yes
+LockPersonality=yes
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+CapabilityBoundingSet=
+SystemCallArchitectures=native
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target
