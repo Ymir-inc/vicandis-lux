@@ -39,6 +39,34 @@ export const localeUrl = (locale: Locale) => `${SITE_BASE}/${locale}/`;
 export const assetUrl = (path: string) => `${SITE_BASE}${path.startsWith('/') ? path : `/${path}`}`;
 
 /**
+ * Cache key for the generated brand artwork. Bump on every artwork change.
+ *
+ * The generated files keep their names forever, and production serves them
+ * with `Cache-Control: max-age=2592000` and no revalidation. Without something
+ * in the URL that moves, a deploy that repaints the brand reaches nobody who
+ * has already visited, nor any proxy in between, for thirty days. The name
+ * cannot move, so the query does.
+ *
+ * The rule is uniform: every generated brand artefact referenced by a bare,
+ * stable URL — `og.png`, `favicon.ico`, `icons/*`, `icon.svg`, `apple-icon.png`
+ * — carries the version. Exempting one because today's caches happen not to
+ * hold it only works until the next bump, and an exception that rests on a
+ * one-time historical fact is the kind that silently stops being true.
+ *
+ * A query on `og:image` is safe and in fact load-bearing: Facebook, LinkedIn,
+ * WhatsApp and Telegram key their card caches on the exact image URL, so a new
+ * value is the supported way to make them re-fetch a card they have already
+ * scraped.
+ *
+ * `public/index.html` is copied verbatim and cannot import this module, so its
+ * links carry the value literally and must be bumped alongside.
+ */
+export const BRAND_ASSET_VERSION = '2';
+
+/** `assetUrl` for generated brand artwork, carrying the cache key. */
+export const brandAssetUrl = (path: string) => `${assetUrl(path)}?v=${BRAND_ASSET_VERSION}`;
+
+/**
  * Organisation identity used across metadata, the manifest and JSON-LD.
  * The NAP fields are placeholders until the owner confirms them; they are only
  * ever emitted when `ORG_VERIFIED` is set.
@@ -47,7 +75,7 @@ export const ORG = {
   name: 'VicandisLux',
   legalName: 'VICANDISLUX SRL',
   url: `${SITE_BASE}/`,
-  logo: assetUrl('/icons/icon-512.png'),
+  logo: brandAssetUrl('/icons/icon-512.png'),
   email: 'director@vicandislux.md',
   telephone: '+373 69 337 792',
   foundingYear: '2007',

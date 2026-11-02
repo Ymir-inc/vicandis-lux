@@ -1,8 +1,10 @@
 # Security & caching headers.
 #
 # Read by Cloudflare Pages and Netlify. GitHub Pages ignores this file, so the
-# throwaway preview is unaffected; it exists so the real deployment is hardened
-# from day one. CSP allows 'unsafe-inline' for scripts and styles because this
+# throwaway preview is unaffected. Production is nginx, which ignores it too —
+# the rules below have to be mirrored by hand in the server config (see
+# TAKEOVER.md §3); this file is the canonical statement of what they should be.
+# CSP allows 'unsafe-inline' for scripts and styles because this
 # is a static export (no per-request nonce) that inlines Next's bootstrap and
 # the design's style attributes — see tasks/OWNER-TODO.md for tightening it.
 
@@ -19,5 +21,28 @@
 /_next/static/*
   Cache-Control: public, max-age=31536000, immutable
 
+# Brand artwork. None of it is fingerprinted — Next emits `/icon.svg`,
+# `/apple-icon.png` and `/og.png` at bare, stable URLs, and browsers ask for
+# `/favicon.ico` by that path whatever the markup says. A long TTL therefore
+# keeps serving the *previous* logo for its whole duration after a rebrand, so
+# these get a day and a revalidation rather than a week of silence.
+/og.png
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/favicon.ico
+  Cache-Control: public, max-age=86400, must-revalidate
+
+/icon.svg
+  Cache-Control: public, max-age=86400, must-revalidate
+
+/apple-icon.png
+  Cache-Control: public, max-age=86400, must-revalidate
+
+/manifest.webmanifest
+  Cache-Control: public, max-age=86400, must-revalidate
+
 /icons/*
-  Cache-Control: public, max-age=604800
+  Cache-Control: public, max-age=86400, must-revalidate
+
+/brand/*
+  Cache-Control: public, max-age=86400, must-revalidate
