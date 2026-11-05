@@ -1,0 +1,118 @@
+# vicandislux.md origin on a MAIESTRU API box (maiestru-prod-1, 10.0.0.3).
+#
+# Installed by ./deploy.sh to /etc/caddy/sites/vicandis-lux.caddy, which the
+# box's /etc/caddy/Caddyfile imports. Plain HTTP only: maiestru-lb terminates
+# TLS and forwards to :80 here with the Host header kept (see lb.caddy).
+#
+# Translated from the old nginx host (2.28.45.53):
+#   /etc/nginx/sites-enabled/vicandislux + /etc/nginx/snippets/vlx-legacy.conf
+# Deliberate differences, all stricter or equal:
+#   - The security headers now reach every response, including images, fonts
+#     and scripts. nginx dropped them wherever a location set its own
+#     add_header (the inheritance trap described in vlx-security-headers.conf).
+#   - HSTS is sent by the LB (lb.caddy), the only hop that speaks HTTPS.
+#   - Everything under /_next/static/ is "public, max-age=31536000, immutable".
+#     nginx gave fonts and images there 30 days, because its image regex won
+#     over the /_next/static/ prefix. The files are content-hashed either way.
+#   - gzip/zstd is done once, at the LB.
+#   - Single Cache-Control header instead of nginx's "expires" + add_header pair.
+
+(vicandis_lux_security_headers) {
+	header {
+		# 'unsafe-inline' is the documented trade-off of a Next.js static export
+		# (no per-request nonce). Keep in sync with public/_headers.
+		Content-Security-Policy "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; img-src 'self' data:; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self'; manifest-src 'self'; form-action 'self'; upgrade-insecure-requests"
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		X-Frame-Options "SAMEORIGIN"
+		Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=(), interest-cohort=()"
+		Cross-Origin-Opener-Policy "same-origin"
+	}
+}
+
+http://vicandislux.md, http://www.vicandislux.md {
+	# Atomic symlink to /var/www/vicandis-lux/releases/<sha>, managed by deploy.sh.
+	root * /var/www/vicandis-lux/current
+
+	import vicandis_lux_security_headers
+
+	# ── Caching matchers (mutually exclusive; applied inside route below) ──
+	@vlx_next_static path /_next/static/*
+	# Brand artwork at bare, unhashed URLs: short TTL + revalidation so a
+	# rebrand lands quickly (vlx-legacy.conf section 4).
+	@vlx_og path /og.png
+	@vlx_icons path /favicon.ico /icon.svg /apple-icon.png /icons/icon-48.png /icons/icon-192.png /icons/icon-512.png /icons/icon-maskable-512.png
+	@vlx_assets {
+		path_regexp (?i)\.(jpg|jpeg|png|webp|svg|ico|woff2)$
+		not path /_next/static/* /og.png /favicon.ico /icon.svg /apple-icon.png /icons/icon-48.png /icons/icon-192.png /icons/icon-512.png /icons/icon-maskable-512.png
+	}
+
+	# ── Legacy .html pages of the pre-2026 site (vlx-legacy.conf section 1) ─
+	# Case-insensitive, query string dropped, apex named explicitly so
+	# www + legacy is a single 301.
+	@vlx_legacy_home path_regexp (?i)^/Home\.html$
+	@vlx_legacy_services path_regexp (?i)^/(Servicii|Servicii_Catering|Servicii_Tipografice|SERVICII_TIPAR_SI_PRINT_DIGITAL|Echipe_interpreti)\.html$
+	@vlx_legacy_equipment path_regexp (?i)^/(Echipamente_Audio|Echipamente_video|Echipamente_Traduceri_Simultane)\.html$
+	@vlx_legacy_contact path_regexp (?i)^/CONTACTE\.html$
+	@vlx_legacy_refs path_regexp (?i)^/(Clienti|PARTENERI)\.html$
+	@vlx_legacy_gallery path_regexp (?i)^/Galerie_Foto\.html$
+
+	@vlx_www host www.vicandislux.md
+
+	# A directory requested without its trailing slash: nginx answered 301.
+	# (Caddy's own canonical redirect would be a 308.)
+	@vlx_dir_noslash {
+		not path */
+		file {path}/index.html
+	}
+
+	# route{} keeps this exact order; outside it Caddy would reorder directives.
+	route {
+		redir @vlx_legacy_home https://vicandislux.md/ro/ 301
+		redir @vlx_legacy_services https://vicandislux.md/ro/#servicii 301
+		redir @vlx_legacy_equipment https://vicandislux.md/ro/#echipamente 301
+		redir @vlx_legacy_contact https://vicandislux.md/ro/#contact 301
+		redir @vlx_legacy_refs https://vicandislux.md/ro/#referinte 301
+		redir @vlx_legacy_gallery https://vicandislux.md/ro/#studii 301
+
+		# www -> apex, path and query kept (vlx-legacy.conf section 2).
+		redir @vlx_www https://vicandislux.md{uri} 301
+
+		# nginx's "location /api/" answered a bare /api with a 301 to /api/.
+		# Absolute https Locations, like nginx sent (www was handled above).
+		redir /api https://vicandislux.md/api/{?query} 301
+		redir @vlx_dir_noslash https://vicandislux.md{path}/{?query} 301
+
+		# Caching, after the redirects so a 301 never carries an asset TTL.
+		header @vlx_next_static Cache-Control "public, max-age=31536000, immutable"
+		header @vlx_og Cache-Control "public, max-age=3600, must-revalidate"
+		header @vlx_icons Cache-Control "public, max-age=86400, must-revalidate"
+		header @vlx_assets Cache-Control "public, max-age=2592000"
+
+		# Content types the old host sent (nginx mime.types): it forced the
+		# manifest type, and it served .xml as text/xml.
+		header /manifest.webmanifest Content-Type "application/manifest+json"
+		header /sitemap.xml Content-Type "text/xml"
+
+		# Quote endpoint (server/quote.mjs, vicandis-lux-quote.service).
+		reverse_proxy /api/* 127.0.0.1:8180 {
+			# quote.mjs rate-limits on the first X-Forwarded-For entry. Pass the
+			# client IP that maiestru-lb put there, instead of the LB's own IP.
+			header_up X-Forwarded-For {header.X-Forwarded-For}
+			transport http {
+				response_header_timeout 20s
+			}
+		}
+
+		file_server
+	}
+
+	# error_page 404 /404.html, keeping the 404 status.
+	# Never cache an error: nginx's "expires" only applied to 2xx/3xx.
+	handle_errors 404 {
+		import vicandis_lux_security_headers
+		header -Cache-Control
+		rewrite * /404.html
+		file_server
+	}
+}
