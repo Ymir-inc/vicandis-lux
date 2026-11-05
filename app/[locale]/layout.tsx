@@ -10,6 +10,7 @@ import {
   SITE_BASE,
   SITE_ORIGIN,
   assetUrl,
+  brandAssetUrl,
   localeUrl,
 } from '@/i18n/site';
 import StructuredData from '@/components/StructuredData';
@@ -131,7 +132,7 @@ export async function generateMetadata({
   };
 
   const ogImage = {
-    url: assetUrl('/og.png'),
+    url: brandAssetUrl('/og.png'),
     width: 1200,
     height: 630,
     alt: t.meta.siteName,
@@ -150,6 +151,23 @@ export async function generateMetadata({
     // Explicit tel: links handle calling; stop the OS auto-linking stray numbers.
     formatDetection: { telephone: false, email: false, address: false },
     alternates: { canonical: localeUrl(locale), languages },
+    /*
+      Declared explicitly rather than left to the `app/icon.svg` file convention,
+      which advertises only the SVG. Google's favicon crawler and a long tail of
+      clients fetch `/favicon.ico` and nothing else, so the raster has to be in
+      the head too. Absolute URLs keep the sub-path intact, and `brandAssetUrl`
+      adds the cache key every generated brand artefact carries.
+    */
+    icons: {
+      icon: [
+        { url: brandAssetUrl('/favicon.ico'), sizes: '16x16 32x32 48x48', type: 'image/x-icon' },
+        { url: brandAssetUrl('/icon.svg'), type: 'image/svg+xml', sizes: 'any' },
+        { url: brandAssetUrl('/icons/icon-48.png'), sizes: '48x48', type: 'image/png' },
+        { url: brandAssetUrl('/icons/icon-192.png'), sizes: '192x192', type: 'image/png' },
+      ],
+      shortcut: brandAssetUrl('/favicon.ico'),
+      apple: [{ url: brandAssetUrl('/apple-icon.png'), sizes: '180x180', type: 'image/png' }],
+    },
     robots: IS_PREVIEW
       ? { index: false, follow: false, nocache: true }
       : {

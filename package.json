@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "icons": "node scripts/generate-icons.mjs",
+    "og": "node scripts/generate-og.mjs"
   },
   "dependencies": {
     "next": "16.2.12",
@@ -21,6 +23,8 @@
     "@types/react-dom": "^19.2.0",
     "eslint": "^9.39.0",
     "eslint-config-next": "16.2.12",
+    "opentype.js": "^2.0.0",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4.3.3",
     "typescript": "^5.9.3"
   }
