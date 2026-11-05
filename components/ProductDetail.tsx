@@ -85,7 +85,7 @@ export default function ProductDetail({ t }: { t: Messages['product'] }) {
                   aria-label={view.label}
                   aria-pressed={galleryIndex === i}
                   style={{
-                    border: `1px solid ${galleryIndex === i ? '#C6FF3A' : 'rgba(255,255,255,0.10)'}`,
+                    border: `1px solid ${galleryIndex === i ? '#D6A94B' : 'rgba(255,255,255,0.10)'}`,
                   }}
                 >
                   <span

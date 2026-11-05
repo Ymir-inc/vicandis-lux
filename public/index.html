@@ -15,6 +15,20 @@
     <link rel="alternate" hreflang="ru-MD" href="./ru/" />
     <link rel="alternate" hreflang="en" href="./en/" />
     <link rel="alternate" hreflang="x-default" href="./ro/" />
+    <!--
+      Same icon set as `app/[locale]/layout.tsx`. Without these a browser that
+      lands here before the redirect fires blind-guesses `/favicon.ico`, which
+      on a sub-path deployment is not ours. Relative like everything else above:
+      this file is copied verbatim, so an absolute path would break the
+      sub-path preview, and for the same reason `?v=` is written out by hand —
+      bump it in lockstep with BRAND_ASSET_VERSION in `i18n/site.ts`.
+    -->
+    <link rel="icon" href="./favicon.ico?v=2" sizes="16x16 32x32 48x48" type="image/x-icon" />
+    <link rel="icon" href="./icon.svg?v=2" type="image/svg+xml" sizes="any" />
+    <link rel="icon" href="./icons/icon-48.png?v=2" sizes="48x48" type="image/png" />
+    <link rel="icon" href="./icons/icon-192.png?v=2" sizes="192x192" type="image/png" />
+    <link rel="apple-touch-icon" href="./apple-icon.png?v=2" sizes="180x180" type="image/png" />
+    <link rel="manifest" href="./manifest.webmanifest" />
     <style>
       body {
         margin: 0;

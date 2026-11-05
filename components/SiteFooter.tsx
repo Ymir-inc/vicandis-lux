@@ -10,6 +10,30 @@ const columnTitleStyle: React.CSSProperties = {
   marginBottom: 20,
 };
 
+/** Hosts whose links are pages to read, not conversations to start. */
+const OFFSITE_PROFILE_HOSTS = ['facebook.com', 'instagram.com'];
+
+const isOffsiteProfile = (href: string) => {
+  if (!href.startsWith('https://')) return false;
+  const { hostname } = new URL(href);
+  return OFFSITE_PROFILE_HOSTS.some((host) => hostname === host || hostname.endsWith(`.${host}`));
+};
+
+/**
+ * Attributes for a footer social entry.
+ *
+ * Only the profile hosts above are off-site reading: they open in a new tab so
+ * the visitor keeps their place. Everything else is treated as an app hand-off
+ * — `viber://`, `wa.me`, and any click-to-chat added later (`t.me`, `m.me`) —
+ * and stays in the current tab, matching MobileContactBar: the browser passes
+ * the intent to the OS and the site is still underneath on return, where
+ * `target="_blank"` would strand a blank tab. The scheme cannot decide this,
+ * because click-to-chat is served over https too. New entries default to the
+ * hand-off behaviour; list a host above only when it is a page to read.
+ */
+const socialLinkProps = (href: string) =>
+  isOffsiteProfile(href) ? { target: '_blank', rel: 'noopener noreferrer' } : {};
+
 export default function SiteFooter({
   t,
   locale,
@@ -45,7 +69,7 @@ export default function SiteFooter({
               }}
             >
               {t.social.map((s) => (
-                <a key={s.label} href={s.href} className="flink">
+                <a key={s.label} href={s.href} className="flink" {...socialLinkProps(s.href)}>
                   {s.label}
                 </a>
               ))}
